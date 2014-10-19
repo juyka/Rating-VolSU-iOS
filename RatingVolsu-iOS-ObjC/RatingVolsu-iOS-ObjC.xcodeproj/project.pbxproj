@@ -1,0 +1,628 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0102B89B1C52458B9C1483B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C04D6F37EBC2412C96CB0297 /* libPods.a */; };
+		D601A65F19EFFC2D00735F5B /* Semester.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A65E19EFFC2D00735F5B /* Semester.m */; };
+		D601A66219EFFC2E00735F5B /* Faculty.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A66119EFFC2E00735F5B /* Faculty.m */; };
+		D601A66819EFFC2E00735F5B /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A66719EFFC2E00735F5B /* Student.m */; };
+		D601A66B19EFFC2E00735F5B /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A66A19EFFC2E00735F5B /* Subject.m */; };
+		D601A66E19F037B900735F5B /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A66D19F037B900735F5B /* Group.m */; };
+		D601A67119F03BEE00735F5B /* SemestersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67019F03BEE00735F5B /* SemestersViewController.m */; };
+		D601A67419F03FA000735F5B /* Semester+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67319F03FA000735F5B /* Semester+Mappings.m */; };
+		D601A67719F1395000735F5B /* RatingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67619F1395000735F5B /* RatingTableViewController.m */; };
+		D601A67A19F14AAF00735F5B /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67919F14AAF00735F5B /* FavoritesViewController.m */; };
+		D601A67D19F1514700735F5B /* FavoritesItem+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67C19F1514700735F5B /* FavoritesItem+Mappings.m */; };
+		D601A67E19F15CD400735F5B /* RatingVolsu-iOS-ObjC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D66E2E1C19E7E524006077BC /* RatingVolsu-iOS-ObjC.xcdatamodeld */; };
+		D604872119ED22A20009E1E7 /* Faculty+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D604872019ED22A20009E1E7 /* Faculty+Mappings.m */; };
+		D6238D9419E907D7003D4CA8 /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D6238D9319E907D7003D4CA8 /* RequestManager.m */; };
+		D6272BF719EE6D1D005DD267 /* NSManagedObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6272BF619EE6D1D005DD267 /* NSManagedObject+Extensions.m */; };
+		D6272BFA19EE786B005DD267 /* Group+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D6272BF919EE786B005DD267 /* Group+Mappings.m */; };
+		D6272BFD19EE794E005DD267 /* Student+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D6272BFC19EE794E005DD267 /* Student+Mappings.m */; };
+		D6272C0019EED308005DD267 /* FavoritesItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6272BFF19EED308005DD267 /* FavoritesItem.m */; };
+		D6272C0619EED309005DD267 /* RatingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6272C0519EED309005DD267 /* RatingItem.m */; };
+		D66E2DF619E7E500006077BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D66E2DF519E7E500006077BC /* main.m */; };
+		D66E2DF919E7E500006077BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D66E2DF819E7E500006077BC /* AppDelegate.m */; };
+		D66E2DFF19E7E500006077BC /* RatingSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66E2DFE19E7E500006077BC /* RatingSelectorViewController.m */; };
+		D66E2E0219E7E500006077BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D66E2E0019E7E500006077BC /* Main.storyboard */; };
+		D66E2E0419E7E500006077BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66E2E0319E7E500006077BC /* Images.xcassets */; };
+		D66E2E0719E7E500006077BC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66E2E0519E7E500006077BC /* LaunchScreen.xib */; };
+		D66E2E1319E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D66E2E1219E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D66E2E0D19E7E500006077BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D66E2DE819E7E500006077BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D66E2DEF19E7E500006077BC;
+			remoteInfo = "RatingVolsu-iOS-ObjC";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B27227D256AE42519D81504B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		C04D6F37EBC2412C96CB0297 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D601A65D19EFFC2D00735F5B /* Semester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Semester.h; sourceTree = "<group>"; };
+		D601A65E19EFFC2D00735F5B /* Semester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Semester.m; sourceTree = "<group>"; };
+		D601A66019EFFC2E00735F5B /* Faculty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faculty.h; sourceTree = "<group>"; };
+		D601A66119EFFC2E00735F5B /* Faculty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faculty.m; sourceTree = "<group>"; };
+		D601A66619EFFC2E00735F5B /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		D601A66719EFFC2E00735F5B /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		D601A66919EFFC2E00735F5B /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		D601A66A19EFFC2E00735F5B /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
+		D601A66C19F037B900735F5B /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		D601A66D19F037B900735F5B /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		D601A66F19F03BEE00735F5B /* SemestersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemestersViewController.h; sourceTree = "<group>"; };
+		D601A67019F03BEE00735F5B /* SemestersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemestersViewController.m; sourceTree = "<group>"; };
+		D601A67219F03FA000735F5B /* Semester+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Semester+Mappings.h"; sourceTree = "<group>"; };
+		D601A67319F03FA000735F5B /* Semester+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Semester+Mappings.m"; sourceTree = "<group>"; };
+		D601A67519F1395000735F5B /* RatingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingTableViewController.h; sourceTree = "<group>"; };
+		D601A67619F1395000735F5B /* RatingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingTableViewController.m; sourceTree = "<group>"; };
+		D601A67819F14AAF00735F5B /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		D601A67919F14AAF00735F5B /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
+		D601A67B19F1514700735F5B /* FavoritesItem+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FavoritesItem+Mappings.h"; sourceTree = "<group>"; };
+		D601A67C19F1514700735F5B /* FavoritesItem+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FavoritesItem+Mappings.m"; sourceTree = "<group>"; };
+		D604871F19ED22A20009E1E7 /* Faculty+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Faculty+Mappings.h"; sourceTree = "<group>"; };
+		D604872019ED22A20009E1E7 /* Faculty+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Faculty+Mappings.m"; sourceTree = "<group>"; };
+		D6238D9219E907D7003D4CA8 /* RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
+		D6238D9319E907D7003D4CA8 /* RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
+		D6272BF219ED6E68005DD267 /* CoreDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataModel.h; sourceTree = "<group>"; };
+		D6272BF319EE6839005DD267 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D6272BF519EE6D1D005DD267 /* NSManagedObject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Extensions.h"; sourceTree = "<group>"; };
+		D6272BF619EE6D1D005DD267 /* NSManagedObject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Extensions.m"; sourceTree = "<group>"; };
+		D6272BF819EE786B005DD267 /* Group+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Group+Mappings.h"; sourceTree = "<group>"; };
+		D6272BF919EE786B005DD267 /* Group+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Group+Mappings.m"; sourceTree = "<group>"; };
+		D6272BFB19EE794E005DD267 /* Student+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+Mappings.h"; sourceTree = "<group>"; };
+		D6272BFC19EE794E005DD267 /* Student+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+Mappings.m"; sourceTree = "<group>"; };
+		D6272BFE19EED308005DD267 /* FavoritesItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesItem.h; sourceTree = "<group>"; };
+		D6272BFF19EED308005DD267 /* FavoritesItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesItem.m; sourceTree = "<group>"; };
+		D6272C0419EED309005DD267 /* RatingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingItem.h; sourceTree = "<group>"; };
+		D6272C0519EED309005DD267 /* RatingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingItem.m; sourceTree = "<group>"; };
+		D66E2DF019E7E500006077BC /* RatingVolsu-iOS-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RatingVolsu-iOS-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66E2DF419E7E500006077BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D66E2DF519E7E500006077BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D66E2DF719E7E500006077BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D66E2DF819E7E500006077BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D66E2DFD19E7E500006077BC /* RatingSelectorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RatingSelectorViewController.h; sourceTree = "<group>"; };
+		D66E2DFE19E7E500006077BC /* RatingSelectorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatingSelectorViewController.m; sourceTree = "<group>"; };
+		D66E2E0119E7E500006077BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D66E2E0319E7E500006077BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D66E2E0619E7E500006077BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D66E2E0C19E7E500006077BC /* RatingVolsu-iOS-ObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RatingVolsu-iOS-ObjCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66E2E1119E7E500006077BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D66E2E1219E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatingVolsu_iOS_ObjCTests.m; sourceTree = "<group>"; };
+		D66E2E1D19E7E524006077BC /* RatingVolsu-iOS-ObjC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RatingVolsu-iOS-ObjC.xcdatamodel"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D66E2DED19E7E500006077BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0102B89B1C52458B9C1483B1 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D66E2E0919E7E500006077BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5ED92712D1B48229702FF1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C04D6F37EBC2412C96CB0297 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D604873619ED3F530009E1E7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D601A66C19F037B900735F5B /* Group.h */,
+				D601A66D19F037B900735F5B /* Group.m */,
+				D601A66919EFFC2E00735F5B /* Subject.h */,
+				D601A66A19EFFC2E00735F5B /* Subject.m */,
+				D601A66619EFFC2E00735F5B /* Student.h */,
+				D601A66719EFFC2E00735F5B /* Student.m */,
+				D601A66019EFFC2E00735F5B /* Faculty.h */,
+				D601A66119EFFC2E00735F5B /* Faculty.m */,
+				D601A65D19EFFC2D00735F5B /* Semester.h */,
+				D601A65E19EFFC2D00735F5B /* Semester.m */,
+				D6272C0419EED309005DD267 /* RatingItem.h */,
+				D6272C0519EED309005DD267 /* RatingItem.m */,
+				D6272BFE19EED308005DD267 /* FavoritesItem.h */,
+				D6272BFF19EED308005DD267 /* FavoritesItem.m */,
+				D604871F19ED22A20009E1E7 /* Faculty+Mappings.h */,
+				D604872019ED22A20009E1E7 /* Faculty+Mappings.m */,
+				D6272BF819EE786B005DD267 /* Group+Mappings.h */,
+				D6272BF919EE786B005DD267 /* Group+Mappings.m */,
+				D6272BFB19EE794E005DD267 /* Student+Mappings.h */,
+				D6272BFC19EE794E005DD267 /* Student+Mappings.m */,
+				D6272BF219ED6E68005DD267 /* CoreDataModel.h */,
+				D601A67219F03FA000735F5B /* Semester+Mappings.h */,
+				D601A67319F03FA000735F5B /* Semester+Mappings.m */,
+				D601A67519F1395000735F5B /* RatingTableViewController.h */,
+				D601A67619F1395000735F5B /* RatingTableViewController.m */,
+				D601A67B19F1514700735F5B /* FavoritesItem+Mappings.h */,
+				D601A67C19F1514700735F5B /* FavoritesItem+Mappings.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D6272BF419EE6C4A005DD267 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D6272BF519EE6D1D005DD267 /* NSManagedObject+Extensions.h */,
+				D6272BF619EE6D1D005DD267 /* NSManagedObject+Extensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D66E2DE719E7E500006077BC = {
+			isa = PBXGroup;
+			children = (
+				D66E2DF219E7E500006077BC /* RatingVolsu-iOS-ObjC */,
+				D66E2E0F19E7E500006077BC /* RatingVolsu-iOS-ObjCTests */,
+				D66E2DF119E7E500006077BC /* Products */,
+				B27227D256AE42519D81504B /* Pods.xcconfig */,
+				B5ED92712D1B48229702FF1C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D66E2DF119E7E500006077BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D66E2DF019E7E500006077BC /* RatingVolsu-iOS-ObjC.app */,
+				D66E2E0C19E7E500006077BC /* RatingVolsu-iOS-ObjCTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D66E2DF219E7E500006077BC /* RatingVolsu-iOS-ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				D6272BF419EE6C4A005DD267 /* Extensions */,
+				D604873619ED3F530009E1E7 /* CoreData */,
+				D66E2E1C19E7E524006077BC /* RatingVolsu-iOS-ObjC.xcdatamodeld */,
+				D66E2DF719E7E500006077BC /* AppDelegate.h */,
+				D66E2DF819E7E500006077BC /* AppDelegate.m */,
+				D66E2DFD19E7E500006077BC /* RatingSelectorViewController.h */,
+				D66E2DFE19E7E500006077BC /* RatingSelectorViewController.m */,
+				D66E2E0019E7E500006077BC /* Main.storyboard */,
+				D66E2E0319E7E500006077BC /* Images.xcassets */,
+				D66E2E0519E7E500006077BC /* LaunchScreen.xib */,
+				D66E2DF319E7E500006077BC /* Supporting Files */,
+				D6238D9219E907D7003D4CA8 /* RequestManager.h */,
+				D6238D9319E907D7003D4CA8 /* RequestManager.m */,
+				D601A66F19F03BEE00735F5B /* SemestersViewController.h */,
+				D601A67019F03BEE00735F5B /* SemestersViewController.m */,
+				D601A67819F14AAF00735F5B /* FavoritesViewController.h */,
+				D601A67919F14AAF00735F5B /* FavoritesViewController.m */,
+			);
+			path = "RatingVolsu-iOS-ObjC";
+			sourceTree = "<group>";
+		};
+		D66E2DF319E7E500006077BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D66E2DF419E7E500006077BC /* Info.plist */,
+				D66E2DF519E7E500006077BC /* main.m */,
+				D6272BF319EE6839005DD267 /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D66E2E0F19E7E500006077BC /* RatingVolsu-iOS-ObjCTests */ = {
+			isa = PBXGroup;
+			children = (
+				D66E2E1219E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m */,
+				D66E2E1019E7E500006077BC /* Supporting Files */,
+			);
+			path = "RatingVolsu-iOS-ObjCTests";
+			sourceTree = "<group>";
+		};
+		D66E2E1019E7E500006077BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D66E2E1119E7E500006077BC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D66E2DEF19E7E500006077BC /* RatingVolsu-iOS-ObjC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D66E2E1619E7E500006077BC /* Build configuration list for PBXNativeTarget "RatingVolsu-iOS-ObjC" */;
+			buildPhases = (
+				631EE4106BCA4C91B6BD3A29 /* Check Pods Manifest.lock */,
+				D66E2DEC19E7E500006077BC /* Sources */,
+				D66E2DED19E7E500006077BC /* Frameworks */,
+				D66E2DEE19E7E500006077BC /* Resources */,
+				07FB4CBEDB55471BA0A9F736 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RatingVolsu-iOS-ObjC";
+			productName = "RatingVolsu-iOS-ObjC";
+			productReference = D66E2DF019E7E500006077BC /* RatingVolsu-iOS-ObjC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D66E2E0B19E7E500006077BC /* RatingVolsu-iOS-ObjCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D66E2E1919E7E500006077BC /* Build configuration list for PBXNativeTarget "RatingVolsu-iOS-ObjCTests" */;
+			buildPhases = (
+				D66E2E0819E7E500006077BC /* Sources */,
+				D66E2E0919E7E500006077BC /* Frameworks */,
+				D66E2E0A19E7E500006077BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D66E2E0E19E7E500006077BC /* PBXTargetDependency */,
+			);
+			name = "RatingVolsu-iOS-ObjCTests";
+			productName = "RatingVolsu-iOS-ObjCTests";
+			productReference = D66E2E0C19E7E500006077BC /* RatingVolsu-iOS-ObjCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D66E2DE819E7E500006077BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = VolSU;
+				TargetAttributes = {
+					D66E2DEF19E7E500006077BC = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					D66E2E0B19E7E500006077BC = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = D66E2DEF19E7E500006077BC;
+					};
+				};
+			};
+			buildConfigurationList = D66E2DEB19E7E500006077BC /* Build configuration list for PBXProject "RatingVolsu-iOS-ObjC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D66E2DE719E7E500006077BC;
+			productRefGroup = D66E2DF119E7E500006077BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D66E2DEF19E7E500006077BC /* RatingVolsu-iOS-ObjC */,
+				D66E2E0B19E7E500006077BC /* RatingVolsu-iOS-ObjCTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D66E2DEE19E7E500006077BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D66E2E0219E7E500006077BC /* Main.storyboard in Resources */,
+				D66E2E0719E7E500006077BC /* LaunchScreen.xib in Resources */,
+				D66E2E0419E7E500006077BC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D66E2E0A19E7E500006077BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07FB4CBEDB55471BA0A9F736 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		631EE4106BCA4C91B6BD3A29 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D66E2DEC19E7E500006077BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6272C0019EED308005DD267 /* FavoritesItem.m in Sources */,
+				D66E2DF919E7E500006077BC /* AppDelegate.m in Sources */,
+				D601A66819EFFC2E00735F5B /* Student.m in Sources */,
+				D66E2DFF19E7E500006077BC /* RatingSelectorViewController.m in Sources */,
+				D601A66B19EFFC2E00735F5B /* Subject.m in Sources */,
+				D604872119ED22A20009E1E7 /* Faculty+Mappings.m in Sources */,
+				D601A67719F1395000735F5B /* RatingTableViewController.m in Sources */,
+				D601A67D19F1514700735F5B /* FavoritesItem+Mappings.m in Sources */,
+				D6238D9419E907D7003D4CA8 /* RequestManager.m in Sources */,
+				D601A65F19EFFC2D00735F5B /* Semester.m in Sources */,
+				D66E2DF619E7E500006077BC /* main.m in Sources */,
+				D6272C0619EED309005DD267 /* RatingItem.m in Sources */,
+				D6272BF719EE6D1D005DD267 /* NSManagedObject+Extensions.m in Sources */,
+				D601A67E19F15CD400735F5B /* RatingVolsu-iOS-ObjC.xcdatamodeld in Sources */,
+				D601A67419F03FA000735F5B /* Semester+Mappings.m in Sources */,
+				D601A66219EFFC2E00735F5B /* Faculty.m in Sources */,
+				D601A67A19F14AAF00735F5B /* FavoritesViewController.m in Sources */,
+				D6272BFA19EE786B005DD267 /* Group+Mappings.m in Sources */,
+				D6272BFD19EE794E005DD267 /* Student+Mappings.m in Sources */,
+				D601A67119F03BEE00735F5B /* SemestersViewController.m in Sources */,
+				D601A66E19F037B900735F5B /* Group.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D66E2E0819E7E500006077BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D66E2E1319E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D66E2E0E19E7E500006077BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D66E2DEF19E7E500006077BC /* RatingVolsu-iOS-ObjC */;
+			targetProxy = D66E2E0D19E7E500006077BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D66E2E0019E7E500006077BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D66E2E0119E7E500006077BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D66E2E0519E7E500006077BC /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D66E2E0619E7E500006077BC /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D66E2E1419E7E500006077BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D66E2E1519E7E500006077BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D66E2E1719E7E500006077BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B27227D256AE42519D81504B /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RatingVolsu-iOS-ObjC/PrefixHeader.pch";
+				INFOPLIST_FILE = "RatingVolsu-iOS-ObjC/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D66E2E1819E7E500006077BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B27227D256AE42519D81504B /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RatingVolsu-iOS-ObjC/PrefixHeader.pch";
+				INFOPLIST_FILE = "RatingVolsu-iOS-ObjC/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D66E2E1A19E7E500006077BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RatingVolsu-iOS-ObjCTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RatingVolsu-iOS-ObjC.app/RatingVolsu-iOS-ObjC";
+			};
+			name = Debug;
+		};
+		D66E2E1B19E7E500006077BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RatingVolsu-iOS-ObjCTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RatingVolsu-iOS-ObjC.app/RatingVolsu-iOS-ObjC";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D66E2DEB19E7E500006077BC /* Build configuration list for PBXProject "RatingVolsu-iOS-ObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D66E2E1419E7E500006077BC /* Debug */,
+				D66E2E1519E7E500006077BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D66E2E1619E7E500006077BC /* Build configuration list for PBXNativeTarget "RatingVolsu-iOS-ObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D66E2E1719E7E500006077BC /* Debug */,
+				D66E2E1819E7E500006077BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D66E2E1919E7E500006077BC /* Build configuration list for PBXNativeTarget "RatingVolsu-iOS-ObjCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D66E2E1A19E7E500006077BC /* Debug */,
+				D66E2E1B19E7E500006077BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D66E2E1C19E7E524006077BC /* RatingVolsu-iOS-ObjC.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D66E2E1D19E7E524006077BC /* RatingVolsu-iOS-ObjC.xcdatamodel */,
+			);
+			currentVersion = D66E2E1D19E7E524006077BC /* RatingVolsu-iOS-ObjC.xcdatamodel */;
+			name = "RatingVolsu-iOS-ObjC.xcdatamodeld";
+			path = "../../../Documents/RatingVolsu-iOS-ObjC.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D66E2DE819E7E500006077BC /* Project object */;
+}

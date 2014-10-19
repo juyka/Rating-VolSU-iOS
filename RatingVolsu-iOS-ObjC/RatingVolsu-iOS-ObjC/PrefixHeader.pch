@@ -1,0 +1,13 @@
+//
+//  PrefixHeader.pch
+//  RatingVolsu-iOS-ObjC
+//
+//  Created by Настя on 15.10.14.
+//  Copyright (c) 2014 VolSU. All rights reserved.
+//
+
+#import "ObjectiveSugar.h"
+#import "ObjectiveRecord.h"
+#import "CoreData/CoreDataModel.h"
+#import "NSManagedObject+Extensions.h"
+
