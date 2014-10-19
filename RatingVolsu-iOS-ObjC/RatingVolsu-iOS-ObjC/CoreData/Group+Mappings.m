@@ -43,8 +43,12 @@
 	NSDictionary *parameters = @{@"fak_id": parameter};
 	NSString *url = @"group_req.php";
 	
-	[RequestManager.manager request:url parameters:parameters withBlock:^(NSArray *entries){
-		NSArray * objects = [Group createArray:entries];
+	[RequestManager.manager request:url parameters:parameters withBlock:^(NSArray *entries) {
+		
+		Faculty *faculty = [Faculty find:@"facultyId == %@", parameter];
+		NSArray *objects = [Group createArray:entries];
+		//[objects setValue:faculty forKey:@"faculty"];
+		
 		if (handler) {
 			handler(objects);
 		}		

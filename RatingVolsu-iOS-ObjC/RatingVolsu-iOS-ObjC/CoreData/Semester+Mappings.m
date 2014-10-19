@@ -13,7 +13,7 @@
 
 + (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler {
 	
-	NSDictionary *parameters = @{ @"gr_id": parameter};
+	NSDictionary *parameters = @{@"gr_id": parameter};
 	NSString *url = @"sem_req.php";
 	
 	[RequestManager.manager request:url parameters:parameters withBlock:^(NSArray *entries){

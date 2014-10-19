@@ -40,11 +40,13 @@
 
 + (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler {
 	
-	NSDictionary *parameters = @{ @"group_id": parameter};
+	NSDictionary *parameters = @{@"group_id": parameter};
 	NSString *url = @"stud_req.php";
 	
-	[RequestManager.manager request:url parameters:parameters withBlock:^(NSArray *entries){
+	[RequestManager.manager request:url parameters:parameters withBlock:^(NSArray *entries) {
+		Group *group = [Group findOrCreate:@{@"groupId": parameter}];
 		NSArray *objects = [Student createArray:entries];
+//		[objects setValue:group forKey:@"Group"];
 		if (handler) {
 			handler(objects);
 		}

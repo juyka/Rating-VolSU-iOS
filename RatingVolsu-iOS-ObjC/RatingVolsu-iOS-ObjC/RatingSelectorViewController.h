@@ -8,10 +8,24 @@
 
 @import UIKit;
 
-@interface RatingSelectorViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
-@property (nonatomic) Class entityClass;
-@property (nonatomic) NSNumber *parentId;
+@class RatingSelectorViewController;
+
+
+@protocol RatingSelectorDelegate <NSObject>
+- (void)ratingSelector:(RatingSelectorViewController *)controller didPickObject:(NSManagedObject *)object;
+@end
+
+
+@interface RatingSelectorViewController : UIViewController
+
+@property(nonatomic, weak) id<RatingSelectorDelegate> delegate;
+
+@property(nonatomic) Class entityClass;
+@property(nonatomic) NSString *descriptionKey;
+@property(nonatomic) NSString *parentKey;
+@property(nonatomic) NSString *cellId;
+@property(nonatomic) NSNumber *parentId;
 
 @end
 

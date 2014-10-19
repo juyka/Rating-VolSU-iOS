@@ -21,7 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	[Semester request:self.groupId withHandler:^(NSArray *dataList) {
+	
+	Group *group = self.group ?: self.student.group;
+	[Semester request:group.groupId withHandler:^(NSArray *dataList) {
 		
 		self.dataSource = dataList;
 		[self.tableView reloadData];
@@ -37,7 +39,7 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	
-	NSNumber *year = [Group find:@"groupId == %@", self.groupId].year;
+	NSNumber *year = [Group find:@"groupId == %@", self.group.groupId].year;
 	
 	year = [NSNumber numberWithInteger:year.intValue + indexPath.row / 2];
 	

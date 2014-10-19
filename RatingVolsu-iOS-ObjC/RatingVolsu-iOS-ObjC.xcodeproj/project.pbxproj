@@ -33,6 +33,9 @@
 		D66E2E0419E7E500006077BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66E2E0319E7E500006077BC /* Images.xcassets */; };
 		D66E2E0719E7E500006077BC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66E2E0519E7E500006077BC /* LaunchScreen.xib */; };
 		D66E2E1319E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D66E2E1219E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m */; };
+		D6BCA27319F3F2040039AAB8 /* FacultiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BCA27219F3F2040039AAB8 /* FacultiesViewController.m */; };
+		D6BCA27819F3F4BC0039AAB8 /* GroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BCA27719F3F4BC0039AAB8 /* GroupsViewController.m */; };
+		D6BCA27B19F3F4D70039AAB8 /* StudentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BCA27A19F3F4D70039AAB8 /* StudentsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,12 @@
 		D66E2E1119E7E500006077BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D66E2E1219E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatingVolsu_iOS_ObjCTests.m; sourceTree = "<group>"; };
 		D66E2E1D19E7E524006077BC /* RatingVolsu-iOS-ObjC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RatingVolsu-iOS-ObjC.xcdatamodel"; sourceTree = "<group>"; };
+		D6BCA27119F3F2040039AAB8 /* FacultiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacultiesViewController.h; sourceTree = "<group>"; };
+		D6BCA27219F3F2040039AAB8 /* FacultiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacultiesViewController.m; sourceTree = "<group>"; };
+		D6BCA27619F3F4BC0039AAB8 /* GroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsViewController.h; sourceTree = "<group>"; };
+		D6BCA27719F3F4BC0039AAB8 /* GroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsViewController.m; sourceTree = "<group>"; };
+		D6BCA27919F3F4D70039AAB8 /* StudentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentsViewController.h; sourceTree = "<group>"; };
+		D6BCA27A19F3F4D70039AAB8 /* StudentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,13 +202,12 @@
 		D66E2DF219E7E500006077BC /* RatingVolsu-iOS-ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				D6BCA27419F3F2400039AAB8 /* Classes */,
 				D6272BF419EE6C4A005DD267 /* Extensions */,
 				D604873619ED3F530009E1E7 /* CoreData */,
 				D66E2E1C19E7E524006077BC /* RatingVolsu-iOS-ObjC.xcdatamodeld */,
 				D66E2DF719E7E500006077BC /* AppDelegate.h */,
 				D66E2DF819E7E500006077BC /* AppDelegate.m */,
-				D66E2DFD19E7E500006077BC /* RatingSelectorViewController.h */,
-				D66E2DFE19E7E500006077BC /* RatingSelectorViewController.m */,
 				D66E2E0019E7E500006077BC /* Main.storyboard */,
 				D66E2E0319E7E500006077BC /* Images.xcassets */,
 				D66E2E0519E7E500006077BC /* LaunchScreen.xib */,
@@ -239,6 +247,29 @@
 				D66E2E1119E7E500006077BC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D6BCA27419F3F2400039AAB8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D6BCA27519F3F2760039AAB8 /* RatingSelector */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		D6BCA27519F3F2760039AAB8 /* RatingSelector */ = {
+			isa = PBXGroup;
+			children = (
+				D66E2DFD19E7E500006077BC /* RatingSelectorViewController.h */,
+				D66E2DFE19E7E500006077BC /* RatingSelectorViewController.m */,
+				D6BCA27119F3F2040039AAB8 /* FacultiesViewController.h */,
+				D6BCA27219F3F2040039AAB8 /* FacultiesViewController.m */,
+				D6BCA27619F3F4BC0039AAB8 /* GroupsViewController.h */,
+				D6BCA27719F3F4BC0039AAB8 /* GroupsViewController.m */,
+				D6BCA27919F3F4D70039AAB8 /* StudentsViewController.h */,
+				D6BCA27A19F3F4D70039AAB8 /* StudentsViewController.m */,
+			);
+			name = RatingSelector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,12 +411,15 @@
 				D66E2DF919E7E500006077BC /* AppDelegate.m in Sources */,
 				D601A66819EFFC2E00735F5B /* Student.m in Sources */,
 				D66E2DFF19E7E500006077BC /* RatingSelectorViewController.m in Sources */,
+				D6BCA27819F3F4BC0039AAB8 /* GroupsViewController.m in Sources */,
 				D601A66B19EFFC2E00735F5B /* Subject.m in Sources */,
 				D604872119ED22A20009E1E7 /* Faculty+Mappings.m in Sources */,
+				D6BCA27319F3F2040039AAB8 /* FacultiesViewController.m in Sources */,
 				D601A67719F1395000735F5B /* RatingTableViewController.m in Sources */,
 				D601A67D19F1514700735F5B /* FavoritesItem+Mappings.m in Sources */,
 				D6238D9419E907D7003D4CA8 /* RequestManager.m in Sources */,
 				D601A65F19EFFC2D00735F5B /* Semester.m in Sources */,
+				D6BCA27B19F3F4D70039AAB8 /* StudentsViewController.m in Sources */,
 				D66E2DF619E7E500006077BC /* main.m in Sources */,
 				D6272C0619EED309005DD267 /* RatingItem.m in Sources */,
 				D6272BF719EE6D1D005DD267 /* NSManagedObject+Extensions.m in Sources */,
@@ -526,6 +560,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RatingVolsu-iOS-ObjC/PrefixHeader.pch";
 				INFOPLIST_FILE = "RatingVolsu-iOS-ObjC/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -539,6 +574,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RatingVolsu-iOS-ObjC/PrefixHeader.pch";
 				INFOPLIST_FILE = "RatingVolsu-iOS-ObjC/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

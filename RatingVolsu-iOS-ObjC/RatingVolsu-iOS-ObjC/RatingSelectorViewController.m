@@ -15,6 +15,11 @@
 
 
 @interface RatingSelectorViewController ()
+<
+	UITableViewDataSource,
+	UITableViewDelegate,
+	NSFetchedResultsControllerDelegate
+>
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -26,16 +31,11 @@
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
-- (Class)entityClass {
-	return _entityClass ?: Faculty.class;
-}
-
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
 	[[self fetchedResultsController] performFetch:nil];
 	[_tableView reloadData];
-	[self.entityClass primaryKey];
 	[self.entityClass request:self.parentId withHandler:nil];
 }
 
@@ -46,19 +46,19 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	
-	cell.textLabel.text = [[self.fetchedResultsController objectAtIndexPath:indexPath] valueForKey:[self.entityClass descriptionKey]];
+	cell.textLabel.text = [[self.fetchedResultsController objectAtIndexPath:indexPath] valueForKey:self.descriptionKey];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:14]};
-	CGRect rect = [[[self.fetchedResultsController objectAtIndexPath:indexPath] valueForKey:[self.entityClass descriptionKey]]
+	CGRect rect = [[[self.fetchedResultsController objectAtIndexPath:indexPath] valueForKey:self.descriptionKey]
 				   boundingRectWithSize:CGSizeMake(290, CGFLOAT_MAX)
 				   options:NSStringDrawingUsesLineFragmentOrigin
 				   attributes:attributes
 				   context:nil];
 	
-	return 8 + rect.size.height + 8;
+	return 8 + ceil(rect.size.height) + 8;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -77,6 +77,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	[self.delegate ratingSelector:self didPickObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
 }
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
@@ -127,8 +129,13 @@
 		
 		[fetchRequest setEntity:entity];
 		NSSortDescriptor *sort = [[NSSortDescriptor alloc]
-								  initWithKey:[self.entityClass descriptionKey] ascending:YES];
+								  initWithKey:self.descriptionKey ascending:YES];
 		[fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+		
+		if (self.parentId && self.parentKey) {
+			
+//			fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K = %@", self.parentKey, self.parentId];
+		}
 		
 		NSFetchedResultsController *theFetchedResultsController =
 		[[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
@@ -139,27 +146,6 @@
 		_fetchedResultsController.delegate = self;
 	}
 	return _fetchedResultsController;
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	
-	if ([segue.identifier isEqualToString:@"StudentSemesterSegue"] || [segue.identifier isEqualToString:@"GroupSemesterSegue"])
-	{
-		SemestersViewController *viewController = segue.destinationViewController;
-		viewController.groupId = self.parentId;
-	}
-	else
-	{
-		RatingSelectorViewController *viewController = segue.destinationViewController;
-		NSIndexPath *indexPath = [_tableView indexPathForCell:sender];
-		NSString *key = [self.entityClass primaryKey];
-		if (key)
-		{
-			viewController.parentId = [[self.fetchedResultsController objectAtIndexPath:indexPath] valueForKey:key];
-		}
-		viewController.entityClass = [self.entityClass childEntity];
-	}
-		
 }
 
 @end

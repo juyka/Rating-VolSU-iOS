@@ -10,6 +10,7 @@
 
 @interface SemestersViewController : UIViewController
 
-@property (nonatomic) NSNumber *groupId;
+@property (nonatomic) Group *group;
+@property (nonatomic) Student *student;
 
 @end
