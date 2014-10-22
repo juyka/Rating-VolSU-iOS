@@ -25,21 +25,6 @@ typedef void (^RequestHandler)(NSArray *dataList);
 	return @"facultyId";
 }
 
-+ (Class)childEntity {
-	
-	return Group.class;
-}
-
-+ (NSString *)descriptionKey {
-	
-	return @"name";
-}
-
-+ (NSString *)cellId {
-	
-	return @"FacultyCell";
-}
-
 + (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler {
 	
 	NSDictionary *parameters = @{ @"get_lists": @"0"};

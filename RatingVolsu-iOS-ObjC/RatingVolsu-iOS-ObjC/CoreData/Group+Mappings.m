@@ -23,21 +23,6 @@
 	return @"groupId";
 }
 
-+ (Class)childEntity {
-	
-	return Student.class;
-}
-
-+ (NSString *)descriptionKey {
-	
-	return @"name";
-}
-
-+ (NSString *)cellId {
-	
-	return @"GroupCell";
-}
-
 + (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler {
 	
 	NSDictionary *parameters = @{@"fak_id": parameter};
@@ -47,7 +32,7 @@
 		
 		Faculty *faculty = [Faculty find:@"facultyId == %@", parameter];
 		NSArray *objects = [Group createArray:entries];
-		//[objects setValue:faculty forKey:@"faculty"];
+		[objects setValue:faculty forKey:@"faculty"];
 		
 		if (handler) {
 			handler(objects);

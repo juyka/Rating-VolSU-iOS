@@ -68,7 +68,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self.entityClass cellId] forIndexPath:indexPath];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellId forIndexPath:indexPath];
 	[self configureCell:cell atIndexPath:indexPath];
 	
 	return cell;
@@ -128,13 +128,12 @@
 		NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(self.entityClass) inManagedObjectContext:NSManagedObjectContext.defaultContext];
 		
 		[fetchRequest setEntity:entity];
-		NSSortDescriptor *sort = [[NSSortDescriptor alloc]
-								  initWithKey:self.descriptionKey ascending:YES];
+		NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:self.descriptionKey ascending:YES];
 		[fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
 		
 		if (self.parentId && self.parentKey) {
 			
-//			fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K = %@", self.parentKey, self.parentId];
+			fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K = %@", self.parentKey, self.parentId];
 		}
 		
 		NSFetchedResultsController *theFetchedResultsController =

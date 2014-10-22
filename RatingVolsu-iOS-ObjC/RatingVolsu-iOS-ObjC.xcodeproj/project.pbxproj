@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0102B89B1C52458B9C1483B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C04D6F37EBC2412C96CB0297 /* libPods.a */; };
+		5F000E6119F4EE2400DB5E91 /* RatingVolsu-iOS-ObjC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F000E5F19F4EE2400DB5E91 /* RatingVolsu-iOS-ObjC.xcdatamodeld */; };
 		D601A65F19EFFC2D00735F5B /* Semester.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A65E19EFFC2D00735F5B /* Semester.m */; };
 		D601A66219EFFC2E00735F5B /* Faculty.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A66119EFFC2E00735F5B /* Faculty.m */; };
 		D601A66819EFFC2E00735F5B /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A66719EFFC2E00735F5B /* Student.m */; };
@@ -18,7 +19,6 @@
 		D601A67719F1395000735F5B /* RatingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67619F1395000735F5B /* RatingTableViewController.m */; };
 		D601A67A19F14AAF00735F5B /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67919F14AAF00735F5B /* FavoritesViewController.m */; };
 		D601A67D19F1514700735F5B /* FavoritesItem+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67C19F1514700735F5B /* FavoritesItem+Mappings.m */; };
-		D601A67E19F15CD400735F5B /* RatingVolsu-iOS-ObjC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D66E2E1C19E7E524006077BC /* RatingVolsu-iOS-ObjC.xcdatamodeld */; };
 		D604872119ED22A20009E1E7 /* Faculty+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D604872019ED22A20009E1E7 /* Faculty+Mappings.m */; };
 		D6238D9419E907D7003D4CA8 /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D6238D9319E907D7003D4CA8 /* RequestManager.m */; };
 		D6272BF719EE6D1D005DD267 /* NSManagedObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6272BF619EE6D1D005DD267 /* NSManagedObject+Extensions.m */; };
@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F000E6019F4EE2400DB5E91 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		B27227D256AE42519D81504B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C04D6F37EBC2412C96CB0297 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D601A65D19EFFC2D00735F5B /* Semester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Semester.h; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		D66E2E0C19E7E500006077BC /* RatingVolsu-iOS-ObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RatingVolsu-iOS-ObjCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66E2E1119E7E500006077BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D66E2E1219E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatingVolsu_iOS_ObjCTests.m; sourceTree = "<group>"; };
-		D66E2E1D19E7E524006077BC /* RatingVolsu-iOS-ObjC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RatingVolsu-iOS-ObjC.xcdatamodel"; sourceTree = "<group>"; };
 		D6BCA27119F3F2040039AAB8 /* FacultiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacultiesViewController.h; sourceTree = "<group>"; };
 		D6BCA27219F3F2040039AAB8 /* FacultiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacultiesViewController.m; sourceTree = "<group>"; };
 		D6BCA27619F3F4BC0039AAB8 /* GroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsViewController.h; sourceTree = "<group>"; };
@@ -202,10 +202,10 @@
 		D66E2DF219E7E500006077BC /* RatingVolsu-iOS-ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				5F000E5F19F4EE2400DB5E91 /* RatingVolsu-iOS-ObjC.xcdatamodeld */,
 				D6BCA27419F3F2400039AAB8 /* Classes */,
 				D6272BF419EE6C4A005DD267 /* Extensions */,
 				D604873619ED3F530009E1E7 /* CoreData */,
-				D66E2E1C19E7E524006077BC /* RatingVolsu-iOS-ObjC.xcdatamodeld */,
 				D66E2DF719E7E500006077BC /* AppDelegate.h */,
 				D66E2DF819E7E500006077BC /* AppDelegate.m */,
 				D66E2E0019E7E500006077BC /* Main.storyboard */,
@@ -423,13 +423,13 @@
 				D66E2DF619E7E500006077BC /* main.m in Sources */,
 				D6272C0619EED309005DD267 /* RatingItem.m in Sources */,
 				D6272BF719EE6D1D005DD267 /* NSManagedObject+Extensions.m in Sources */,
-				D601A67E19F15CD400735F5B /* RatingVolsu-iOS-ObjC.xcdatamodeld in Sources */,
 				D601A67419F03FA000735F5B /* Semester+Mappings.m in Sources */,
 				D601A66219EFFC2E00735F5B /* Faculty.m in Sources */,
 				D601A67A19F14AAF00735F5B /* FavoritesViewController.m in Sources */,
 				D6272BFA19EE786B005DD267 /* Group+Mappings.m in Sources */,
 				D6272BFD19EE794E005DD267 /* Student+Mappings.m in Sources */,
 				D601A67119F03BEE00735F5B /* SemestersViewController.m in Sources */,
+				5F000E6119F4EE2400DB5E91 /* RatingVolsu-iOS-ObjC.xcdatamodeld in Sources */,
 				D601A66E19F037B900735F5B /* Group.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,14 +647,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D66E2E1C19E7E524006077BC /* RatingVolsu-iOS-ObjC.xcdatamodeld */ = {
+		5F000E5F19F4EE2400DB5E91 /* RatingVolsu-iOS-ObjC.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D66E2E1D19E7E524006077BC /* RatingVolsu-iOS-ObjC.xcdatamodel */,
+				5F000E6019F4EE2400DB5E91 /* DataModel.xcdatamodel */,
 			);
-			currentVersion = D66E2E1D19E7E524006077BC /* RatingVolsu-iOS-ObjC.xcdatamodel */;
-			name = "RatingVolsu-iOS-ObjC.xcdatamodeld";
-			path = "../../../Documents/RatingVolsu-iOS-ObjC.xcdatamodeld";
+			currentVersion = 5F000E6019F4EE2400DB5E91 /* DataModel.xcdatamodel */;
+			path = "RatingVolsu-iOS-ObjC.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

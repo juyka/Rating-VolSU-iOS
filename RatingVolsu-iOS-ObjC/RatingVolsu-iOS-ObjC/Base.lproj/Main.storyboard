@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0EZ-8s-4O6">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -14,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="9dE-DS-3CH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eAh-zg-h8D">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="k6V-U1-CHP">
-                                <rect key="frame" x="10" y="48" width="600" height="600"/>
+                                <rect key="frame" x="10" y="48" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="wIH-Zu-fmS">
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -103,6 +102,7 @@
                         <viewControllerLayoutGuide type="bottom" id="26O-mK-OOQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FQB-Wp-61E">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxL-Fm-fQ4">
@@ -124,10 +124,10 @@
                                 <exclude reference="bxL-Fm-fQ4"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Xui-Jh-DYZ"/>
                                 <exclude reference="67d-DB-1fw"/>
                                 <exclude reference="sMq-1a-0bE"/>
                                 <exclude reference="zEt-eq-Vb5"/>
-                                <exclude reference="Xui-Jh-DYZ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -135,10 +135,10 @@
                                 <include reference="bxL-Fm-fQ4"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Xui-Jh-DYZ"/>
                                 <include reference="67d-DB-1fw"/>
                                 <include reference="sMq-1a-0bE"/>
                                 <include reference="zEt-eq-Vb5"/>
-                                <include reference="Xui-Jh-DYZ"/>
                             </mask>
                         </variation>
                     </view>
@@ -220,10 +220,10 @@
                                 <exclude reference="15I-zn-bGW"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="r1S-Zo-U5c"/>
                                 <exclude reference="648-n8-GBE"/>
                                 <exclude reference="ebn-v5-EtF"/>
                                 <exclude reference="yKE-DY-67g"/>
-                                <exclude reference="r1S-Zo-U5c"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -231,10 +231,10 @@
                                 <include reference="15I-zn-bGW"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="r1S-Zo-U5c"/>
                                 <include reference="648-n8-GBE"/>
                                 <include reference="ebn-v5-EtF"/>
                                 <include reference="yKE-DY-67g"/>
-                                <include reference="r1S-Zo-U5c"/>
                             </mask>
                         </variation>
                     </view>
@@ -387,6 +387,7 @@
                         <viewControllerLayoutGuide type="bottom" id="nk0-rJ-XOC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lkF-xH-74d">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zg-N7-W8g">
@@ -408,10 +409,10 @@
                                 <exclude reference="4zg-N7-W8g"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Oje-3z-7ms"/>
                                 <exclude reference="Fkr-fQ-IW0"/>
                                 <exclude reference="LP6-h8-LmC"/>
                                 <exclude reference="Orp-4e-FQE"/>
-                                <exclude reference="Oje-3z-7ms"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -419,10 +420,10 @@
                                 <include reference="4zg-N7-W8g"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Oje-3z-7ms"/>
                                 <include reference="Fkr-fQ-IW0"/>
                                 <include reference="LP6-h8-LmC"/>
                                 <include reference="Orp-4e-FQE"/>
-                                <include reference="Oje-3z-7ms"/>
                             </mask>
                         </variation>
                     </view>
@@ -444,6 +445,7 @@
                         <viewControllerLayoutGuide type="bottom" id="IlC-Sd-Al1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3ge-Ls-nXu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bB9-7H-uCD">
@@ -465,10 +467,10 @@
                                 <exclude reference="bB9-7H-uCD"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Rzq-Ga-dBY"/>
                                 <exclude reference="STP-gy-MSN"/>
                                 <exclude reference="tgy-RP-QqU"/>
                                 <exclude reference="wcZ-Ar-vCu"/>
-                                <exclude reference="Rzq-Ga-dBY"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -476,10 +478,10 @@
                                 <include reference="bB9-7H-uCD"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Rzq-Ga-dBY"/>
                                 <include reference="STP-gy-MSN"/>
                                 <include reference="tgy-RP-QqU"/>
                                 <include reference="wcZ-Ar-vCu"/>
-                                <include reference="Rzq-Ga-dBY"/>
                             </mask>
                         </variation>
                     </view>

@@ -31,6 +31,7 @@
 		
 		GroupsViewController *controller = segue.destinationViewController;
 		controller.faculty = sender;
+		
 	}
 }
 
