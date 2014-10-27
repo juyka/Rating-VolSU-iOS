@@ -10,6 +10,11 @@
 
 @implementation FavoritesItem (Mappings)
 
++ (NSDictionary *)mappings {
+	return @{
+			 @"Id" : @"favoriteItemId"
+			 };
+}
 
 - (NSString *)details {
 	

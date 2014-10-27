@@ -33,6 +33,7 @@
 		Faculty *faculty = [Faculty find:@"facultyId == %@", parameter];
 		NSArray *objects = [Group createArray:entries];
 		[objects setValue:faculty forKey:@"faculty"];
+		[CoreDataManager.sharedManager saveContext];
 		
 		if (handler) {
 			handler(objects);

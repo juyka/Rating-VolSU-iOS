@@ -32,6 +32,7 @@
 		Group *group = [Group findOrCreate:@{@"groupId": parameter}];
 		NSArray *objects = [Student createArray:entries];
 		[objects setValue:group forKey:@"Group"];
+		[CoreDataManager.sharedManager saveContext];
 		if (handler) {
 			handler(objects);
 		}
