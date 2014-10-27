@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Faculty" representedClassName="Faculty" syncable="YES">
         <attribute name="facultyId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -7,6 +7,7 @@
     </entity>
     <entity name="FavoritesItem" representedClassName="FavoritesItem" syncable="YES">
         <attribute name="favoretesItemId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="semestr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="favoritesItems" inverseEntity="Group" syncable="YES"/>
         <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="favoritesItems" inverseEntity="Student" syncable="YES"/>
@@ -54,11 +55,11 @@
     </entity>
     <elements>
         <element name="Faculty" positionX="-315" positionY="-117" width="128" height="88"/>
-        <element name="FavoritesItem" positionX="-110" positionY="-279" width="128" height="105"/>
+        <element name="FavoritesItem" positionX="-110" positionY="-279" width="128" height="120"/>
         <element name="Group" positionX="-117" positionY="-117" width="128" height="148"/>
         <element name="RatingItem" positionX="-110" positionY="72" width="128" height="193"/>
+        <element name="Semester" positionX="-108" positionY="-126" width="128" height="103"/>
         <element name="Student" positionX="133" positionY="-118" width="128" height="133"/>
         <element name="Subject" positionX="-308" positionY="119" width="128" height="105"/>
-        <element name="Semester" positionX="-108" positionY="-126" width="128" height="103"/>
     </elements>
 </model>
