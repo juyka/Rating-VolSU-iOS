@@ -9,23 +9,18 @@
 /* Begin PBXBuildFile section */
 		0102B89B1C52458B9C1483B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C04D6F37EBC2412C96CB0297 /* libPods.a */; };
 		5F000E6119F4EE2400DB5E91 /* RatingVolsu-iOS-ObjC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F000E5F19F4EE2400DB5E91 /* RatingVolsu-iOS-ObjC.xcdatamodeld */; };
-		D601A65F19EFFC2D00735F5B /* Semester.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A65E19EFFC2D00735F5B /* Semester.m */; };
-		D601A66219EFFC2E00735F5B /* Faculty.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A66119EFFC2E00735F5B /* Faculty.m */; };
-		D601A66819EFFC2E00735F5B /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A66719EFFC2E00735F5B /* Student.m */; };
-		D601A66B19EFFC2E00735F5B /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A66A19EFFC2E00735F5B /* Subject.m */; };
-		D601A66E19F037B900735F5B /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A66D19F037B900735F5B /* Group.m */; };
 		D601A67119F03BEE00735F5B /* SemestersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67019F03BEE00735F5B /* SemestersViewController.m */; };
 		D601A67419F03FA000735F5B /* Semester+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67319F03FA000735F5B /* Semester+Mappings.m */; };
 		D601A67719F1395000735F5B /* RatingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67619F1395000735F5B /* RatingTableViewController.m */; };
-		D601A67A19F14AAF00735F5B /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67919F14AAF00735F5B /* FavoritesViewController.m */; };
-		D601A67D19F1514700735F5B /* FavoritesItem+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67C19F1514700735F5B /* FavoritesItem+Mappings.m */; };
+		D601A67A19F14AAF00735F5B /* RecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67919F14AAF00735F5B /* RecentViewController.m */; };
+		D601A67D19F1514700735F5B /* RecentItem+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67C19F1514700735F5B /* RecentItem+Mappings.m */; };
 		D604872119ED22A20009E1E7 /* Faculty+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D604872019ED22A20009E1E7 /* Faculty+Mappings.m */; };
 		D6238D9419E907D7003D4CA8 /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D6238D9319E907D7003D4CA8 /* RequestManager.m */; };
 		D6272BF719EE6D1D005DD267 /* NSManagedObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6272BF619EE6D1D005DD267 /* NSManagedObject+Extensions.m */; };
 		D6272BFA19EE786B005DD267 /* Group+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D6272BF919EE786B005DD267 /* Group+Mappings.m */; };
 		D6272BFD19EE794E005DD267 /* Student+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D6272BFC19EE794E005DD267 /* Student+Mappings.m */; };
-		D6272C0019EED308005DD267 /* FavoritesItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6272BFF19EED308005DD267 /* FavoritesItem.m */; };
-		D6272C0619EED309005DD267 /* RatingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6272C0519EED309005DD267 /* RatingItem.m */; };
+		D6631DB519FE559A0042930F /* GroupRating.m in Sources */ = {isa = PBXBuildFile; fileRef = D6631DB419FE559A0042930F /* GroupRating.m */; };
+		D6631DB819FE55B70042930F /* StudentRating.m in Sources */ = {isa = PBXBuildFile; fileRef = D6631DB719FE55B70042930F /* StudentRating.m */; };
 		D66E2DF619E7E500006077BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D66E2DF519E7E500006077BC /* main.m */; };
 		D66E2DF919E7E500006077BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D66E2DF819E7E500006077BC /* AppDelegate.m */; };
 		D66E2DFF19E7E500006077BC /* RatingSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66E2DFE19E7E500006077BC /* RatingSelectorViewController.m */; };
@@ -36,6 +31,15 @@
 		D6BCA27319F3F2040039AAB8 /* FacultiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BCA27219F3F2040039AAB8 /* FacultiesViewController.m */; };
 		D6BCA27819F3F4BC0039AAB8 /* GroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BCA27719F3F4BC0039AAB8 /* GroupsViewController.m */; };
 		D6BCA27B19F3F4D70039AAB8 /* StudentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BCA27A19F3F4D70039AAB8 /* StudentsViewController.m */; };
+		D6CE1F7419FE88C80062790E /* RatingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE1F7319FE88C80062790E /* RatingsViewController.m */; };
+		D6CE1F7D1A002ED50062790E /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE1F7C1A002ED50062790E /* Subject.m */; };
+		D6CE1F801A002ED60062790E /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE1F7F1A002ED60062790E /* Student.m */; };
+		D6CE1F861A002ED60062790E /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE1F851A002ED60062790E /* Group.m */; };
+		D6CE1F891A002ED60062790E /* Semester.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE1F881A002ED60062790E /* Semester.m */; };
+		D6CE1F8C1A002ED60062790E /* Faculty.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE1F8B1A002ED60062790E /* Faculty.m */; };
+		D6CE1F8F1A002ED60062790E /* RatingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE1F8E1A002ED60062790E /* RatingItem.m */; };
+		D6CE1F921A00E7BC0062790E /* RecentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE1F911A00E7BC0062790E /* RecentItem.m */; };
+		D6CE1F951A0103420062790E /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE1F941A0103420062790E /* DismissSegue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,26 +56,16 @@
 		5F000E6019F4EE2400DB5E91 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		B27227D256AE42519D81504B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C04D6F37EBC2412C96CB0297 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D601A65D19EFFC2D00735F5B /* Semester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Semester.h; sourceTree = "<group>"; };
-		D601A65E19EFFC2D00735F5B /* Semester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Semester.m; sourceTree = "<group>"; };
-		D601A66019EFFC2E00735F5B /* Faculty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faculty.h; sourceTree = "<group>"; };
-		D601A66119EFFC2E00735F5B /* Faculty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faculty.m; sourceTree = "<group>"; };
-		D601A66619EFFC2E00735F5B /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		D601A66719EFFC2E00735F5B /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		D601A66919EFFC2E00735F5B /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
-		D601A66A19EFFC2E00735F5B /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
-		D601A66C19F037B900735F5B /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
-		D601A66D19F037B900735F5B /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
 		D601A66F19F03BEE00735F5B /* SemestersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemestersViewController.h; sourceTree = "<group>"; };
 		D601A67019F03BEE00735F5B /* SemestersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SemestersViewController.m; sourceTree = "<group>"; };
 		D601A67219F03FA000735F5B /* Semester+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Semester+Mappings.h"; sourceTree = "<group>"; };
 		D601A67319F03FA000735F5B /* Semester+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Semester+Mappings.m"; sourceTree = "<group>"; };
 		D601A67519F1395000735F5B /* RatingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingTableViewController.h; sourceTree = "<group>"; };
 		D601A67619F1395000735F5B /* RatingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingTableViewController.m; sourceTree = "<group>"; };
-		D601A67819F14AAF00735F5B /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
-		D601A67919F14AAF00735F5B /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
-		D601A67B19F1514700735F5B /* FavoritesItem+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FavoritesItem+Mappings.h"; sourceTree = "<group>"; };
-		D601A67C19F1514700735F5B /* FavoritesItem+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FavoritesItem+Mappings.m"; sourceTree = "<group>"; };
+		D601A67819F14AAF00735F5B /* RecentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentViewController.h; sourceTree = "<group>"; };
+		D601A67919F14AAF00735F5B /* RecentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentViewController.m; sourceTree = "<group>"; };
+		D601A67B19F1514700735F5B /* RecentItem+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RecentItem+Mappings.h"; sourceTree = "<group>"; };
+		D601A67C19F1514700735F5B /* RecentItem+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RecentItem+Mappings.m"; sourceTree = "<group>"; };
 		D604871F19ED22A20009E1E7 /* Faculty+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Faculty+Mappings.h"; sourceTree = "<group>"; };
 		D604872019ED22A20009E1E7 /* Faculty+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Faculty+Mappings.m"; sourceTree = "<group>"; };
 		D6238D9219E907D7003D4CA8 /* RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
@@ -84,10 +78,11 @@
 		D6272BF919EE786B005DD267 /* Group+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Group+Mappings.m"; sourceTree = "<group>"; };
 		D6272BFB19EE794E005DD267 /* Student+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+Mappings.h"; sourceTree = "<group>"; };
 		D6272BFC19EE794E005DD267 /* Student+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+Mappings.m"; sourceTree = "<group>"; };
-		D6272BFE19EED308005DD267 /* FavoritesItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesItem.h; sourceTree = "<group>"; };
-		D6272BFF19EED308005DD267 /* FavoritesItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesItem.m; sourceTree = "<group>"; };
-		D6272C0419EED309005DD267 /* RatingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingItem.h; sourceTree = "<group>"; };
-		D6272C0519EED309005DD267 /* RatingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingItem.m; sourceTree = "<group>"; };
+		D6631DB319FE559A0042930F /* GroupRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupRating.h; sourceTree = "<group>"; };
+		D6631DB419FE559A0042930F /* GroupRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupRating.m; sourceTree = "<group>"; };
+		D6631DB619FE55B70042930F /* StudentRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRating.h; sourceTree = "<group>"; };
+		D6631DB719FE55B70042930F /* StudentRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentRating.m; sourceTree = "<group>"; };
+		D6631DB919FE56050042930F /* RatingObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingObjectProtocol.h; sourceTree = "<group>"; };
 		D66E2DF019E7E500006077BC /* RatingVolsu-iOS-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RatingVolsu-iOS-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66E2DF419E7E500006077BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D66E2DF519E7E500006077BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +102,24 @@
 		D6BCA27719F3F4BC0039AAB8 /* GroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupsViewController.m; sourceTree = "<group>"; };
 		D6BCA27919F3F4D70039AAB8 /* StudentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentsViewController.h; sourceTree = "<group>"; };
 		D6BCA27A19F3F4D70039AAB8 /* StudentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentsViewController.m; sourceTree = "<group>"; };
+		D6CE1F7219FE88C80062790E /* RatingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingsViewController.h; sourceTree = "<group>"; };
+		D6CE1F7319FE88C80062790E /* RatingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingsViewController.m; sourceTree = "<group>"; };
+		D6CE1F7B1A002ED50062790E /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		D6CE1F7C1A002ED50062790E /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
+		D6CE1F7E1A002ED60062790E /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		D6CE1F7F1A002ED60062790E /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		D6CE1F841A002ED60062790E /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		D6CE1F851A002ED60062790E /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		D6CE1F871A002ED60062790E /* Semester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Semester.h; sourceTree = "<group>"; };
+		D6CE1F881A002ED60062790E /* Semester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Semester.m; sourceTree = "<group>"; };
+		D6CE1F8A1A002ED60062790E /* Faculty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Faculty.h; sourceTree = "<group>"; };
+		D6CE1F8B1A002ED60062790E /* Faculty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Faculty.m; sourceTree = "<group>"; };
+		D6CE1F8D1A002ED60062790E /* RatingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingItem.h; sourceTree = "<group>"; };
+		D6CE1F8E1A002ED60062790E /* RatingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingItem.m; sourceTree = "<group>"; };
+		D6CE1F901A00E7BC0062790E /* RecentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentItem.h; sourceTree = "<group>"; };
+		D6CE1F911A00E7BC0062790E /* RecentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentItem.m; sourceTree = "<group>"; };
+		D6CE1F931A0103420062790E /* DismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissSegue.h; sourceTree = "<group>"; };
+		D6CE1F941A0103420062790E /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissSegue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,20 +152,20 @@
 		D604873619ED3F530009E1E7 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				D601A66C19F037B900735F5B /* Group.h */,
-				D601A66D19F037B900735F5B /* Group.m */,
-				D601A66919EFFC2E00735F5B /* Subject.h */,
-				D601A66A19EFFC2E00735F5B /* Subject.m */,
-				D601A66619EFFC2E00735F5B /* Student.h */,
-				D601A66719EFFC2E00735F5B /* Student.m */,
-				D601A66019EFFC2E00735F5B /* Faculty.h */,
-				D601A66119EFFC2E00735F5B /* Faculty.m */,
-				D601A65D19EFFC2D00735F5B /* Semester.h */,
-				D601A65E19EFFC2D00735F5B /* Semester.m */,
-				D6272C0419EED309005DD267 /* RatingItem.h */,
-				D6272C0519EED309005DD267 /* RatingItem.m */,
-				D6272BFE19EED308005DD267 /* FavoritesItem.h */,
-				D6272BFF19EED308005DD267 /* FavoritesItem.m */,
+				D6CE1F8D1A002ED60062790E /* RatingItem.h */,
+				D6CE1F8E1A002ED60062790E /* RatingItem.m */,
+				D6CE1F8A1A002ED60062790E /* Faculty.h */,
+				D6CE1F8B1A002ED60062790E /* Faculty.m */,
+				D6CE1F871A002ED60062790E /* Semester.h */,
+				D6CE1F901A00E7BC0062790E /* RecentItem.h */,
+				D6CE1F911A00E7BC0062790E /* RecentItem.m */,
+				D6CE1F881A002ED60062790E /* Semester.m */,
+				D6CE1F841A002ED60062790E /* Group.h */,
+				D6CE1F851A002ED60062790E /* Group.m */,
+				D6CE1F7E1A002ED60062790E /* Student.h */,
+				D6CE1F7F1A002ED60062790E /* Student.m */,
+				D6CE1F7B1A002ED50062790E /* Subject.h */,
+				D6CE1F7C1A002ED50062790E /* Subject.m */,
 				D604871F19ED22A20009E1E7 /* Faculty+Mappings.h */,
 				D604872019ED22A20009E1E7 /* Faculty+Mappings.m */,
 				D6272BF819EE786B005DD267 /* Group+Mappings.h */,
@@ -164,8 +177,8 @@
 				D601A67319F03FA000735F5B /* Semester+Mappings.m */,
 				D601A67519F1395000735F5B /* RatingTableViewController.h */,
 				D601A67619F1395000735F5B /* RatingTableViewController.m */,
-				D601A67B19F1514700735F5B /* FavoritesItem+Mappings.h */,
-				D601A67C19F1514700735F5B /* FavoritesItem+Mappings.m */,
+				D601A67B19F1514700735F5B /* RecentItem+Mappings.h */,
+				D601A67C19F1514700735F5B /* RecentItem+Mappings.m */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -216,8 +229,10 @@
 				D6238D9319E907D7003D4CA8 /* RequestManager.m */,
 				D601A66F19F03BEE00735F5B /* SemestersViewController.h */,
 				D601A67019F03BEE00735F5B /* SemestersViewController.m */,
-				D601A67819F14AAF00735F5B /* FavoritesViewController.h */,
-				D601A67919F14AAF00735F5B /* FavoritesViewController.m */,
+				D601A67819F14AAF00735F5B /* RecentViewController.h */,
+				D601A67919F14AAF00735F5B /* RecentViewController.m */,
+				D6CE1F931A0103420062790E /* DismissSegue.h */,
+				D6CE1F941A0103420062790E /* DismissSegue.m */,
 			);
 			path = "RatingVolsu-iOS-ObjC";
 			sourceTree = "<group>";
@@ -253,6 +268,13 @@
 			isa = PBXGroup;
 			children = (
 				D6BCA27519F3F2760039AAB8 /* RatingSelector */,
+				D6631DB319FE559A0042930F /* GroupRating.h */,
+				D6631DB419FE559A0042930F /* GroupRating.m */,
+				D6631DB619FE55B70042930F /* StudentRating.h */,
+				D6631DB719FE55B70042930F /* StudentRating.m */,
+				D6631DB919FE56050042930F /* RatingObjectProtocol.h */,
+				D6CE1F7219FE88C80062790E /* RatingsViewController.h */,
+				D6CE1F7319FE88C80062790E /* RatingsViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -407,30 +429,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6272C0019EED308005DD267 /* FavoritesItem.m in Sources */,
 				D66E2DF919E7E500006077BC /* AppDelegate.m in Sources */,
-				D601A66819EFFC2E00735F5B /* Student.m in Sources */,
+				D6CE1F8F1A002ED60062790E /* RatingItem.m in Sources */,
+				D6631DB519FE559A0042930F /* GroupRating.m in Sources */,
+				D6CE1F891A002ED60062790E /* Semester.m in Sources */,
 				D66E2DFF19E7E500006077BC /* RatingSelectorViewController.m in Sources */,
 				D6BCA27819F3F4BC0039AAB8 /* GroupsViewController.m in Sources */,
-				D601A66B19EFFC2E00735F5B /* Subject.m in Sources */,
 				D604872119ED22A20009E1E7 /* Faculty+Mappings.m in Sources */,
 				D6BCA27319F3F2040039AAB8 /* FacultiesViewController.m in Sources */,
 				D601A67719F1395000735F5B /* RatingTableViewController.m in Sources */,
-				D601A67D19F1514700735F5B /* FavoritesItem+Mappings.m in Sources */,
+				D601A67D19F1514700735F5B /* RecentItem+Mappings.m in Sources */,
+				D6CE1F7419FE88C80062790E /* RatingsViewController.m in Sources */,
+				D6CE1F8C1A002ED60062790E /* Faculty.m in Sources */,
 				D6238D9419E907D7003D4CA8 /* RequestManager.m in Sources */,
-				D601A65F19EFFC2D00735F5B /* Semester.m in Sources */,
 				D6BCA27B19F3F4D70039AAB8 /* StudentsViewController.m in Sources */,
+				D6CE1F951A0103420062790E /* DismissSegue.m in Sources */,
+				D6CE1F801A002ED60062790E /* Student.m in Sources */,
+				D6CE1F7D1A002ED50062790E /* Subject.m in Sources */,
 				D66E2DF619E7E500006077BC /* main.m in Sources */,
-				D6272C0619EED309005DD267 /* RatingItem.m in Sources */,
 				D6272BF719EE6D1D005DD267 /* NSManagedObject+Extensions.m in Sources */,
+				D6CE1F861A002ED60062790E /* Group.m in Sources */,
 				D601A67419F03FA000735F5B /* Semester+Mappings.m in Sources */,
-				D601A66219EFFC2E00735F5B /* Faculty.m in Sources */,
-				D601A67A19F14AAF00735F5B /* FavoritesViewController.m in Sources */,
+				D6CE1F921A00E7BC0062790E /* RecentItem.m in Sources */,
+				D6631DB819FE55B70042930F /* StudentRating.m in Sources */,
+				D601A67A19F14AAF00735F5B /* RecentViewController.m in Sources */,
 				D6272BFA19EE786B005DD267 /* Group+Mappings.m in Sources */,
 				D6272BFD19EE794E005DD267 /* Student+Mappings.m in Sources */,
 				D601A67119F03BEE00735F5B /* SemestersViewController.m in Sources */,
 				5F000E6119F4EE2400DB5E91 /* RatingVolsu-iOS-ObjC.xcdatamodeld in Sources */,
-				D601A66E19F037B900735F5B /* Group.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

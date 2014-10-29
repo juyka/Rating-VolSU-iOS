@@ -11,5 +11,5 @@
 #import "Student.h"
 #import "Subject.h"
 #import "RatingItem.h"
-#import "FavoritesItem.h"
+#import "RecentItem.h"
 #import "Semester.h"

@@ -6,62 +6,38 @@
 //  Copyright (c) 2014 VolSU. All rights reserved.
 //
 
-#import "FavoritesViewController.h"
-#import "FavoritesItem+Mappings.h"
+#import "RecentViewController.h"
+#import "RecentItem+Mappings.h"
+#import "RatingsViewController.h"
 
-@interface FavoritesViewController ()
+@interface RecentViewController ()
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation FavoritesViewController
+@implementation RecentViewController
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	[FavoritesItem create:@{
-							@"name": @"Я",
-							@"student": [Student findOrCreate:@{
-														  @"number": @(10108),
-														  @"group": [Group create:@{
-																					@"groupId": @(1434),
-																					@"name": @"ИСТ-101",
-																					@"type": @"специалитет"
-																					}],
-														  @"studentId":@(4234)
-														  }],
-							@"semestr": @(3),
-							@"favoritesItemId": @(45435)
-							}];
-	[FavoritesItem create:@{
-							@"name": @"Моя группа",
-							@"group": [Group findOrCreate:@{
-													  @"groupId": @(1434),
-													  @"name": @"ИСТ-101",
-													  @"type": @"специалитет"
-													  }],
-							@"semestr": @(3),
-							@"favoritesItemId": @(43423)
-							}];
-	[CoreDataManager.sharedManager saveContext];
 	
-	[[self fetchedResultsController] performFetch:nil];
-	[_tableView reloadData];
-}
-
-- (void)didReceiveMemoryWarning {
-	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
+	if ([RecentItem all].count) {
+		[_tableView reloadData];
+	}
+	else {
+		[self performSegueWithIdentifier:@"RatingSelectorSegue" sender:nil];
+	}
+	
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	
-	FavoritesItem *favoritesItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	cell.textLabel.text = favoritesItem.name;
-	cell.detailTextLabel.text = [favoritesItem details];
+	RecentItem *recentItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	cell.textLabel.text = recentItem.name;
+	cell.detailTextLabel.text = [recentItem details];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -80,6 +56,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	RecentItem *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	[self showRating:item];
 }
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
@@ -126,7 +105,7 @@
 	
 	if (!_fetchedResultsController) {
 		NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-		NSEntityDescription *entity = [NSEntityDescription entityForName:@"FavoritesItem" inManagedObjectContext:NSManagedObjectContext.defaultContext];
+		NSEntityDescription *entity = [NSEntityDescription entityForName:@"RecentItem" inManagedObjectContext:NSManagedObjectContext.defaultContext];
 		
 		[fetchRequest setEntity:entity];
 		NSSortDescriptor *sort = [[NSSortDescriptor alloc]
@@ -144,9 +123,24 @@
 	return _fetchedResultsController;
 }
 
+- (void)showRating:(RecentItem *)item {
+	
+	
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	
+//	if (sender) {
+//		RatingsViewController *controller = segue.destinationViewController;
+//	}
+}
+
+- (IBAction)unwind:(UIStoryboardSegue *)unwindSegue {
 	
+	if ([unwindSegue.identifier isEqualToString:@"UnwindToRecentController"]) {
+		
+		[self showRating:[unwindSegue.sourceViewController valueForKey:@"selectedItem"]];
+	}
 }
 
 @end

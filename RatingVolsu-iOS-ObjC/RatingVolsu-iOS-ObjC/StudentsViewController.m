@@ -34,11 +34,7 @@
 		
 		SemestersViewController *controller = segue.destinationViewController;
 		controller.student = sender;
-	}
-	else if ([segue.identifier isEqualToString:@"GroupSemesterSegue"]) {
 		
-		SemestersViewController *controller = segue.destinationViewController;
-		controller.group = self.group;
 	}
 }
 

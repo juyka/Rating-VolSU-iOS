@@ -8,6 +8,9 @@
 
 #import "SemestersViewController.h"
 #import "NSManagedObject+Extensions.h"
+#import "RatingsViewController.h"
+#import "RecentViewController.h"
+#import "RecentItem+Mappings.h"
 
 @interface SemestersViewController ()
 
@@ -21,8 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.dataSource = @[@1, @2, @3];
 	
-	Group *group = self.group ?: self.student.group;
+	Group *group = self.student.group;
 	[Semester request:group.groupId withHandler:^(NSArray *dataList) {
 		
 		self.dataSource = dataList;
@@ -39,7 +43,7 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	
-	NSNumber *year = [Group find:@"groupId == %@", self.group.groupId].year;
+	NSNumber *year = [Group find:@"groupId == %@", self.student.group.groupId].year;
 	
 	year = [NSNumber numberWithInteger:year.intValue + indexPath.row / 2];
 	
@@ -64,17 +68,30 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	[self performSegueWithIdentifier:@"UnwindToRecentController" sender:self.dataSource[indexPath.row]];
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+	if ([segue.identifier isEqualToString:@"UnwindToRecentController"]) {
+		
+		NSNumber *recentId = [[NSNumber alloc] initWithInt:self.student.studentId.intValue * 100 + [sender intValue]];
+		RecentItem *item = [RecentItem findOrCreate:@{@"itemId" : recentId}];
+		[item update:@{
+					   @"student" : self.student,
+					   @"semester" : sender,
+					   @"date" : [NSDate date],
+					   @"isFavorite" : @NO
+					   }];
+		_selectedItem = item;
+	}
 }
-*/
+
 
 @end

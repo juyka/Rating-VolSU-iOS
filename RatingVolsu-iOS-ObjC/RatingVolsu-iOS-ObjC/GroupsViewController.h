@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RatingObjectProtocol.h"
 
 @interface GroupsViewController : UIViewController
+
 @property(nonatomic) Faculty *faculty;
+@property (nonatomic, copy) void (^callBack)(id <RatingObjectProtocol> object);
+
 @end

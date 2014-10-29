@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RatingObjectProtocol.h"
 
 @interface SemestersViewController : UIViewController
 
-@property (nonatomic) Group *group;
 @property (nonatomic) Student *student;
+@property (nonatomic, readonly) RecentItem *selectedItem;
 
 @end

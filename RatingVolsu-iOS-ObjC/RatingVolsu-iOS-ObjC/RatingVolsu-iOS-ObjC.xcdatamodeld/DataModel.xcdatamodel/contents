@@ -5,20 +5,12 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="groups" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Group" inverseName="faculty" inverseEntity="Group" syncable="YES"/>
     </entity>
-    <entity name="FavoritesItem" representedClassName="FavoritesItem" syncable="YES">
-        <attribute name="favoretesItemId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="semestr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="favoritesItems" inverseEntity="Group" syncable="YES"/>
-        <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="favoritesItems" inverseEntity="Student" syncable="YES"/>
-    </entity>
     <entity name="Group" representedClassName="Group" syncable="YES">
         <attribute name="groupId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="faculty" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Faculty" inverseName="groups" inverseEntity="Faculty" syncable="YES"/>
-        <relationship name="favoritesItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FavoritesItem" inverseName="group" inverseEntity="FavoritesItem" syncable="YES"/>
         <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="group" inverseEntity="Student" syncable="YES"/>
     </entity>
     <entity name="RatingItem" representedClassName="RatingItem" syncable="YES">
@@ -33,7 +25,15 @@
         <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="ratingItems" inverseEntity="Student" syncable="YES"/>
         <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="ratingItems" inverseEntity="Subject" syncable="YES"/>
     </entity>
-    <entity name="Semester" syncable="YES">
+    <entity name="RecentItem" representedClassName="RecentItem" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="itemId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="semester" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="recentItems" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="Semester" representedClassName="Semester" syncable="YES">
         <attribute name="number" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="semesterId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="ratings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RatingItem" inverseName="semester" inverseEntity="RatingItem" syncable="YES"/>
@@ -42,9 +42,9 @@
     <entity name="Student" representedClassName="Student" syncable="YES">
         <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="studentId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="favoritesItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FavoritesItem" inverseName="student" inverseEntity="FavoritesItem" syncable="YES"/>
         <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="students" inverseEntity="Group" syncable="YES"/>
         <relationship name="ratingItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RatingItem" inverseName="student" inverseEntity="RatingItem" syncable="YES"/>
+        <relationship name="recentItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecentItem" inverseName="student" inverseEntity="RecentItem" syncable="YES"/>
         <relationship name="semesters" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Semester" inverseName="students" inverseEntity="Semester" syncable="YES"/>
     </entity>
     <entity name="Subject" representedClassName="Subject" syncable="YES">
@@ -55,11 +55,11 @@
     </entity>
     <elements>
         <element name="Faculty" positionX="-315" positionY="-117" width="128" height="88"/>
-        <element name="FavoritesItem" positionX="-110" positionY="-279" width="128" height="120"/>
-        <element name="Group" positionX="-117" positionY="-117" width="128" height="148"/>
+        <element name="Group" positionX="-117" positionY="-117" width="128" height="133"/>
         <element name="RatingItem" positionX="-110" positionY="72" width="128" height="193"/>
-        <element name="Semester" positionX="-108" positionY="-126" width="128" height="103"/>
-        <element name="Student" positionX="133" positionY="-118" width="128" height="133"/>
+        <element name="RecentItem" positionX="-110" positionY="-279" width="128" height="135"/>
+        <element name="Semester" positionX="-108" positionY="-126" width="128" height="105"/>
+        <element name="Student" positionX="133" positionY="-118" width="128" height="135"/>
         <element name="Subject" positionX="-308" positionY="119" width="128" height="105"/>
     </elements>
 </model>

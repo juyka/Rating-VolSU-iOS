@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 VolSU. All rights reserved.
 //
 
-#import "FavoritesItem.h"
+#import "RecentItem.h"
 
-@interface FavoritesItem (Mappings)
+@interface RecentItem (Mappings)
 
  - (NSString *)details;
 
