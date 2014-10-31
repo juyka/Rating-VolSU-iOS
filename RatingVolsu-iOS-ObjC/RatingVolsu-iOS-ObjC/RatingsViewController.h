@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RatingObjectProtocol.h"
 
 @interface RatingsViewController : UIViewController
 

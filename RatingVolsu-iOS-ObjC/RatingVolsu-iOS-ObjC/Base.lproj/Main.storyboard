@@ -71,9 +71,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="492"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="UmG-Km-lgS" id="YYW-BN-5Bc"/>
                                     <outlet property="delegate" destination="UmG-Km-lgS" id="zLF-7Q-mAa"/>
@@ -100,7 +97,6 @@
         <!--Студенты-->
         <scene sceneID="bS5-bd-Huw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SRK-bK-V0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ov8-nw-sY2" customClass="StudentsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tGI-kP-L4F"/>
@@ -112,9 +108,6 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxL-Fm-fQ4">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="492"/>
-                                </variation>
                                 <connections>
                                     <segue destination="UmG-Km-lgS" kind="embed" identifier="StudentsTable" id="Sfk-2t-7vO"/>
                                 </connections>
@@ -157,14 +150,13 @@
                         <segue destination="Qr6-jZ-wrh" kind="show" identifier="SemesterSegue" id="ntL-6t-uMn"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SRK-bK-V0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3681" y="389"/>
         </scene>
         <!--Semesters View Controller-->
         <scene sceneID="dAs-Cq-LL4">
             <objects>
-                <exit id="F1K-sY-ehd" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cws-xV-tck" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="Qr6-jZ-wrh" customClass="SemestersViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wAH-OA-shs"/>
@@ -243,10 +235,12 @@
                         <segue destination="F1K-sY-ehd" kind="unwind" identifier="UnwindToRecentController" unwindAction="unwind:" id="Cq0-7S-tPv"/>
                     </connections>
                 </viewController>
+                <exit id="F1K-sY-ehd" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cws-xV-tck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1978.5" y="1401"/>
         </scene>
-        <!--Ratings View Controller-->
+        <!--Рейтинг-->
         <scene sceneID="9pv-Ck-KpP">
             <objects>
                 <viewController id="OT6-QH-ZDB" customClass="RatingsViewController" sceneMemberID="viewController">
@@ -278,11 +272,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Рейтинг" id="OgR-No-y6J"/>
                 </viewController>
-                <navigationItem title="Рейтинг" id="5BU-dk-Gwg"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmv-0g-klM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="411" y="1401"/>
+            <point key="canvasLocation" x="411" y="1110"/>
         </scene>
         <!--Последнее-->
         <scene sceneID="Oiq-bI-Ewb">
@@ -296,16 +290,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OGG-Uh-1gc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wjZ-sh-yYt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="KPk-vb-gBG" detailTextLabel="tyn-b5-Q3J" style="IBUITableViewCellStyleSubtitle" id="iSe-JK-IJo">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="hfr-0f-J4E" detailTextLabel="L7N-yd-adx" style="IBUITableViewCellStyleSubtitle" id="l3k-pa-2Kw" customClass="MCSwipeTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iSe-JK-IJo" id="HHC-c6-fXa">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l3k-pa-2Kw" id="L57-qn-vb2">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KPk-vb-gBG">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hfr-0f-J4E">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -314,7 +308,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tyn-b5-Q3J">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L7N-yd-adx">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -327,31 +321,53 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                </variation>
                                 <connections>
-                                    <outlet property="dataSource" destination="P28-3a-hX5" id="wCe-fY-qqz"/>
-                                    <outlet property="delegate" destination="P28-3a-hX5" id="EJh-sN-HdO"/>
+                                    <outlet property="dataSource" destination="P28-3a-hX5" id="WtM-LE-kcx"/>
+                                    <outlet property="delegate" destination="P28-3a-hX5" id="Dbh-oV-4rT"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wjZ-sh-yYt" firstAttribute="top" secondItem="gX3-iV-QUh" secondAttribute="top" id="moG-Ax-v2t"/>
+                            <constraint firstItem="wjZ-sh-yYt" firstAttribute="leading" secondItem="2fs-J1-z2I" secondAttribute="leading" id="pBi-tg-3gO"/>
+                            <constraint firstItem="u4b-9A-Lz8" firstAttribute="bottom" secondItem="wjZ-sh-yYt" secondAttribute="bottom" id="tc7-so-hAI"/>
+                            <constraint firstAttribute="trailing" secondItem="wjZ-sh-yYt" secondAttribute="trailing" id="wZP-e1-IH6"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="OGG-Uh-1gc"/>
+                                <exclude reference="wjZ-sh-yYt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="tc7-so-hAI"/>
+                                <exclude reference="moG-Ax-v2t"/>
+                                <exclude reference="pBi-tg-3gO"/>
+                                <exclude reference="wZP-e1-IH6"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="OGG-Uh-1gc"/>
+                                <include reference="wjZ-sh-yYt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="tc7-so-hAI"/>
+                                <include reference="moG-Ax-v2t"/>
+                                <include reference="pBi-tg-3gO"/>
+                                <include reference="wZP-e1-IH6"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Последнее" id="Dll-iR-KLw"/>
+                    <navigationItem key="navigationItem" title="Последнее" id="Dll-iR-KLw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OlK-uk-pHx">
+                            <connections>
+                                <action selector="addItem" destination="P28-3a-hX5" id="hAz-5F-4Qt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="OGG-Uh-1gc" id="WnI-rG-ZBK"/>
+                        <outlet property="tableView" destination="wjZ-sh-yYt" id="QO7-k1-bfY"/>
                         <segue destination="tgA-d7-kQs" kind="presentation" identifier="RatingSelectorSegue" id="QHz-I7-4tJ"/>
+                        <segue destination="OT6-QH-ZDB" kind="show" identifier="RatingSegue" id="pjx-tl-1Ou"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IW-dt-hcR" userLabel="First Responder" sceneMemberID="firstResponder"/>

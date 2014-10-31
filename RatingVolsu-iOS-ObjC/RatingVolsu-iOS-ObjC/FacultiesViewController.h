@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RatingObjectProtocol.h"
 
 @interface FacultiesViewController : UIViewController
-
-@property (nonatomic, copy) void (^callBack)(id <RatingObjectProtocol> object);
 
 @end

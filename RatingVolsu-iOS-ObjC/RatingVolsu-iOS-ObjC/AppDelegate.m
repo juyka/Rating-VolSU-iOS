@@ -20,22 +20,22 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	[RequestManager manager];
 	
-	Faculty *faculty = [Faculty findOrCreate:@{
-					  @"facultyId" : @5342,
-					  @"name" : @"ИМИТ"
-					  }];
-	Group *group = [Group findOrCreate: @{
-									@"groupId" : @4325,
-									@"name" : @"ИСТ-101",
-									@"year" : @2010,
-									@"faculty" : faculty
-									}];
-	Student *student = [Student findOrCreate: @{
-												@"studentId" : @45345,
-												@"number" : @10108,
-												@"group" : group
-												}];
-	
+//	Faculty *faculty = [Faculty findOrCreate:@{
+//					  @"facultyId" : @5342,
+//					  @"name" : @"ИМИТ"
+//					  }];
+//	Group *group = [Group findOrCreate: @{
+//									@"groupId" : @4325,
+//									@"name" : @"ИСТ-101",
+//									@"year" : @2010,
+//									@"faculty" : faculty
+//									}];
+//	Student *student = [Student findOrCreate: @{
+//												@"studentId" : @45345,
+//												@"number" : @10108,
+//												@"group" : group
+//												}];
+//	
 	// Override point for customization after application launch.
 	return YES;
 }

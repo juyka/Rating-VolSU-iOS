@@ -31,7 +31,6 @@
 		
 		GroupsViewController *controller = segue.destinationViewController;
 		controller.faculty = sender;
-		controller.callBack = self.callBack;
 	}
 }
 

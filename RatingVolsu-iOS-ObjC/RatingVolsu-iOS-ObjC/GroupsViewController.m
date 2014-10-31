@@ -33,7 +33,6 @@
 		
 		StudentsViewController *controller = segue.destinationViewController;
 		controller.group = sender;
-		controller.callBack = self.callBack;
 	}
 }
 

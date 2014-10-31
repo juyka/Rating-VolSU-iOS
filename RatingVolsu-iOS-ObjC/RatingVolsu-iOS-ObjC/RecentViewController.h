@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RatingObjectProtocol.h"
 
-@interface RecentViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,NSFetchedResultsControllerDelegate>
+@interface RecentViewController : UIViewController
 
 @end

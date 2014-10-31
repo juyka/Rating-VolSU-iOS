@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.dataSource = @[@1, @2, @3];
+	//self.dataSource = @[@1, @2, @3];
 	
 	Group *group = self.student.group;
 	[Semester request:group.groupId withHandler:^(NSArray *dataList) {
@@ -83,13 +83,15 @@
 		
 		NSNumber *recentId = [[NSNumber alloc] initWithInt:self.student.studentId.intValue * 100 + [sender intValue]];
 		RecentItem *item = [RecentItem findOrCreate:@{@"itemId" : recentId}];
+		NSDate *date = [NSDate date];
 		[item update:@{
+					   @"name" : [NSString stringWithFormat:@"%@ %@", self.student.number, date.description],
 					   @"student" : self.student,
 					   @"semester" : sender,
-					   @"date" : [NSDate date],
-					   @"isFavorite" : @NO
+					   @"date" : date
 					   }];
 		_selectedItem = item;
+		[CoreDataManager.sharedManager saveContext];
 	}
 }
 
