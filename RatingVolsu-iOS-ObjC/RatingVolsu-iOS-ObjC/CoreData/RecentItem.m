@@ -2,12 +2,12 @@
 //  RecentItem.m
 //  RatingVolsu-iOS-ObjC
 //
-//  Created by Настя on 31/10/14.
+//  Created by Настя on 02/11/14.
 //  Copyright (c) 2014 VolSU. All rights reserved.
 //
 
 #import "RecentItem.h"
-#import "Student.h"
+#import "Semester.h"
 
 
 @implementation RecentItem
@@ -17,6 +17,5 @@
 @dynamic itemId;
 @dynamic name;
 @dynamic semester;
-@dynamic student;
 
 @end

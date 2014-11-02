@@ -19,9 +19,9 @@
 	
 	NSString * details = nil;
 	
-	if (self.student) {
+	if (self.semester) {
 		
-		details = [NSString stringWithFormat:@"%@ %@ %@", self.student.group.name, self.student.number, self.semester];
+		details = [NSString stringWithFormat:@"%@ %@ %@", self.semester.student.group.name, self.semester.student.number, self.semester.number];
 	}
 	
 	return details;

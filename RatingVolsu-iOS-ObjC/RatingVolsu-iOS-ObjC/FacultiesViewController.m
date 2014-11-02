@@ -17,6 +17,14 @@
 
 @implementation FacultiesViewController
 
+- (void)viewDidLoad {
+	
+	if (![RecentItem all].count) {
+		
+		self.navigationItem.leftBarButtonItem = nil;
+	}
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	
 	if ([segue.identifier isEqualToString:@"FacultiesTable"]) {

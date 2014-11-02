@@ -2,7 +2,7 @@
 //  Subject.h
 //  RatingVolsu-iOS-ObjC
 //
-//  Created by Настя on 28/10/14.
+//  Created by Настя on 02/11/14.
 //  Copyright (c) 2014 VolSU. All rights reserved.
 //
 

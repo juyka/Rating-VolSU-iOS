@@ -47,6 +47,13 @@ NSURL *baseURL;
 						 NSArray *entries = responseObject;
 						 handler(entries);
 					 }
+					 else
+						 if ([responseObject isKindOfClass:NSDictionary.class]) {
+							 
+							 NSArray *entries = @[responseObject];
+							 handler(entries);
+						 }
+					 
 				 }
 				 failure:^(NSURLSessionDataTask *task, NSError *error) {
 					 [[[UIAlertView alloc] initWithTitle:@"Ошибка подключения к серверу"

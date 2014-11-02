@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RatingsViewController : UIViewController
+@interface StudentRatingViewController : UIViewController
 
 @property (nonatomic) RecentItem *recentItem;
+
+
 
 @end

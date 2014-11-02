@@ -238,12 +238,12 @@
                 <exit id="F1K-sY-ehd" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cws-xV-tck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1978.5" y="1401"/>
+            <point key="canvasLocation" x="2823" y="1110"/>
         </scene>
-        <!--Рейтинг-->
+        <!--Рейтинг по студенту-->
         <scene sceneID="9pv-Ck-KpP">
             <objects>
-                <viewController id="OT6-QH-ZDB" customClass="RatingsViewController" sceneMemberID="viewController">
+                <viewController id="OT6-QH-ZDB" customClass="StudentRatingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DXO-5w-dH4"/>
                         <viewControllerLayoutGuide type="bottom" id="NLt-JX-kok"/>
@@ -255,28 +255,156 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Etr-Xw-hSa">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                </variation>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Gr2-of-fsG" style="IBUITableViewCellStyleDefault" id="LjW-kj-zpK">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LjW-kj-zpK" id="AeF-oz-HJF">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gr2-of-fsG">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="OT6-QH-ZDB" id="dL6-dA-oJG"/>
+                                    <outlet property="delegate" destination="OT6-QH-ZDB" id="8aq-ka-wJS"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NLt-JX-kok" firstAttribute="bottom" secondItem="Etr-Xw-hSa" secondAttribute="bottom" id="KZI-QC-SZD"/>
+                            <constraint firstItem="Etr-Xw-hSa" firstAttribute="leading" secondItem="fWS-bp-sKC" secondAttribute="leading" id="PwI-Ph-8bD"/>
+                            <constraint firstItem="DXO-5w-dH4" firstAttribute="bottom" secondItem="Etr-Xw-hSa" secondAttribute="top" id="glg-E7-gSm"/>
+                            <constraint firstAttribute="trailing" secondItem="Etr-Xw-hSa" secondAttribute="trailing" id="x7i-Cf-8oc"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Etr-Xw-hSa"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="PwI-Ph-8bD"/>
+                                <exclude reference="x7i-Cf-8oc"/>
+                                <exclude reference="glg-E7-gSm"/>
+                                <exclude reference="KZI-QC-SZD"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Etr-Xw-hSa"/>
                             </mask>
+                            <mask key="constraints">
+                                <include reference="PwI-Ph-8bD"/>
+                                <include reference="x7i-Cf-8oc"/>
+                                <include reference="glg-E7-gSm"/>
+                                <include reference="KZI-QC-SZD"/>
+                            </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Рейтинг" id="OgR-No-y6J"/>
+                    <navigationItem key="navigationItem" title="Рейтинг по студенту" id="OgR-No-y6J">
+                        <barButtonItem key="rightBarButtonItem" title="По группе" id="sGD-2g-Yaz">
+                            <connections>
+                                <segue destination="MaO-Ch-1Qz" kind="show" identifier="GroupRatingSegue" id="cGu-Pk-Nmp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Etr-Xw-hSa" id="CAa-8l-Z5D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmv-0g-klM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="411" y="1110"/>
+        </scene>
+        <!--Рейтинг по группе-->
+        <scene sceneID="ox5-hO-8wG">
+            <objects>
+                <viewController id="MaO-Ch-1Qz" customClass="GroupRatingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g2d-yO-MAD"/>
+                        <viewControllerLayoutGuide type="bottom" id="hrL-Km-x5S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cgh-3y-zFa">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Рейтинг по группе" id="VsD-Bq-JbD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f1R-RT-9oj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1203" y="1115"/>
+        </scene>
+        <!--Subject View Controller-->
+        <scene sceneID="AMe-tJ-eJq">
+            <objects>
+                <viewController id="xll-Tj-M5Y" customClass="SubjectViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yvg-nk-8k9"/>
+                        <viewControllerLayoutGuide type="bottom" id="jpz-IU-irN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LJd-dz-mDb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bm8-oJ-bJ6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="jCP-eE-yWn" style="IBUITableViewCellStyleDefault" id="dd2-dB-cMG">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dd2-dB-cMG" id="ET8-fI-tnz">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jCP-eE-yWn">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="xll-Tj-M5Y" id="WsB-2r-gQc"/>
+                                    <outlet property="delegate" destination="xll-Tj-M5Y" id="dVb-hr-0mh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="bm8-oJ-bJ6"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="bm8-oJ-bJ6"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="bm8-oJ-bJ6" id="uLL-0d-Hl4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RcK-lJ-7Y5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2067" y="1115"/>
         </scene>
         <!--Последнее-->
         <scene sceneID="Oiq-bI-Ewb">
@@ -516,17 +644,24 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Институты" id="fJn-Gx-msQ"/>
+                    <navigationItem key="navigationItem" title="Институты" id="fJn-Gx-msQ">
+                        <barButtonItem key="leftBarButtonItem" title="Закрыть" id="YcK-hS-xw8">
+                            <connections>
+                                <segue destination="EZC-2m-MnO" kind="unwind" identifier="CloseUnwindToRecentController" unwindAction="unwind:" id="DQo-mi-h6Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="JyF-Sl-YeF" kind="show" identifier="GroupsController" id="oKt-p3-ANY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rej-Pg-ZAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EZC-2m-MnO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2067" y="389"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Sfk-2t-7vO"/>
+        <segue reference="kQd-np-anl"/>
     </inferredMetricsTieBreakers>
 </document>

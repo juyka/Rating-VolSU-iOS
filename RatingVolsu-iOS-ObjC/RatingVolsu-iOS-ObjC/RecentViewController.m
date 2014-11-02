@@ -8,7 +8,7 @@
 
 #import "RecentViewController.h"
 #import "RecentItem+Mappings.h"
-#import "RatingsViewController.h"
+#import "StudentRatingViewController.h"
 #import "MCSwipeTableViewCell.h"
 
 @interface RecentViewController ()
@@ -37,13 +37,7 @@ NSFetchedResultsControllerDelegate
 	self.tableView.separatorInset = UIEdgeInsetsZero;
 	
 	[[self fetchedResultsController] performFetch:nil];
-	[RecentItem findOrCreate:@{
-							   @"itemId" : @46676,
-							   @"name" : @"Студент 10108",
-							   @"semester" : @6,
-							   @"isFavorite" : @YES
-							   }];
-	[[CoreDataManager sharedManager] saveContext];
+
 	[self.tableView reloadData];
 	
 	if (!self.fetchedResultsController.fetchedObjects.count) {
@@ -231,7 +225,7 @@ NSFetchedResultsControllerDelegate
 
 	if ([segue.identifier isEqualToString:@"RatingSegue"]) {
 		
-		RatingsViewController *controller = segue.destinationViewController;
+		StudentRatingViewController *controller = segue.destinationViewController;
 		
 		controller.recentItem = sender;
 	}
@@ -245,5 +239,6 @@ NSFetchedResultsControllerDelegate
 		[self.tableView reloadData];
 	}
 }
+
 
 @end

@@ -2,13 +2,12 @@
 //  RatingItem.m
 //  RatingVolsu-iOS-ObjC
 //
-//  Created by Настя on 28/10/14.
+//  Created by Настя on 02/11/14.
 //  Copyright (c) 2014 VolSU. All rights reserved.
 //
 
 #import "RatingItem.h"
 #import "Semester.h"
-#import "Student.h"
 #import "Subject.h"
 
 
@@ -21,8 +20,7 @@
 @dynamic sum;
 @dynamic thirdAttestation;
 @dynamic total;
-@dynamic semester;
-@dynamic student;
 @dynamic subject;
+@dynamic semester;
 
 @end

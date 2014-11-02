@@ -8,7 +8,7 @@
 
 #import "SemestersViewController.h"
 #import "NSManagedObject+Extensions.h"
-#import "RatingsViewController.h"
+#import "StudentRatingViewController.h"
 #import "RecentViewController.h"
 #import "RecentItem+Mappings.h"
 
@@ -86,9 +86,12 @@
 		NSDate *date = [NSDate date];
 		[item update:@{
 					   @"name" : [NSString stringWithFormat:@"%@ %@", self.student.number, date.description],
-					   @"student" : self.student,
-					   @"semester" : sender,
-					   @"date" : date
+					   @"date" : date,
+					   @"semester": [Semester findOrCreate:@{
+															 @"semesterId" : recentId,
+															 @"student" : self.student,
+															 @"number" : sender
+															 }]
 					   }];
 		_selectedItem = item;
 		[CoreDataManager.sharedManager saveContext];
