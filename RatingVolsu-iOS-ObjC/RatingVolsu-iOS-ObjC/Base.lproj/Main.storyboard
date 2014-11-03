@@ -243,7 +243,7 @@
         <!--Рейтинг по студенту-->
         <scene sceneID="9pv-Ck-KpP">
             <objects>
-                <viewController id="OT6-QH-ZDB" customClass="StudentRatingViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="OT6-QH-ZDB" customClass="StudentRatingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DXO-5w-dH4"/>
                         <viewControllerLayoutGuide type="bottom" id="NLt-JX-kok"/>
@@ -328,16 +328,54 @@
         <!--Рейтинг по группе-->
         <scene sceneID="ox5-hO-8wG">
             <objects>
-                <viewController id="MaO-Ch-1Qz" customClass="GroupRatingViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="MaO-Ch-1Qz" customClass="GroupRatingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g2d-yO-MAD"/>
                         <viewControllerLayoutGuide type="bottom" id="hrL-Km-x5S"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cgh-3y-zFa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A72-sJ-Dp3" customClass="GroupRatingTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A72-sJ-Dp3" firstAttribute="top" secondItem="g2d-yO-MAD" secondAttribute="bottom" id="0ik-rS-VA6"/>
+                            <constraint firstAttribute="trailing" secondItem="A72-sJ-Dp3" secondAttribute="trailing" id="Gqu-nZ-fD7"/>
+                            <constraint firstItem="hrL-Km-x5S" firstAttribute="top" secondItem="A72-sJ-Dp3" secondAttribute="bottom" id="fmO-nv-9jw"/>
+                            <constraint firstItem="A72-sJ-Dp3" firstAttribute="leading" secondItem="cgh-3y-zFa" secondAttribute="leading" id="qB8-EI-VlI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="A72-sJ-Dp3"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0ik-rS-VA6"/>
+                                <exclude reference="Gqu-nZ-fD7"/>
+                                <exclude reference="qB8-EI-VlI"/>
+                                <exclude reference="fmO-nv-9jw"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="A72-sJ-Dp3"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0ik-rS-VA6"/>
+                                <include reference="Gqu-nZ-fD7"/>
+                                <include reference="qB8-EI-VlI"/>
+                                <include reference="fmO-nv-9jw"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Рейтинг по группе" id="VsD-Bq-JbD"/>
+                    <connections>
+                        <outlet property="tableView" destination="A72-sJ-Dp3" id="FhQ-W6-T7M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1R-RT-9oj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

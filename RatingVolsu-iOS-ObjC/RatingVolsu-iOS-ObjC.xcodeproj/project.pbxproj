@@ -38,6 +38,8 @@
 		D6BD2BC61A063D8200591069 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BC51A063D8200591069 /* Student.m */; };
 		D6BD2BC91A063D8200591069 /* RecentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BC81A063D8200591069 /* RecentItem.m */; };
 		D6BD2BCC1A0640F600591069 /* RatingItem+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BCB1A0640F600591069 /* RatingItem+Mappings.m */; };
+		D6BD2BCF1A07852800591069 /* GroupRatingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BCE1A07852800591069 /* GroupRatingTableView.m */; };
+		D6BD2BD21A0785A400591069 /* GroupRatingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BD11A0785A400591069 /* GroupRatingTableViewCell.m */; };
 		D6CE1F7419FE88C80062790E /* StudentRatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE1F7319FE88C80062790E /* StudentRatingViewController.m */; };
 		D6FF4D6E1A03973900421E29 /* NSString+RubyLikeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF4D6D1A03973900421E29 /* NSString+RubyLikeExtensions.m */; };
 /* End PBXBuildFile section */
@@ -115,6 +117,10 @@
 		D6BD2BC81A063D8200591069 /* RecentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentItem.m; sourceTree = "<group>"; };
 		D6BD2BCA1A0640F600591069 /* RatingItem+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RatingItem+Mappings.h"; sourceTree = "<group>"; };
 		D6BD2BCB1A0640F600591069 /* RatingItem+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RatingItem+Mappings.m"; sourceTree = "<group>"; };
+		D6BD2BCD1A07852800591069 /* GroupRatingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupRatingTableView.h; sourceTree = "<group>"; };
+		D6BD2BCE1A07852800591069 /* GroupRatingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupRatingTableView.m; sourceTree = "<group>"; };
+		D6BD2BD01A0785A400591069 /* GroupRatingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupRatingTableViewCell.h; sourceTree = "<group>"; };
+		D6BD2BD11A0785A400591069 /* GroupRatingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupRatingTableViewCell.m; sourceTree = "<group>"; };
 		D6CE1F7219FE88C80062790E /* StudentRatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRatingViewController.h; sourceTree = "<group>"; };
 		D6CE1F7319FE88C80062790E /* StudentRatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentRatingViewController.m; sourceTree = "<group>"; };
 		D6FF4D6C1A03973900421E29 /* NSString+RubyLikeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RubyLikeExtensions.h"; sourceTree = "<group>"; };
@@ -289,6 +295,17 @@
 			name = RatingSelector;
 			sourceTree = "<group>";
 		};
+		D6BD2BD31A0785A900591069 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				D6BD2BCD1A07852800591069 /* GroupRatingTableView.h */,
+				D6BD2BCE1A07852800591069 /* GroupRatingTableView.m */,
+				D6BD2BD01A0785A400591069 /* GroupRatingTableViewCell.h */,
+				D6BD2BD11A0785A400591069 /* GroupRatingTableViewCell.m */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
 		D6FF4D5E1A02319A00421E29 /* Rating */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +313,7 @@
 				D6CE1F7319FE88C80062790E /* StudentRatingViewController.m */,
 				D6BD2B8E1A062FB600591069 /* GroupRatingViewController.h */,
 				D6BD2B8F1A062FB600591069 /* GroupRatingViewController.m */,
+				D6BD2BD31A0785A900591069 /* TableView */,
 			);
 			name = Rating;
 			sourceTree = "<group>";
@@ -456,6 +474,7 @@
 				D66E2DF919E7E500006077BC /* AppDelegate.m in Sources */,
 				D66E2DFF19E7E500006077BC /* RatingSelectorViewController.m in Sources */,
 				D6BCA27819F3F4BC0039AAB8 /* GroupsViewController.m in Sources */,
+				D6BD2BCF1A07852800591069 /* GroupRatingTableView.m in Sources */,
 				D604872119ED22A20009E1E7 /* Faculty+Mappings.m in Sources */,
 				D6BCA27319F3F2040039AAB8 /* FacultiesViewController.m in Sources */,
 				D601A67719F1395000735F5B /* RatingTableViewController.m in Sources */,
@@ -476,6 +495,7 @@
 				D601A67419F03FA000735F5B /* Semester+Mappings.m in Sources */,
 				D601A67A19F14AAF00735F5B /* RecentViewController.m in Sources */,
 				D6BD2BC91A063D8200591069 /* RecentItem.m in Sources */,
+				D6BD2BD21A0785A400591069 /* GroupRatingTableViewCell.m in Sources */,
 				D6BD2BAB1A06372200591069 /* RatingItem.m in Sources */,
 				D6272BFA19EE786B005DD267 /* Group+Mappings.m in Sources */,
 				D6272BFD19EE794E005DD267 /* Student+Mappings.m in Sources */,
