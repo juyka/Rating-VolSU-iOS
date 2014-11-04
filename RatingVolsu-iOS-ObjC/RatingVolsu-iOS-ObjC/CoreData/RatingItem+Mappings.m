@@ -8,6 +8,7 @@
 
 #import "RatingItem+Mappings.h"
 #import "RequestManager.h"
+#import "NSArray+Extensions.h"
 
 @implementation RatingItem (Mappings)
 
@@ -87,17 +88,19 @@
 	[RequestManager.manager request:url parameters:parameters withBlock:^(NSArray *entries) {
 		
 		NSDictionary *dictionary = entries.first;
+		NSArray *subjects;
 		
 		NSDictionary *objects = [dictionary valueForKey:@"Predmet"];
 		
 		if (objects.class != NSNull.class) {
 			
-			[objects each:^(id key, id value) {
+			subjects = [objects map:^id(id key, id value) {
 				Subject *subject = [Subject findOrCreate:@{@"subjectId" : key}];
 				[subject update:@{
 								  @"name" : [value valueForKeyPath:@"Name"],
 								  @"type" : [value valueForKeyPath:@"Type"],
 								  }];
+				return subject.name;
 			}];
 		}
 		
@@ -125,7 +128,7 @@
 				
 				NSArray *subjectRatings = [marks map:^id(id key, id value) {
 					
-					NSString *identifier = [NSString stringWithFormat:@"%@%@", key, semester.semesterId];
+					NSString *identifier = [NSString stringWithFormat:@"%@%@", key, studentsSemester.semesterId];
 					RatingItem *item = [RatingItem findOrCreate:@{@"ratingItemId" : identifier}];
 					
 					[item update:@{
@@ -140,10 +143,10 @@
 			}];
 			[[CoreDataManager sharedManager] saveContext];
 			
-			NSArray *rating = [ratingItems flatten];
+			NSArray *ratingTable = [[ratingItems flatten] ratingTable];
 			
 			if (handler) {
-				handler(rating);
+				handler(ratingTable);
 			}
 		}
 		

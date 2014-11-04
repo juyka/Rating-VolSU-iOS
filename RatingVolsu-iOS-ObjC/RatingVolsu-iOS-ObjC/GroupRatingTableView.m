@@ -152,8 +152,9 @@
 	
 	return [_dataSource.firstObject map:^id(NSString *value) {
 		
+//		CGFloat maxWidth = value == [_dataSource.firstObject firstObject] ? 90 : 140;
 		UIEdgeInsets insets = UIEdgeInsetsMake(2, 8, 2, 8);
-		CGRect rect = [value boundingRectWithSize:CGSizeMake(200, 100)
+		CGRect rect = [value boundingRectWithSize:CGSizeMake(140, 100)
 										  options:NSStringDrawingUsesLineFragmentOrigin
 									   attributes:[GroupRatingTableViewCell labelAttributes]
 										  context:nil];
@@ -179,6 +180,15 @@
 		CGRect frame = cell.frame;
 		frame.origin.x = scrollView.contentOffset.x + scrollView.contentInset.left;
 		cell.frame = frame;
+		
+		if (row.count > 1) {
+			
+			CGFloat offset = frame.size.width;
+			cell = row[1];
+			frame = cell.frame;
+			frame.origin.x = scrollView.contentOffset.x + scrollView.contentInset.left + offset;
+			cell.frame = frame;
+		}
 	}
 }
 
