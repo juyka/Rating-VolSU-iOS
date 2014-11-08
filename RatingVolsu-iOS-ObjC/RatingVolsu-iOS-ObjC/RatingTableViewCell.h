@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GroupRatingTableViewCell : UIView
+@interface RatingTableViewCell : UIView
 
 @property (nonatomic) NSString *value;
 
 + (NSDictionary *)labelAttributes;
+
+@property(nonatomic, readonly) UILabel *label;
+
 
 @end

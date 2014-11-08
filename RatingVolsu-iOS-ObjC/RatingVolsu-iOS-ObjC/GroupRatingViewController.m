@@ -9,6 +9,7 @@
 #import "GroupRatingViewController.h"
 #import "RatingItem+Mappings.h"
 #import "GroupRatingTableView.h"
+#import "NSArray+Extensions.h"
 
 
 @interface GroupRatingViewController ()
@@ -17,6 +18,7 @@
 >
 
 @property (weak, nonatomic) IBOutlet GroupRatingTableView *tableView;
+@property (nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -26,22 +28,47 @@
 - (void)viewDidLoad {
 	
 	[super viewDidLoad];
+	_tableView.bounces = YES;
+	_tableView.alwaysBounceVertical = YES;
+	self.tableView.cellHeight = 22;
+	
+	
+	[self addRefreshControl];
+	[self addData];
+	[_refreshControl beginRefreshing];
+	[self groupRequest];
+
+}
+
+- (void)addRefreshControl {
+ 
+ _refreshControl = [UIRefreshControl new];
+ [_refreshControl addTarget:self action:@selector(refreshControlAction) forControlEvents:UIControlEventValueChanged];
+ [self.tableView insertSubview:_refreshControl atIndex:0];
+ self.refreshControl = _refreshControl;
+}
+
+- (void)refreshControlAction {
+ 
+	[self groupRequest];
+}
+
+- (void)groupRequest {
 	
 	[RatingItem requestByGroup:self.semester withHandler:^(NSArray *dataList) {
+		NSLog(@"%@", NSStringFromCGRect(self.tableView.frame));
+		[_refreshControl endRefreshing];
 		self.tableView.dataSource = dataList;
 	}];
+}
+
+- (void)addData {
 	
-	self.tableView.fixedColumnWidth = 100;
-	self.tableView.cellSize = CGSizeMake(140, 22);
-//	self.tableView.dataSource = @[
-//								  @[@"Номер зачетки", @"Математика", @"Информатика и природоведение", @"Биология", @"Обществознание", @"Труд", @"Английский язык"],
-//								  @[@"10108", @"10", @"", @"", @"", @"", @""],
-//								  @[@"10109", @"12", @"", @"", @"", @"", @""],
-//								  @[@"10104", @"100", @"", @"", @"", @"", @""],
-//								  @[@"10139", @"40", @"", @"", @"", @"", @""],
-//								  @[@"10148", @"5", @"", @"", @"", @"", @""],
-//								  @[@"10143", @"23", @"", @"", @"", @"", @""],
-//								  ];
+	NSArray *dataSource = [RatingItem where:@{@"semester.student.group.name" : self.semester.student.group.name,
+													@"semester.number" : self.semester.number}];
+
+	
+	self.tableView.dataSource = [dataSource groupRatingTable];
 }
 
 @end

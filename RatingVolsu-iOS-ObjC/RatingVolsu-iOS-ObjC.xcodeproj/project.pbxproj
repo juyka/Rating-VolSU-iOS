@@ -26,6 +26,8 @@
 		D66E2E0419E7E500006077BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66E2E0319E7E500006077BC /* Images.xcassets */; };
 		D66E2E0719E7E500006077BC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66E2E0519E7E500006077BC /* LaunchScreen.xib */; };
 		D66E2E1319E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D66E2E1219E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m */; };
+		D6BB99F11A0B78BC006273F8 /* RatingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB99F01A0B78BC006273F8 /* RatingTableView.m */; };
+		D6BB99F41A0B85AD006273F8 /* StudentRatingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB99F31A0B85AD006273F8 /* StudentRatingTableView.m */; };
 		D6BCA27319F3F2040039AAB8 /* FacultiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BCA27219F3F2040039AAB8 /* FacultiesViewController.m */; };
 		D6BCA27819F3F4BC0039AAB8 /* GroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BCA27719F3F4BC0039AAB8 /* GroupsViewController.m */; };
 		D6BCA27B19F3F4D70039AAB8 /* StudentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BCA27A19F3F4D70039AAB8 /* StudentsViewController.m */; };
@@ -39,7 +41,7 @@
 		D6BD2BC91A063D8200591069 /* RecentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BC81A063D8200591069 /* RecentItem.m */; };
 		D6BD2BCC1A0640F600591069 /* RatingItem+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BCB1A0640F600591069 /* RatingItem+Mappings.m */; };
 		D6BD2BCF1A07852800591069 /* GroupRatingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BCE1A07852800591069 /* GroupRatingTableView.m */; };
-		D6BD2BD21A0785A400591069 /* GroupRatingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BD11A0785A400591069 /* GroupRatingTableViewCell.m */; };
+		D6BD2BD21A0785A400591069 /* RatingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BD11A0785A400591069 /* RatingTableViewCell.m */; };
 		D6BD2BD61A08EDC000591069 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BD51A08EDC000591069 /* NSArray+Extensions.m */; };
 		D6CE1F7419FE88C80062790E /* StudentRatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE1F7319FE88C80062790E /* StudentRatingViewController.m */; };
 		D6FF4D6E1A03973900421E29 /* NSString+RubyLikeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF4D6D1A03973900421E29 /* NSString+RubyLikeExtensions.m */; };
@@ -94,6 +96,10 @@
 		D66E2E0C19E7E500006077BC /* RatingVolsu-iOS-ObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RatingVolsu-iOS-ObjCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66E2E1119E7E500006077BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D66E2E1219E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatingVolsu_iOS_ObjCTests.m; sourceTree = "<group>"; };
+		D6BB99EF1A0B78BC006273F8 /* RatingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingTableView.h; sourceTree = "<group>"; };
+		D6BB99F01A0B78BC006273F8 /* RatingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingTableView.m; sourceTree = "<group>"; };
+		D6BB99F21A0B85AD006273F8 /* StudentRatingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRatingTableView.h; sourceTree = "<group>"; };
+		D6BB99F31A0B85AD006273F8 /* StudentRatingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentRatingTableView.m; sourceTree = "<group>"; };
 		D6BCA27119F3F2040039AAB8 /* FacultiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacultiesViewController.h; sourceTree = "<group>"; };
 		D6BCA27219F3F2040039AAB8 /* FacultiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacultiesViewController.m; sourceTree = "<group>"; };
 		D6BCA27619F3F4BC0039AAB8 /* GroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsViewController.h; sourceTree = "<group>"; };
@@ -120,8 +126,8 @@
 		D6BD2BCB1A0640F600591069 /* RatingItem+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RatingItem+Mappings.m"; sourceTree = "<group>"; };
 		D6BD2BCD1A07852800591069 /* GroupRatingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupRatingTableView.h; sourceTree = "<group>"; };
 		D6BD2BCE1A07852800591069 /* GroupRatingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupRatingTableView.m; sourceTree = "<group>"; };
-		D6BD2BD01A0785A400591069 /* GroupRatingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupRatingTableViewCell.h; sourceTree = "<group>"; };
-		D6BD2BD11A0785A400591069 /* GroupRatingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupRatingTableViewCell.m; sourceTree = "<group>"; };
+		D6BD2BD01A0785A400591069 /* RatingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingTableViewCell.h; sourceTree = "<group>"; };
+		D6BD2BD11A0785A400591069 /* RatingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingTableViewCell.m; sourceTree = "<group>"; };
 		D6BD2BD41A08EDC000591069 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
 		D6BD2BD51A08EDC000591069 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
 		D6CE1F7219FE88C80062790E /* StudentRatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRatingViewController.h; sourceTree = "<group>"; };
@@ -305,8 +311,12 @@
 			children = (
 				D6BD2BCD1A07852800591069 /* GroupRatingTableView.h */,
 				D6BD2BCE1A07852800591069 /* GroupRatingTableView.m */,
-				D6BD2BD01A0785A400591069 /* GroupRatingTableViewCell.h */,
-				D6BD2BD11A0785A400591069 /* GroupRatingTableViewCell.m */,
+				D6BD2BD01A0785A400591069 /* RatingTableViewCell.h */,
+				D6BD2BD11A0785A400591069 /* RatingTableViewCell.m */,
+				D6BB99EF1A0B78BC006273F8 /* RatingTableView.h */,
+				D6BB99F01A0B78BC006273F8 /* RatingTableView.m */,
+				D6BB99F21A0B85AD006273F8 /* StudentRatingTableView.h */,
+				D6BB99F31A0B85AD006273F8 /* StudentRatingTableView.m */,
 			);
 			name = TableView;
 			sourceTree = "<group>";
@@ -496,12 +506,14 @@
 				D66E2DF619E7E500006077BC /* main.m in Sources */,
 				D6272BF719EE6D1D005DD267 /* NSManagedObject+Extensions.m in Sources */,
 				D6BD2BC31A063D8100591069 /* Semester.m in Sources */,
+				D6BB99F11A0B78BC006273F8 /* RatingTableView.m in Sources */,
 				D6BD2BB11A06372200591069 /* Group.m in Sources */,
 				D6BD2B901A062FB600591069 /* GroupRatingViewController.m in Sources */,
 				D601A67419F03FA000735F5B /* Semester+Mappings.m in Sources */,
 				D601A67A19F14AAF00735F5B /* RecentViewController.m in Sources */,
 				D6BD2BC91A063D8200591069 /* RecentItem.m in Sources */,
-				D6BD2BD21A0785A400591069 /* GroupRatingTableViewCell.m in Sources */,
+				D6BD2BD21A0785A400591069 /* RatingTableViewCell.m in Sources */,
+				D6BB99F41A0B85AD006273F8 /* StudentRatingTableView.m in Sources */,
 				D6BD2BAB1A06372200591069 /* RatingItem.m in Sources */,
 				D6272BFA19EE786B005DD267 /* Group+Mappings.m in Sources */,
 				D6272BFD19EE794E005DD267 /* Student+Mappings.m in Sources */,

@@ -10,6 +10,7 @@
 
 @interface NSArray (Extensions)
 
-- (NSArray *)ratingTable;
+- (NSArray *)groupRatingTable;
+- (NSArray *)studentRatingTable;
 
 @end

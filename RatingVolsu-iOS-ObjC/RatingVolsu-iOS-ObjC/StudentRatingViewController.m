@@ -9,6 +9,7 @@
 #import "StudentRatingViewController.h"
 #import "RatingItem+Mappings.h"
 #import "GroupRatingViewController.h"
+#import "StudentRatingTableView.h"
 
 @interface StudentRatingViewController()
 <
@@ -19,10 +20,16 @@ NSFetchedResultsControllerDelegate
 
 @property(nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic) NSArray *dataList;
 @end
 
-@implementation StudentRatingViewController
+@implementation StudentRatingViewController {
+	
+	IBOutlet UIView *_portraitView;
+	IBOutlet UIView *_landscapeView;
+	IBOutlet StudentRatingTableView *ratingTableView;
+	UIView *_currentView;
+}
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
@@ -32,10 +39,38 @@ NSFetchedResultsControllerDelegate
 	_tableView.tableFooterView = UIView.new;
 	[[self fetchedResultsController] performFetch:nil];
 	[_tableView reloadData];
-	[RatingItem requestByStudent:self.recentItem.semester withHandler:nil];
+	[RatingItem requestByStudent:self.recentItem.semester withHandler:^(NSArray *dataList) {
+		ratingTableView.dataSource = dataList;
+	}];
+	
+	ratingTableView.cellHeight = 30;
 	
 	
 }
+
+
+- (void) viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+	[coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context)
+	 {
+		 UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+		 if(UIInterfaceOrientationIsLandscape(orientation))
+		 {
+			 _landscapeView.hidden = NO;
+			 _portraitView.hidden = YES;
+			 [ratingTableView reloadData];
+		 }
+		 else
+		 {
+			 _portraitView.hidden = NO;
+			 _landscapeView.hidden = YES;
+		 }
+		 
+	 } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {    }];
+	
+	[super viewWillTransitionToSize: size withTransitionCoordinator: coordinator];
+}
+
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	

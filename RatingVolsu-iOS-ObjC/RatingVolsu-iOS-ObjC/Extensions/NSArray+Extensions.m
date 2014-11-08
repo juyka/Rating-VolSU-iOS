@@ -10,7 +10,7 @@
 
 @implementation NSArray (Extensions)
 
-- (NSArray *)ratingTable {
+- (NSArray *)groupRatingTable {
 	
 	NSArray *subjects = [self valueForKeyPath:@"@distinctUnionOfObjects.subject"];
 	NSArray *students = [self valueForKeyPath:@"@distinctUnionOfObjects.semester.student"];
@@ -38,6 +38,23 @@
 	[ratingTable insertObject:subjectNames atIndex:0];
 	
 	return ratingTable;
+}
+
+- (NSArray *)studentRatingTable {
+	
+	NSMutableArray *subjectsTable = [self map:^id(RatingItem *item) {
+	
+		NSArray *subject = @[item.subject.name, item.firstAttestation.description, item.secondAttestation.description, item.thirdAttestation.description, item.sum.description, item.exam.description, item.total.description];
+		
+		return subject;
+		
+	}].mutableCopy;
+	
+	NSArray *subjectNames = @[@"Предмет", @"1 модуль", @"2 модуль", @"3 модуль", @"Сумма", @"Экзамен", @"Итог"];
+	
+	[subjectsTable insertObject:subjectNames atIndex:0];
+	
+	return subjectsTable;
 }
 
 @end

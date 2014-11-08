@@ -6,12 +6,9 @@
 //  Copyright (c) 2014 VolSU. All rights reserved.
 //
 
-#import "GroupRatingTableViewCell.h"
+#import "RatingTableViewCell.h"
 
-@implementation GroupRatingTableViewCell {
-	
-	UILabel *_label;
-}
+@implementation RatingTableViewCell 
 
 + (NSDictionary *)labelAttributes {
 	
@@ -37,6 +34,7 @@
 		_label.backgroundColor = [UIColor clearColor];
 		_label.textAlignment = [attributes[NSParagraphStyleAttributeName] alignment];
 		_label.numberOfLines = 0;
+		_label.minimumScaleFactor = 0.3;
 		_label.lineBreakMode = [attributes[NSParagraphStyleAttributeName] lineBreakMode];
 		[self addSubview:_label];
 		

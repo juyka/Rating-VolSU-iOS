@@ -62,14 +62,16 @@
 							   @"thirdAttestation" : value[2],
 							   @"sum" : value[3],
 							   @"exam" : value[4],
-							   @"total": @100
+							   @"total": value[5]
 							   }];
 				return item;
 			}];
 			[[CoreDataManager sharedManager] saveContext];
 		
+			
+			NSArray *ratingTable = [ratingItems studentRatingTable];
 			if (handler) {
-				handler(ratingItems);
+				handler(ratingTable);
 			}
 		}
 		
@@ -143,7 +145,7 @@
 			}];
 			[[CoreDataManager sharedManager] saveContext];
 			
-			NSArray *ratingTable = [[ratingItems flatten] ratingTable];
+			NSArray *ratingTable = [[ratingItems flatten] groupRatingTable];
 			
 			if (handler) {
 				handler(ratingTable);
