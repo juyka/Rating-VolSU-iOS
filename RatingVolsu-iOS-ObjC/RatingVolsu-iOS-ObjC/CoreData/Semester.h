@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSNumber * number;
 @property (nonatomic, retain) NSNumber * semesterId;
 @property (nonatomic, retain) NSSet *ratings;
+@property (nonatomic, retain) NSNumber *place;
 @property (nonatomic, retain) Student *student;
 @property (nonatomic, retain) RecentItem *recentItem;
 @end

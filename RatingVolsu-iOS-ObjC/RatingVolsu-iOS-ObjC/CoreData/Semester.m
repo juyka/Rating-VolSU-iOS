@@ -18,6 +18,7 @@
 @dynamic semesterId;
 @dynamic ratings;
 @dynamic student;
+@dynamic place;
 @dynamic recentItem;
 
 @end

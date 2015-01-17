@@ -30,7 +30,7 @@
 //	NSArray *heightOffesets = [self offsets:heights];
 	NSArray *widthOffsets = [self offsets:widths];
 	
-	self.cells = @[].mutableCopy;
+	_cells = @[].mutableCopy;
 	[self.dataSource eachWithIndex:^(NSArray *dataRow, NSUInteger row) {
 		
 		NSMutableArray *cellsRow = @[].mutableCopy;
@@ -51,7 +51,7 @@
 			
 			[self insertSubview:cell atIndex:0];
 		}];
-		[self.cells addObject:cellsRow];
+		[_cells addObject:cellsRow];
 	}];
 	
 	UIView *lastCell = [self.cells.lastObject lastObject];

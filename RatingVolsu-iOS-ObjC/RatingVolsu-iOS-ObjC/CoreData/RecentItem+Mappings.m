@@ -21,7 +21,7 @@
 	
 	if (self.semester) {
 		
-		details = [NSString stringWithFormat:@"%@ %@ %@", self.semester.student.group.name, self.semester.student.number, self.semester.number];
+		details = [NSString stringWithFormat:@"%@ %@ семестр %@", self.semester.student.group.name, self.semester.number, self.semester.student.number];
 	}
 	
 	return details;

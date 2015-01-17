@@ -10,8 +10,7 @@
 
 @interface StudentRatingViewController : UIViewController
 
-@property (nonatomic) RecentItem *recentItem;
-
+@property(nonatomic) Semester *semester;
 
 
 @end

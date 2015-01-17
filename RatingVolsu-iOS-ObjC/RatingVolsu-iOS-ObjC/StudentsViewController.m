@@ -25,7 +25,7 @@
 		RatingSelectorViewController *controller = segue.destinationViewController;
 		controller.delegate = self;
 		controller.entityClass = Student.class;
-		controller.descriptionKey = @"number";
+		controller.titleKey = @"number";
 		controller.parentId = self.group.groupId;
 		controller.parentKey = @"group.groupId";
 		controller.cellId = @"StudentCell";

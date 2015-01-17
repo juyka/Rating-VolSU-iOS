@@ -17,6 +17,6 @@ typedef void (^RequestHandler)(NSArray *dataList);
 + (instancetype)findByPrymaryKeyOrCreate:(NSDictionary *)properties;
 + (Class)childEntity;
 + (NSString *)descriptionKey;
-+ (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler;
++ (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler errorBlock:(void (^)())errorHandler;
 + (NSString *)cellId;
 @end

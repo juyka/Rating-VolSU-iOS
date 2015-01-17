@@ -8,8 +8,10 @@
 
 #import "RecentViewController.h"
 #import "RecentItem+Mappings.h"
-#import "StudentRatingViewController.h"
+#import "RatingViewController.h"
 #import "MCSwipeTableViewCell.h"
+#import "SectionHeaderView.h"
+#import "UIImage+Extensions.h"
 
 @interface RecentViewController ()
 <
@@ -30,9 +32,9 @@ NSFetchedResultsControllerDelegate
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	UIView *backgroundView = [[UIView alloc] initWithFrame:self.tableView.bounds];
-	backgroundView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
-	self.tableView.backgroundView = backgroundView;
+	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
+	item.title = @" ";
+	self.navigationItem.backBarButtonItem = item;
 	self.tableView.tableFooterView = [UIView new];
 	self.tableView.separatorInset = UIEdgeInsetsZero;
 	
@@ -76,6 +78,7 @@ NSFetchedResultsControllerDelegate
 	
 	[cell setSwipeGestureWithView:view color:color mode:MCSwipeTableViewCellModeExit state:state completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
 		
+		item.name = (state == MCSwipeTableViewCellState1) ? @"Noname" : [NSString stringWithFormat:@"Студент %@", item.semester.student.number];
 		item.isFavorite = @(state == MCSwipeTableViewCellState1);
 		[[CoreDataManager sharedManager] saveContext];
 	}];
@@ -90,7 +93,15 @@ NSFetchedResultsControllerDelegate
 	
 	RecentItem *recentItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	cell.textLabel.text = recentItem.name;
+	cell.textLabel.textColor = @(0x252B36).rgbColor;
+	cell.textLabel.font = @(17).ptLightFont;
+	
 	cell.detailTextLabel.text = [recentItem details];
+	cell.detailTextLabel.textColor = @(0x8E95A3).rgbColor;
+	cell.detailTextLabel.font = @(12).ptFont;
+	
+	NSString *title = recentItem.name.iconText;
+	cell.imageView.image = [UIImage cellImage:title];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -104,16 +115,26 @@ NSFetchedResultsControllerDelegate
 	return [self.fetchedResultsController.sections count];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+- (NSString *)titleForHeaderInSection:(NSInteger)section {
 	
 	NSDictionary *headers = @{
-							  @"1" : @"Избранное",
-							  @"0" : @"Последние"
+							  @"1" : @"избранное",
+							  @"0" : @"последнее"
 							  };
 	
 	NSString *key = self.fetchedResultsController.sectionIndexTitles[section];
 	
 	return headers[key];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	
+	SectionHeaderView *view = @"SectionHeaderView".xibView;
+	view.backgroundColor = tableView.backgroundView.backgroundColor;
+	NSString *text = [self titleForHeaderInSection:section];
+	view.label.text = text.uppercaseString;
+	
+	return view;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -225,7 +246,7 @@ NSFetchedResultsControllerDelegate
 
 	if ([segue.identifier isEqualToString:@"RatingSegue"]) {
 		
-		StudentRatingViewController *controller = segue.destinationViewController;
+		RatingViewController *controller = segue.destinationViewController;
 		
 		controller.recentItem = sender;
 	}

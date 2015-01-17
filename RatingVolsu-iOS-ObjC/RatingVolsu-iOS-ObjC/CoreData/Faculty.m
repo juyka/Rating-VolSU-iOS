@@ -2,8 +2,8 @@
 //  Faculty.m
 //  RatingVolsu-iOS-ObjC
 //
-//  Created by Настя on 02/11/14.
-//  Copyright (c) 2014 VolSU. All rights reserved.
+//  Created by Настя on 11/01/15.
+//  Copyright (c) 2015 VolSU. All rights reserved.
 //
 
 #import "Faculty.h"
@@ -14,6 +14,7 @@
 
 @dynamic facultyId;
 @dynamic name;
+@dynamic owner;
 @dynamic groups;
 
 @end

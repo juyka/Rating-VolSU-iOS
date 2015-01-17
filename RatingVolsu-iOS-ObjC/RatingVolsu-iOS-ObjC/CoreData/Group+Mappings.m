@@ -23,7 +23,7 @@
 	return @"groupId";
 }
 
-+ (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler {
++ (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler errorBlock:(void (^)())errorHandler{
 	
 	NSDictionary *parameters = @{@"fak_id": parameter};
 	NSString *url = @"group_req.php";
@@ -38,7 +38,7 @@
 		if (handler) {
 			handler(objects);
 		}		
-	}];
+	} errorBlock:errorHandler];
 	
 }
 

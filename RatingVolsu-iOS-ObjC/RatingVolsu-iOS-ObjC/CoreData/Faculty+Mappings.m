@@ -25,18 +25,25 @@ typedef void (^RequestHandler)(NSArray *dataList);
 	return @"facultyId";
 }
 
-+ (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler {
++ (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler errorBlock:(void (^)())errorHandler {
 	
 	NSDictionary *parameters = @{ @"get_lists": @"0"};
 	NSString *url = @"facult_req.php";
 	
 	[RequestManager.manager request:url parameters:parameters withBlock:^(NSArray *entries){
-		[Faculty createArray:entries];
+		NSArray *objects = [Faculty createArray:entries];
+		[objects each:^(Faculty *object) {
+			NSString *name = object.name;
+			NSRange range = [name rangeOfString:@"(" options:NSBackwardsSearch range:NSMakeRange(0, name.length)];
+			NSString *substring = [name substringFromIndex:range.location];
+			name = [name stringByReplacingOccurrencesOfString:substring withString:@""];
+			object.name = [name stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+		}];
 		[CoreDataManager.sharedManager saveContext];
 		if (handler) {
 			handler(entries);
 		}
-	}];
+	} errorBlock:errorHandler];
 }
 
 @end

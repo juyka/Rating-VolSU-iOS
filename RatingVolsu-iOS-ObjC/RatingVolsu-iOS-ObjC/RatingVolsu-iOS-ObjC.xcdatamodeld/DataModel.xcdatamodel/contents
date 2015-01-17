@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Faculty" representedClassName="Faculty" syncable="YES">
         <attribute name="facultyId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="owner" optional="YES" attributeType="String" defaultValueString="ВолГУ" syncable="YES"/>
         <relationship name="groups" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Group" inverseName="faculty" inverseEntity="Group" syncable="YES"/>
     </entity>
     <entity name="Group" representedClassName="Group" syncable="YES">
@@ -16,6 +17,7 @@
     <entity name="RatingItem" representedClassName="RatingItem" syncable="YES">
         <attribute name="exam" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="firstAttestation" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="priority" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="ratingItemId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="secondAttestation" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="sum" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -33,6 +35,7 @@
     </entity>
     <entity name="Semester" representedClassName="Semester" syncable="YES">
         <attribute name="number" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="place" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="semesterId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="ratings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RatingItem" inverseName="semester" inverseEntity="RatingItem" syncable="YES"/>
         <relationship name="recentItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RecentItem" inverseName="semester" inverseEntity="RecentItem" syncable="YES"/>
@@ -51,12 +54,12 @@
         <relationship name="ratingItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RatingItem" inverseName="subject" inverseEntity="RatingItem" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Faculty" positionX="-504" positionY="-97" width="128" height="88"/>
+        <element name="Faculty" positionX="-504" positionY="-97" width="128" height="105"/>
         <element name="Group" positionX="-306" positionY="-108" width="128" height="133"/>
-        <element name="RecentItem" positionX="108" positionY="-199" width="128" height="118"/>
-        <element name="Semester" positionX="124" positionY="36" width="128" height="118"/>
-        <element name="Subject" positionX="-315" positionY="102" width="128" height="105"/>
-        <element name="RatingItem" positionX="-110" positionY="108" width="128" height="178"/>
+        <element name="RatingItem" positionX="-110" positionY="108" width="128" height="193"/>
+        <element name="RecentItem" positionX="108" positionY="-199" width="128" height="120"/>
+        <element name="Semester" positionX="124" positionY="36" width="128" height="135"/>
         <element name="Student" positionX="-108" positionY="-63" width="128" height="103"/>
+        <element name="Subject" positionX="-315" positionY="102" width="128" height="105"/>
     </elements>
 </model>

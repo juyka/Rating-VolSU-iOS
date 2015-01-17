@@ -1,9 +1,9 @@
 //
 //  RatingItem.h
-//  RatingVolsu-iOS-ObjC
+//  Pods
 //
-//  Created by Настя on 02/11/14.
-//  Copyright (c) 2014 VolSU. All rights reserved.
+//  Created by Настя on 14/12/14.
+//
 //
 
 #import <Foundation/Foundation.h>
@@ -20,7 +20,8 @@
 @property (nonatomic, retain) NSNumber * sum;
 @property (nonatomic, retain) NSNumber * thirdAttestation;
 @property (nonatomic, retain) NSNumber * total;
-@property (nonatomic, retain) Subject *subject;
+@property (nonatomic, retain) NSNumber * priority;
 @property (nonatomic, retain) Semester *semester;
+@property (nonatomic, retain) Subject *subject;
 
 @end

@@ -7,9 +7,11 @@
 //
 
 #import "GroupRatingViewController.h"
+#import "GroupRatingCollectionViewController.h"
 #import "RatingItem+Mappings.h"
 #import "GroupRatingTableView.h"
 #import "NSArray+Extensions.h"
+#import "MNRefreshControl.h"
 
 
 @interface GroupRatingViewController ()
@@ -18,7 +20,6 @@
 >
 
 @property (weak, nonatomic) IBOutlet GroupRatingTableView *tableView;
-@property (nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -27,37 +28,28 @@
 
 - (void)viewDidLoad {
 	
-	[super viewDidLoad];
-	_tableView.bounces = YES;
-	_tableView.alwaysBounceVertical = YES;
-	self.tableView.cellHeight = 22;
+	[super viewDidLoad];	
 	
-	
-	[self addRefreshControl];
+	//[self addRefreshControl];
 	[self addData];
-	[_refreshControl beginRefreshing];
 	[self groupRequest];
 
 }
 
 - (void)addRefreshControl {
  
- _refreshControl = [UIRefreshControl new];
- [_refreshControl addTarget:self action:@selector(refreshControlAction) forControlEvents:UIControlEventValueChanged];
- [self.tableView insertSubview:_refreshControl atIndex:0];
- self.refreshControl = _refreshControl;
+	self.tableView.addRefreshControlWithActionHandler(^{
+		
+		[self groupRequest];
+	});
+
 }
 
-- (void)refreshControlAction {
- 
-	[self groupRequest];
-}
 
 - (void)groupRequest {
 	
 	[RatingItem requestByGroup:self.semester withHandler:^(NSArray *dataList) {
-		NSLog(@"%@", NSStringFromCGRect(self.tableView.frame));
-		[_refreshControl endRefreshing];
+	//	[self.tableView.refreshControl endRefreshing];
 		self.tableView.dataSource = dataList;
 	}];
 }
@@ -69,6 +61,15 @@
 
 	
 	self.tableView.dataSource = [dataSource groupRatingTable];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	
+	if ([segue.identifier isEqualToString:@"GroupRatingSegue"]) {
+		
+		GroupRatingCollectionViewController *controller = segue.destinationViewController;
+		controller.semester = self.semester;
+	}
 }
 
 @end

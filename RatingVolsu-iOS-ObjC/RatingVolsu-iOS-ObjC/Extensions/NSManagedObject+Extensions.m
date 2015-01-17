@@ -55,7 +55,8 @@
 	UNDEFINED_EXCEPTION();
 }
 
-+ (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler {
++ (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler errorBlock:(void (^)())errorHandler
+{
 	
 }
 

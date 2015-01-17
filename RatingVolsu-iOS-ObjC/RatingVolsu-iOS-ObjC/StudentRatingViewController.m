@@ -8,18 +8,25 @@
 
 #import "StudentRatingViewController.h"
 #import "RatingItem+Mappings.h"
-#import "GroupRatingViewController.h"
+#import "GroupRatingCollectionViewController.h"
 #import "StudentRatingTableView.h"
+#import "StudentRatingTableViewCell.h"
+#import "StudentRatingTableHeader.h"
+#import "SectionHeaderView.h"
+#import "FXPageControl/FXPageControl.h"
+#import "RatingScrollView.h"
 
 @interface StudentRatingViewController()
 <
 UITableViewDataSource,
 UITableViewDelegate,
-NSFetchedResultsControllerDelegate
+NSFetchedResultsControllerDelegate,
+FXPageControlDelegate
 >
 
 @property(nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) StudentRatingTableHeader *headerView;
 @property (nonatomic) NSArray *dataList;
 @end
 
@@ -28,6 +35,7 @@ NSFetchedResultsControllerDelegate
 	IBOutlet UIView *_portraitView;
 	IBOutlet UIView *_landscapeView;
 	IBOutlet StudentRatingTableView *ratingTableView;
+	
 	UIView *_currentView;
 }
 
@@ -36,46 +44,52 @@ NSFetchedResultsControllerDelegate
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	_tableView.tableFooterView = UIView.new;
+	UISwipeGestureRecognizer *leftSwipe, *rightSwipe;
+	
+	leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipe:)];
+	[leftSwipe setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+	[[self view] addGestureRecognizer:leftSwipe];
+	
+	rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipe:)];
+	[rightSwipe setDirection:(UISwipeGestureRecognizerDirectionRight)];
+	[[self view] addGestureRecognizer:rightSwipe];
+	
+	self.tableView.tableFooterView = [UIView new];
+	self.tableView.separatorInset = UIEdgeInsetsZero;
+	[self.tableView registerNib:[UINib nibWithNibName:@"StudentRatingTableViewCell" bundle:nil] forCellReuseIdentifier:@"nibCell"];
+	
 	[[self fetchedResultsController] performFetch:nil];
 	[_tableView reloadData];
-	[RatingItem requestByStudent:self.recentItem.semester withHandler:^(NSArray *dataList) {
+	
+	[RatingItem requestByStudent:self.semester withHandler:^(NSArray *dataList) {
 		ratingTableView.dataSource = dataList;
 	}];
-	
-	ratingTableView.cellHeight = 30;
-	
-	
 }
 
-
-- (void) viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
-{
-	[coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context)
-	 {
-		 UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-		 if(UIInterfaceOrientationIsLandscape(orientation))
-		 {
-			 _landscapeView.hidden = NO;
-			 _portraitView.hidden = YES;
-			 [ratingTableView reloadData];
-		 }
-		 else
-		 {
-			 _portraitView.hidden = NO;
-			 _landscapeView.hidden = YES;
-		 }
-		 
-	 } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {    }];
+- (void)rightSwipe:(UISwipeGestureRecognizer *)sender {
 	
-	[super viewWillTransitionToSize: size withTransitionCoordinator: coordinator];
+	self.headerView.pageControl.currentPage--;
 }
 
+- (void)leftSwipe:(UISwipeGestureRecognizer *)sender {
+	
+	self.headerView.pageControl.currentPage++;
+}
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)pageControl:(FXPageControl *)pageControl changedCurrentPage:(NSInteger)currentPage {
+	
+	[self.tableView.visibleCells each:^(StudentRatingTableViewCell *cell) {
+		[cell scroll:currentPage];
+	}];
+	
+	self.headerView.title.text = @[@"1 модуль", @"2 модуль", @"3 модуль", @"Сумма", @"Экзамен", @"Всего"][currentPage];
+}
+
+- (void)configureCell:(StudentRatingTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	
 	RatingItem *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	cell.textLabel.text = [NSString stringWithFormat:@"%@  %@", item.subject.name, item.total];
+	cell.titleText.text = [NSString stringWithFormat:@"%@ ", item.subject.name];
+	cell.numbers = @[item.firstAttestation, item.secondAttestation, item.thirdAttestation, item.sum, item.exam, item.total];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -85,10 +99,27 @@ NSFetchedResultsControllerDelegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+	StudentRatingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"nibCell" forIndexPath:indexPath];
 	[self configureCell:cell atIndexPath:indexPath];
 	
 	return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	
+	StudentRatingTableHeader *view = @"StudentRatingTableHeader".xibView;
+	self.headerView = view;
+	self.headerView.backgroundColor = @(0xE0E0E0).rgbColor;
+	view.pageControl.numberOfPages = 6;
+	view.pageControl.delegate = self;
+	view.pageControl.currentPage = 5;
+	view.pageControl.dotSpacing = 5;
+	view.pageControl.dotSize = 4;
+	view.pageControl.dotColor = @(0xC2C1BF).rgbColor;
+	view.pageControl.selectedDotColor = @(0x9B9A99).rgbColor;
+	view.pageControl.backgroundColor = [UIColor clearColor];
+
+	return view;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -120,7 +151,7 @@ NSFetchedResultsControllerDelegate
 			break;
 			
 		case NSFetchedResultsChangeUpdate:
-			[self configureCell:[tableView cellForRowAtIndexPath:indexPath]
+			[self configureCell:(id)[tableView cellForRowAtIndexPath:indexPath]
 					atIndexPath:indexPath];
 			break;
 			
@@ -137,6 +168,28 @@ NSFetchedResultsControllerDelegate
 	[_tableView endUpdates];
 }
 
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+	[coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context)
+	 {
+		 UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+		 if(UIInterfaceOrientationIsLandscape(orientation))
+		 {
+			 _landscapeView.hidden = NO;
+			 _portraitView.hidden = YES;
+			 [ratingTableView reloadData];
+		 }
+		 else
+		 {
+			 _portraitView.hidden = NO;
+			 _landscapeView.hidden = YES;
+		 }
+		 
+	 } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {    }];
+	
+	[super viewWillTransitionToSize: size withTransitionCoordinator: coordinator];
+}
+
 - (NSFetchedResultsController *)fetchedResultsController {
 	
 	if (!_fetchedResultsController) {
@@ -146,7 +199,7 @@ NSFetchedResultsControllerDelegate
 		[fetchRequest setEntity:entity];
 		fetchRequest.sortDescriptors = @[@"total".descending];
 		
-		fetchRequest.predicate = [NSPredicate predicateWithFormat:@"semester.semesterId = %@", self.recentItem.semester.semesterId ];
+		fetchRequest.predicate = [NSPredicate predicateWithFormat:@"semester.semesterId = %@", self.semester.semesterId ];
 		
 		NSFetchedResultsController *theFetchedResultsController =
 		[[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
@@ -159,14 +212,7 @@ NSFetchedResultsControllerDelegate
 	return _fetchedResultsController;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	
-	if ([segue.identifier isEqualToString:@"GroupRatingSegue"]) {
-		
-		GroupRatingViewController *controller = segue.destinationViewController;
-		controller.semester = self.recentItem.semester;
-	}
-}
+
 
 
 @end

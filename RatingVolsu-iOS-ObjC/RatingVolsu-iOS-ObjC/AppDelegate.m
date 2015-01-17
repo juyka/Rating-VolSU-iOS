@@ -20,23 +20,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	[RequestManager manager];
 	
-//	Faculty *faculty = [Faculty findOrCreate:@{
-//					  @"facultyId" : @5342,
-//					  @"name" : @"ИМИТ"
-//					  }];
-//	Group *group = [Group findOrCreate: @{
-//									@"groupId" : @4325,
-//									@"name" : @"ИСТ-101",
-//									@"year" : @2010,
-//									@"faculty" : faculty
-//									}];
-//	Student *student = [Student findOrCreate: @{
-//												@"studentId" : @45345,
-//												@"number" : @10108,
-//												@"group" : group
-//												}];
-//	
-	// Override point for customization after application launch.
+	UIColor *blueColor = @(0x162A52).rgbColor;
+	UIColor *orangeColor = @(0xFF8F27).rgbColor;
+	UIColor *whiteColor = @(0xFFFFFF).rgbColor;
+	
+	[UINavigationBar appearance].barTintColor = blueColor;
+	[[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
+	
+	[[UINavigationBar appearance] setTintColor:orangeColor];
+	[[UINavigationBar appearance] setTitleTextAttributes:@{
+														   NSForegroundColorAttributeName: whiteColor,
+														   NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:17],
+														   }];
+	[[UIBarButtonItem appearance] setTitleTextAttributes:@{
+														  NSForegroundColorAttributeName: orangeColor,
+														  NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:17],
+														  }
+												forState:UIControlStateNormal];
+//	UIView *view = UIView.new;
+//	view.backgroundColor = @(0xE0E0E0).rgbColor;
+	[[UITableView appearance] setBackgroundColor:@(0xE0E0E0).rgbColor];
+	
 	return YES;
 }
 

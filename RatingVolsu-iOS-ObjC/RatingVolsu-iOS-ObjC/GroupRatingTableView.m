@@ -12,9 +12,22 @@
 
 @implementation GroupRatingTableView
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	
+	self = [super initWithCoder:aDecoder];
+	if (self) {
+		
+		self.cellHeight = 22;
+		self.fixedRowsCount = 1;
+		self.fixedColumnsCount = 2;
+	}
+	
+	return self;
+}
+
 - (void)reloadData {
 	
-	NSLog(@"%@", NSStringFromCGRect(self.frame));
+	//NSLog(@"%@", NSStringFromCGRect(self.frame));
 	[self.cells each:^(NSMutableArray *row) {
 		
 		[row each:^(RatingTableViewCell *cell) {
@@ -23,9 +36,8 @@
 		}];
 	}];
 	
-//	CGFloat fixedRowHeight = self.fixedRowHeight;
 	NSArray *sizes = [self headerCellSizes];
-	CGFloat maxHeight = [self maxHeight:sizes];
+	_maxHeight = [self maxHeight:sizes];
 	
 	NSMutableArray *offsets = [NSMutableArray arrayWithCapacity:sizes.count];
 	CGFloat offset = 0;
@@ -34,24 +46,17 @@
 		[offsets addObject:@(offset)];
 		offset += size.CGSizeValue.width;
 	}
-	self.offsets = offsets;
+	_offsets = offsets;
 	
-	self.cells = @[].mutableCopy;
+	_cells = @[].mutableCopy;
 	[self.dataSource eachWithIndex:^(NSArray *dataRow, NSUInteger row) {
 		
 		NSMutableArray *cellsRow = @[].mutableCopy;
 		[dataRow eachWithIndex:^(NSString *value, NSUInteger column) {
 
-			CGPoint offset = CGPointMake([offsets[column] floatValue] + self.contentInset.left,
-										 maxHeight * (row > 0) + self.cellHeight * (row - 1) * (row > 1) + self.contentInset.top);
-			
-//			CGPoint offset = CGPointMake(self.fixedColumnWidth * (column > 0) + self.cellSize.width * (column - 1) * (column > 1) + self.contentInset.left,
-//										 fixedRowHeight * (row > 0) + self.cellSize.height * (row - 1) * (row > 1) + self.contentInset.top);
-//			
-			CGRect cellFrame = CGRectMake(offset.x, offset.y,
+			CGRect cellFrame = CGRectMake(0, 0,
 										  [sizes[column] CGSizeValue].width,
-//										  column > 0 ? self.cellSize.width : self.fixedColumnWidth,
-										  row > 0 ? self.cellHeight : maxHeight);
+										  row > 0 ? self.cellHeight : self.maxHeight);
 			
 			RatingTableViewCell *cell = [[RatingTableViewCell alloc] initWithFrame:cellFrame];
 			cell.label.adjustsFontSizeToFitWidth = (row > 0);
@@ -62,12 +67,29 @@
 			
 			[self insertSubview:cell atIndex:0];
 		}];
-		[self.cells addObject:cellsRow];
+		[_cells addObject:cellsRow];
 	}];
+	
+	[self layoutCells];
+	[self offsetFixedCells];
 	
 	UIView *lastCell = [self.cells.lastObject lastObject];
 	self.contentSize = CGSizeMake(CGRectGetMaxX(lastCell.frame) + self.contentInset.right,
 								  CGRectGetMaxY(lastCell.frame) + self.contentInset.bottom);
+}
+
+- (void)layoutCells {
+	
+	[super layoutCells];
+	
+	[self.cells eachWithIndex:^(NSArray *cells, NSUInteger row) {
+		[cells eachWithIndex:^(UIView *cell, NSUInteger column) {
+			
+			CGPoint offset = CGPointMake([self.offsets[column] floatValue] + self.contentInset.left,
+										 self.maxHeight * (row > 0) + self.cellHeight * (row - 1) * (row > 1));
+			cell.frame = (CGRect){.origin = offset, .size = cell.frame.size};
+		}];
+	}];
 }
 
 - (CGFloat)maxHeight:(NSArray *)sizes {

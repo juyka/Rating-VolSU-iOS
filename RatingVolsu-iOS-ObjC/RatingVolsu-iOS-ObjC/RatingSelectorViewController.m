@@ -12,6 +12,7 @@
 #import "ObjectiveRecord.h"
 #import "Student+Mappings.h"
 #import "SemestersViewController.h"
+#import "RatingSelectorTableViewCell.h"
 
 
 @interface RatingSelectorViewController ()
@@ -33,32 +34,43 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(didChangePreferredContentSize:)
+												 name:UIContentSizeCategoryDidChangeNotification object:nil];
+
+	self.tableView.rowHeight = UITableViewAutomaticDimension;
+	self.tableView.estimatedRowHeight = 60.0f;
 	[[self fetchedResultsController] performFetch:nil];
 	[_tableView reloadData];
-	[self.entityClass request:self.parentId withHandler:nil];
+	[self.entityClass request:self.parentId withHandler:^(NSArray *entities){
+		[self.tableView reloadData];
+	} errorBlock:^(){
+		[self.tableView reloadData];
+	}];
 }
+
+- (void)dealloc
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self
+													name:UIContentSizeCategoryDidChangeNotification
+												  object:nil];
+}
+
+- (void)didChangePreferredContentSize:(NSNotification *)notification
+{
+	[self.tableView reloadData];
+}
+
 
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCell:(RatingSelectorTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	
-	cell.textLabel.text = [[self.fetchedResultsController objectAtIndexPath:indexPath] valueForKey:self.descriptionKey];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	
-	NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:14]};
-	CGRect rect = [[[self.fetchedResultsController objectAtIndexPath:indexPath] valueForKey:self.descriptionKey]
-				   boundingRectWithSize:CGSizeMake(290, CGFLOAT_MAX)
-				   options:NSStringDrawingUsesLineFragmentOrigin
-				   attributes:attributes
-				   context:nil];
-	
-	return 8 + ceil(rect.size.height) + 8;
+	cell.title.text = [[self.fetchedResultsController objectAtIndexPath:indexPath] valueForKey:self.titleKey];
+	cell.descriptionText.text = (self.descriptionKey) ? [[self.fetchedResultsController objectAtIndexPath:indexPath] valueForKey:self.descriptionKey] : nil;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -68,7 +80,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellId forIndexPath:indexPath];
+	RatingSelectorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellId forIndexPath:indexPath];
 	[self configureCell:cell atIndexPath:indexPath];
 	
 	return cell;
@@ -104,7 +116,7 @@
 			break;
 			
 		case NSFetchedResultsChangeUpdate:
-			[self configureCell:[tableView cellForRowAtIndexPath:indexPath]
+			[self configureCell:(id)[tableView cellForRowAtIndexPath:indexPath]
 					atIndexPath:indexPath];
 			break;
 			
@@ -128,7 +140,7 @@
 		NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(self.entityClass) inManagedObjectContext:NSManagedObjectContext.defaultContext];
 		
 		[fetchRequest setEntity:entity];
-		NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:self.descriptionKey ascending:YES];
+		NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:self.titleKey ascending:YES];
 		[fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
 		
 		if (self.parentId && self.parentKey) {

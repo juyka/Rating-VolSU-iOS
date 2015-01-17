@@ -32,7 +32,8 @@
 		RatingSelectorViewController *controller = segue.destinationViewController;
 		controller.delegate = self;
 		controller.entityClass = Faculty.class;
-		controller.descriptionKey = @"name";
+		controller.titleKey = @"name";
+		controller.descriptionKey = @"owner";
 		controller.cellId = @"FacultyCell";
 	}
 	else if ([segue.identifier isEqualToString:@"GroupsController"]) {

@@ -23,7 +23,7 @@
 	return @"studentId";
 }
 
-+ (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler {
++ (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler errorBlock:(void (^)())errorHandler{
 	
 	NSDictionary *parameters = @{@"group_id": parameter};
 	NSString *url = @"stud_req.php";
@@ -36,7 +36,7 @@
 		if (handler) {
 			handler(objects);
 		}
-	}];
+	} errorBlock:errorHandler];
 }
 
 @end

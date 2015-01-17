@@ -1,0 +1,3 @@
+[submodule "RatingVolsu-iOS-ObjC/RatingVolsu-iOS-ObjC/MNRefreshControl"]
+	path = RatingVolsu-iOS-ObjC/RatingVolsu-iOS-ObjC/MNRefreshControl
+	url = https://github.com/P0ed/MNRefreshControl

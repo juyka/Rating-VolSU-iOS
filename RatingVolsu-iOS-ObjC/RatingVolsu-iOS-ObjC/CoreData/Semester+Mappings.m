@@ -11,7 +11,7 @@
 
 @implementation Semester (Mappings)
 
-+ (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler {
++ (void)request:(NSNumber *)parameter withHandler:(RequestHandler)handler errorBlock:(void (^)())errorHandler {
 	
 	NSDictionary *parameters = @{@"gr_id": parameter};
 	NSString *url = @"sem_req.php";
@@ -20,7 +20,7 @@
 		if (handler) {
 			handler(entries);
 		}
-	}];
+	} errorBlock:errorHandler];
 }
 
 @end

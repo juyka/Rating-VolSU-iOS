@@ -11,6 +11,7 @@
 #import "StudentRatingViewController.h"
 #import "RecentViewController.h"
 #import "RecentItem+Mappings.h"
+#import "RatingSelectorTableViewCell.h"
 
 @interface SemestersViewController ()
 
@@ -31,7 +32,7 @@
 		
 		self.dataSource = dataList;
 		[self.tableView reloadData];
-	}];
+	} errorBlock:nil];
 	
     // Do any additional setup after loading the view.
 }
@@ -41,15 +42,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCell:(RatingSelectorTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	
 	NSNumber *year = [Group find:@"groupId == %@", self.student.group.groupId].year;
 	
 	year = [NSNumber numberWithInteger:year.intValue + indexPath.row / 2];
 	
 	NSNumber *object = self.dataSource[indexPath.row];
-	cell.textLabel.text = [NSString stringWithFormat:@"%@ (%@ - %d)", object.description, year, year.intValue + 1];
-	
+	cell.title.text = [NSString stringWithFormat:@"%@ семестр", object.description];
+	cell.descriptionText.text = [NSString stringWithFormat:@"%@ – %@", year, @(year.intValue + 1)];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -59,7 +60,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SemesterCell" forIndexPath:indexPath];
+	RatingSelectorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SemesterCell" forIndexPath:indexPath];
 	[self configureCell:cell atIndexPath:indexPath];
 	
 	return cell;
@@ -85,7 +86,7 @@
 		RecentItem *item = [RecentItem findOrCreate:@{@"itemId" : recentId}];
 		NSDate *date = [NSDate date];
 		[item update:@{
-					   @"name" : [NSString stringWithFormat:@"%@ %@", self.student.number, date.description],
+					   @"name" : [NSString stringWithFormat:@"Студент %@", self.student.number],
 					   @"date" : date,
 					   @"semester": [Semester findOrCreate:@{
 															 @"semesterId" : recentId,

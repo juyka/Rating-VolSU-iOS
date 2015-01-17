@@ -11,4 +11,4 @@
 #import "NSManagedObject+Extensions.h"
 #import "CoreDataModel.h"
 #import "NSString+RubyLikeExtensions.h"
-
+#import "RubyLikeExtensions.h"

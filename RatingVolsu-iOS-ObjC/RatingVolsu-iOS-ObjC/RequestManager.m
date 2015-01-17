@@ -30,7 +30,9 @@ NSURL *baseURL;
 	return manager;
 }
 
-- (void)request:(NSString *)urlString parameters:(NSDictionary *)parameters withBlock:(RequestHandler)handler {
+- (void)request:(NSString *)urlString parameters:(NSDictionary *)parameters
+	  withBlock:(RequestHandler)handler
+	 errorBlock:(void (^)())errorHandler {
 	
 	AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
 	
@@ -53,6 +55,12 @@ NSURL *baseURL;
 							 NSArray *entries = @[responseObject];
 							 handler(entries);
 						 }
+					 else
+					 {
+						 if (errorHandler) {
+							 errorHandler();
+						 }
+					 }
 					 
 				 }
 				 failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -76,7 +84,7 @@ NSURL *baseURL;
 		if (handler) {
 			handler(entries);
 		}
-	}];
+	} errorBlock:nil];
 }
 
 - (void)groups:(NSString *)facultId withHandler:(RequestHandler)handler {
@@ -86,7 +94,7 @@ NSURL *baseURL;
 	
 	[self request:url parameters:parameters withBlock:^(NSArray *entries){
 		handler([Group createArray:entries]);
-	}];
+	} errorBlock:nil];
 	
 }
 
@@ -98,7 +106,7 @@ NSURL *baseURL;
 	
 	[self request:url parameters:parameters withBlock:^(NSArray *entries){
 		handler([Student createArray:entries]);
-	}];
+	} errorBlock:nil];
 }
 
 

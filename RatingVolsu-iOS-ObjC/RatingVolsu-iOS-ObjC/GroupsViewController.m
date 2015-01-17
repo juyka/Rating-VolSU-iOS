@@ -26,7 +26,8 @@
 		controller.entityClass = Group.class;
 		controller.parentId = self.faculty.facultyId;
 		controller.parentKey = @"faculty.facultyId";
-		controller.descriptionKey = @"name";
+		controller.titleKey = @"name";
+		controller.descriptionKey = @"type";
 		controller.cellId = @"GroupCell";
 	}
 	else if ([segue.identifier isEqualToString:@"StudentsController"]) {

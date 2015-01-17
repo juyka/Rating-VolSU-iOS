@@ -75,7 +75,7 @@
 			}
 		}
 		
-	}];
+	} errorBlock:nil];
 }
 
 + (void)requestByGroup:(Semester *)semester withHandler:(RequestHandler)handler {
@@ -143,16 +143,27 @@
 				
 				return subjectRatings;
 			}];
-			[[CoreDataManager sharedManager] saveContext];
 			
-			NSArray *ratingTable = [[ratingItems flatten] groupRatingTable];
+			[ratingItems eachWithIndex:^(NSArray *array, NSUInteger index) {
+				
+				RatingItem *item = array.first;
+				NSNumber *place = [[NSNumber alloc] initWithInteger:index + 1];
+				item.semester.place = place;
+				NSLog(@"%@", item.semester);
+			}];
+			
+			[[CoreDataManager sharedManager] saveContext];
+
+			
+			NSArray *ratingTable = [ratingItems flatten];
+			
 			
 			if (handler) {
 				handler(ratingTable);
 			}
 		}
 		
-	}];
+	} errorBlock:nil];
 
 }
 

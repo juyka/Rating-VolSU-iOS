@@ -10,19 +10,23 @@
 
 @implementation NSString (RubyLikeExtensions)
 
-- (UIImage *)image {
+- (id)xibView {
+	return [NSBundle.mainBundle loadNibNamed:self owner:nil options:nil].firstObject;
+}
+
+- (NSString *)iconText {
 	
-	return [UIImage imageNamed:self];
-}
-
-- (NSSortDescriptor *)ascending {
- 
- return [NSSortDescriptor sortDescriptorWithKey:self ascending:YES];
-}
-
-- (NSSortDescriptor *)descending {
- 
- return [NSSortDescriptor sortDescriptorWithKey:self ascending:NO];
+	NSMutableString * firstCharacters = [NSMutableString string];
+	NSArray * words = [self componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+	for (NSString * word in words) {
+		if ([word length] > 0) {
+			NSString * firstLetter = [word substringToIndex:1];
+			if (firstCharacters.length < 2)
+				[firstCharacters appendString:[firstLetter uppercaseString]];
+		}
+	}
+	
+	return firstCharacters;
 }
 
 @end

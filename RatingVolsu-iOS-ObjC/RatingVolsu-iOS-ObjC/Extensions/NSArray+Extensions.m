@@ -16,7 +16,7 @@
 	NSArray *students = [self valueForKeyPath:@"@distinctUnionOfObjects.semester.student"];
 	__block int counter = 1;
 	
-	NSMutableArray *ratingTable = [students map:^id(Student *student) {
+	NSArray *ratingTable = [students map:^id(Student *student) {
 		
 		NSMutableArray *subjectsTable = [subjects map:^id(Subject *subject) {
 			
@@ -27,17 +27,30 @@
 			
 			return item.total.description;
 		}].mutableCopy;
-		
+
 		[subjectsTable insertObject:student.number atIndex:0];
-		[subjectsTable insertObject:@(counter++).description atIndex:0];
+
 		return subjectsTable;
 		
+	}];
+	
+	NSMutableArray *sortedTable = [ratingTable sortedArrayUsingComparator:^NSComparisonResult(NSArray *obj1, NSArray *obj2) {
+		
+		NSNumber *sum1 = [[obj1 subarrayWithRange:NSMakeRange(1, obj1.count - 1)] valueForKeyPath:@"@sum.intValue"];
+		NSNumber *sum2 = [[obj2 subarrayWithRange:NSMakeRange(1, obj2.count - 1)] valueForKeyPath:@"@sum.intValue"];
+		
+		return [sum2 compare:sum1];
 	}].mutableCopy;
 	
-	NSArray *subjectNames = [@[@"    ", @"Номер\nзачетной\nкнижки"] arrayByAddingObjectsFromArray:[subjects valueForKeyPath:@"name"]];
-	[ratingTable insertObject:subjectNames atIndex:0];
 	
-	return ratingTable;
+	[sortedTable each:^(NSMutableArray *subjectsTable) {
+		[subjectsTable insertObject:@(counter++).description atIndex:0];
+	}];
+	
+	NSArray *subjectNames = [@[@"    ", @"Номер\nзачетной\nкнижки"] arrayByAddingObjectsFromArray:[subjects valueForKeyPath:@"name"]];
+	[sortedTable insertObject:subjectNames atIndex:0];
+	
+	return sortedTable;
 }
 
 - (NSArray *)studentRatingTable {

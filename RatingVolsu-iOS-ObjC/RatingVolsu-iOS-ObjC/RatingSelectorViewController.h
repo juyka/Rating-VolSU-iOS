@@ -22,6 +22,7 @@
 @property(nonatomic, weak) id<RatingSelectorDelegate> delegate;
 
 @property(nonatomic) Class entityClass;
+@property(nonatomic) NSString *titleKey;
 @property(nonatomic) NSString *descriptionKey;
 @property(nonatomic) NSString *parentKey;
 @property(nonatomic) NSString *cellId;

@@ -10,9 +10,7 @@
 
 @interface NSString (RubyLikeExtensions)
 
-@property (nonatomic, readonly) UIImage *image;
-
-@property (nonatomic, readonly) NSSortDescriptor *ascending;
-@property (nonatomic, readonly) NSSortDescriptor *descending;
+- (id)xibView;
+- (NSString *)iconText;
 
 @end
