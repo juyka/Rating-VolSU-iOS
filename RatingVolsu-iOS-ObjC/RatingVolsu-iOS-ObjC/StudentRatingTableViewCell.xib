@@ -45,7 +45,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="scrollView" destination="0TI-48-sac" id="yxJ-DZ-vc0"/>
-                <outlet property="titleText" destination="2bB-Vk-Jk5" id="ssr-J2-Rzl"/>
+                <outlet property="titleText" destination="2bB-Vk-Jk5" id="ty7-Iy-pPa"/>
             </connections>
         </view>
     </objects>

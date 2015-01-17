@@ -15,6 +15,7 @@
 #import "SectionHeaderView.h"
 #import "FXPageControl/FXPageControl.h"
 #import "RatingScrollView.h"
+#import "StudentRatingCellProtocol.h"
 
 @interface StudentRatingViewController()
 <
@@ -27,7 +28,6 @@ FXPageControlDelegate
 @property(nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) StudentRatingTableHeader *headerView;
-@property (nonatomic) NSArray *dataList;
 @end
 
 @implementation StudentRatingViewController {
@@ -56,36 +56,36 @@ FXPageControlDelegate
 	
 	self.tableView.tableFooterView = [UIView new];
 	self.tableView.separatorInset = UIEdgeInsetsZero;
-	[self.tableView registerNib:[UINib nibWithNibName:@"StudentRatingTableViewCell" bundle:nil] forCellReuseIdentifier:@"nibCell"];
+	[self.tableView registerNib:[UINib nibWithNibName:@"StudentRatingLandscapeTableViewCell" bundle:nil] forCellReuseIdentifier:@"landscapeCell"];
+	[self.tableView registerNib:[UINib nibWithNibName:@"StudentRatingTableViewCell" bundle:nil] forCellReuseIdentifier:@"portraintCell"];
 	
 	[[self fetchedResultsController] performFetch:nil];
 	[_tableView reloadData];
 	
-	[RatingItem requestByStudent:self.semester withHandler:^(NSArray *dataList) {
-		ratingTableView.dataSource = dataList;
-	}];
+	[RatingItem requestByStudent:self.semester withHandler:nil];
 }
 
 - (void)rightSwipe:(UISwipeGestureRecognizer *)sender {
 	
-	self.headerView.pageControl.currentPage--;
+		self.headerView.pageControl.currentPage--;
+	
 }
 
 - (void)leftSwipe:(UISwipeGestureRecognizer *)sender {
 	
-	self.headerView.pageControl.currentPage++;
+		self.headerView.pageControl.currentPage++;
 }
 
 - (void)pageControl:(FXPageControl *)pageControl changedCurrentPage:(NSInteger)currentPage {
 	
-	[self.tableView.visibleCells each:^(StudentRatingTableViewCell *cell) {
-		[cell scroll:currentPage];
-	}];
-	
-	self.headerView.title.text = @[@"1 модуль", @"2 модуль", @"3 модуль", @"Сумма", @"Экзамен", @"Всего"][currentPage];
+		[self.tableView.visibleCells each:^(StudentRatingTableViewCell *cell) {
+			[cell scroll:currentPage];
+		}];
+
+		self.headerView.title.text = @[@"1 модуль", @"2 модуль", @"3 модуль", @"Сумма", @"Экзамен", @"Всего"][currentPage];
 }
 
-- (void)configureCell:(StudentRatingTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCell:(id<StudentRatingCellProtocol>)cell atIndexPath:(NSIndexPath *)indexPath {
 	
 	RatingItem *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	cell.titleText.text = [NSString stringWithFormat:@"%@ ", item.subject.name];
@@ -99,7 +99,9 @@ FXPageControlDelegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	StudentRatingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"nibCell" forIndexPath:indexPath];
+	NSString *cellId = (UIDeviceOrientationIsLandscape([[UIDevice currentDevice]orientation])) ? @"landscapeCell" : @"portraintCell";
+	
+	UITableViewCell<StudentRatingCellProtocol> *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
 	[self configureCell:cell atIndexPath:indexPath];
 	
 	return cell;
@@ -107,17 +109,18 @@ FXPageControlDelegate
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	
-	StudentRatingTableHeader *view = @"StudentRatingTableHeader".xibView;
-	self.headerView = view;
-	self.headerView.backgroundColor = @(0xE0E0E0).rgbColor;
-	view.pageControl.numberOfPages = 6;
-	view.pageControl.delegate = self;
-	view.pageControl.currentPage = 5;
-	view.pageControl.dotSpacing = 5;
-	view.pageControl.dotSize = 4;
-	view.pageControl.dotColor = @(0xC2C1BF).rgbColor;
-	view.pageControl.selectedDotColor = @(0x9B9A99).rgbColor;
-	view.pageControl.backgroundColor = [UIColor clearColor];
+	StudentRatingTableHeader *view = [[StudentRatingTableHeader alloc] initWithOrientation:[[UIDevice currentDevice]orientation]];
+		self.headerView = view;
+		self.headerView.backgroundColor = @(0xEAEAF1).rgbColor;
+		view.pageControl.numberOfPages = 6;
+		view.pageControl.delegate = self;
+		view.pageControl.currentPage = 5;
+		view.pageControl.dotSpacing = 5;
+		view.pageControl.dotSize = 4;
+		view.pageControl.dotColor = @(0xC2C1BF).rgbColor;
+		view.pageControl.selectedDotColor = @(0x9B9A99).rgbColor;
+		view.pageControl.backgroundColor = [UIColor clearColor];
+
 
 	return view;
 }
@@ -170,24 +173,9 @@ FXPageControlDelegate
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
-	[coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context)
-	 {
-		 UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-		 if(UIInterfaceOrientationIsLandscape(orientation))
-		 {
-			 _landscapeView.hidden = NO;
-			 _portraitView.hidden = YES;
-			 [ratingTableView reloadData];
-		 }
-		 else
-		 {
-			 _portraitView.hidden = NO;
-			 _landscapeView.hidden = YES;
-		 }
-		 
-	 } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {    }];
-	
-	[super viewWillTransitionToSize: size withTransitionCoordinator: coordinator];
+	BOOL value = (UIDeviceOrientationIsLandscape([[UIDevice currentDevice]orientation]));
+	[[self navigationController] setNavigationBarHidden:value animated:YES];
+	[self.tableView reloadData];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {
@@ -211,6 +199,8 @@ FXPageControlDelegate
 	}
 	return _fetchedResultsController;
 }
+
+
 
 
 

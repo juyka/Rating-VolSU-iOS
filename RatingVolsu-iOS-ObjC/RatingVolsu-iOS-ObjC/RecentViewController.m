@@ -9,9 +9,9 @@
 #import "RecentViewController.h"
 #import "RecentItem+Mappings.h"
 #import "RatingViewController.h"
-#import "MCSwipeTableViewCell.h"
 #import "SectionHeaderView.h"
 #import "UIImage+Extensions.h"
+#import "RecentTableViewCell.h"
 
 @interface RecentViewController ()
 <
@@ -35,6 +35,8 @@ NSFetchedResultsControllerDelegate
 	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
 	item.title = @" ";
 	self.navigationItem.backBarButtonItem = item;
+	
+	[self.tableView registerNib:[UINib nibWithNibName:@"RecentTableViewCell" bundle:nil] forCellReuseIdentifier:@"recentCell"];
 	self.tableView.tableFooterView = [UIView new];
 	self.tableView.separatorInset = UIEdgeInsetsZero;
 	
@@ -53,7 +55,7 @@ NSFetchedResultsControllerDelegate
 	[self performSegueWithIdentifier:@"RatingSelectorSegue" sender:nil];
 }
 
-- (void)configureCell:(MCSwipeTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCell:(RecentTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	
 	RecentItem *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	
@@ -78,7 +80,7 @@ NSFetchedResultsControllerDelegate
 	
 	[cell setSwipeGestureWithView:view color:color mode:MCSwipeTableViewCellModeExit state:state completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
 		
-		item.name = (state == MCSwipeTableViewCellState1) ? @"Noname" : [NSString stringWithFormat:@"Студент %@", item.semester.student.number];
+		item.date = [NSDate date];
 		item.isFavorite = @(state == MCSwipeTableViewCellState1);
 		[[CoreDataManager sharedManager] saveContext];
 	}];
@@ -92,16 +94,10 @@ NSFetchedResultsControllerDelegate
 	}];
 	
 	RecentItem *recentItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	cell.textLabel.text = recentItem.name;
-	cell.textLabel.textColor = @(0x252B36).rgbColor;
-	cell.textLabel.font = @(17).ptLightFont;
-	
-	cell.detailTextLabel.text = [recentItem details];
-	cell.detailTextLabel.textColor = @(0x8E95A3).rgbColor;
-	cell.detailTextLabel.font = @(12).ptFont;
-	
+	cell.titleText.text = recentItem.name;
+	cell.descriptionText.text = [recentItem details];
 	NSString *title = recentItem.name.iconText;
-	cell.imageView.image = [UIImage cellImage:title];
+	cell.recentImage.image = [UIImage cellImage:title];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -139,7 +135,7 @@ NSFetchedResultsControllerDelegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	MCSwipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+	RecentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recentCell" forIndexPath:indexPath];
 	
 	[self configureCell:cell atIndexPath:indexPath];
 	

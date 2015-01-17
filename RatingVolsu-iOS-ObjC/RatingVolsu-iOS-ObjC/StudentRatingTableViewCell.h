@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StudentRatingCellProtocol.h"
 
 @class RatingScrollView;
 
-@interface StudentRatingTableViewCell : UITableViewCell
+@interface StudentRatingTableViewCell : UITableViewCell <StudentRatingCellProtocol>
 
-@property (weak, nonatomic) IBOutlet UILabel *titleText;
 @property (weak, nonatomic) IBOutlet RatingScrollView *scrollView;
 @property (nonatomic) NSArray *numbers;
-
+@property (weak, nonatomic) IBOutlet UILabel *titleText;
 
 - (void)scroll:(NSInteger)pageNumber;
 

@@ -12,4 +12,6 @@
 
 @property (nonatomic) RecentItem *recentItem;
 
+- (BOOL)canRotate;
+
 @end

@@ -23,6 +23,9 @@
 		D6068A2F1A670EFE0017B36C /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6068A2E1A670EFE0017B36C /* UIImage+Extensions.m */; };
 		D6068A311A6877780017B36C /* StudentRatingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6068A301A6877780017B36C /* StudentRatingTableViewCell.xib */; };
 		D6068A341A6889A10017B36C /* RatingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6068A331A6889A10017B36C /* RatingScrollView.m */; };
+		D6068A431A6A51D70017B36C /* StudentRatingLandscapeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6068A421A6A51D70017B36C /* StudentRatingLandscapeHeader.xib */; };
+		D6068A471A6A58310017B36C /* StudentRatingLandscapeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6068A451A6A58310017B36C /* StudentRatingLandscapeTableViewCell.m */; };
+		D6068A481A6A58310017B36C /* StudentRatingLandscapeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6068A461A6A58310017B36C /* StudentRatingLandscapeTableViewCell.xib */; };
 		D61CEECE1A61C2C700B67DDC /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61CEECD1A61C2C700B67DDC /* SectionHeaderView.xib */; };
 		D61CEED11A61DA8400B67DDC /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D61CEED01A61DA8400B67DDC /* SectionHeaderView.m */; };
 		D61CEED71A61F24F00B67DDC /* Faculty.m in Sources */ = {isa = PBXBuildFile; fileRef = D61CEED61A61F24F00B67DDC /* Faculty.m */; };
@@ -36,6 +39,9 @@
 		D66E2E0219E7E500006077BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D66E2E0019E7E500006077BC /* Main.storyboard */; };
 		D66E2E0419E7E500006077BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66E2E0319E7E500006077BC /* Images.xcassets */; };
 		D66E2E1319E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D66E2E1219E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m */; };
+		D6A673001A6A7BEC00890DD1 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A672FF1A6A7BEC00890DD1 /* NavigationController.m */; };
+		D6A673031A6B34E900890DD1 /* RecentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A673021A6B34E900890DD1 /* RecentTableViewCell.m */; };
+		D6A673051A6B350B00890DD1 /* RecentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A673041A6B350B00890DD1 /* RecentTableViewCell.xib */; };
 		D6BB99F11A0B78BC006273F8 /* RatingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB99F01A0B78BC006273F8 /* RatingTableView.m */; };
 		D6BB99F41A0B85AD006273F8 /* StudentRatingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB99F31A0B85AD006273F8 /* StudentRatingTableView.m */; };
 		D6BCA27319F3F2040039AAB8 /* FacultiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BCA27219F3F2040039AAB8 /* FacultiesViewController.m */; };
@@ -113,6 +119,10 @@
 		D6068A301A6877780017B36C /* StudentRatingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentRatingTableViewCell.xib; sourceTree = "<group>"; };
 		D6068A321A6889A10017B36C /* RatingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingScrollView.h; sourceTree = "<group>"; };
 		D6068A331A6889A10017B36C /* RatingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingScrollView.m; sourceTree = "<group>"; };
+		D6068A421A6A51D70017B36C /* StudentRatingLandscapeHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentRatingLandscapeHeader.xib; sourceTree = "<group>"; };
+		D6068A441A6A58310017B36C /* StudentRatingLandscapeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRatingLandscapeTableViewCell.h; sourceTree = "<group>"; };
+		D6068A451A6A58310017B36C /* StudentRatingLandscapeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentRatingLandscapeTableViewCell.m; sourceTree = "<group>"; };
+		D6068A461A6A58310017B36C /* StudentRatingLandscapeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentRatingLandscapeTableViewCell.xib; sourceTree = "<group>"; };
 		D61CEECD1A61C2C700B67DDC /* SectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
 		D61CEECF1A61DA8400B67DDC /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
 		D61CEED01A61DA8400B67DDC /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
@@ -140,6 +150,12 @@
 		D66E2E0C19E7E500006077BC /* RatingVolsu-iOS-ObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RatingVolsu-iOS-ObjCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66E2E1119E7E500006077BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D66E2E1219E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatingVolsu_iOS_ObjCTests.m; sourceTree = "<group>"; };
+		D6A672FD1A6A62D200890DD1 /* StudentRatingCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRatingCellProtocol.h; sourceTree = "<group>"; };
+		D6A672FE1A6A7BEC00890DD1 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		D6A672FF1A6A7BEC00890DD1 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		D6A673011A6B34E900890DD1 /* RecentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentTableViewCell.h; sourceTree = "<group>"; };
+		D6A673021A6B34E900890DD1 /* RecentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentTableViewCell.m; sourceTree = "<group>"; };
+		D6A673041A6B350B00890DD1 /* RecentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentTableViewCell.xib; sourceTree = "<group>"; };
 		D6BB99EF1A0B78BC006273F8 /* RatingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingTableView.h; sourceTree = "<group>"; };
 		D6BB99F01A0B78BC006273F8 /* RatingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingTableView.m; sourceTree = "<group>"; };
 		D6BB99F21A0B85AD006273F8 /* StudentRatingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRatingTableView.h; sourceTree = "<group>"; };
@@ -295,8 +311,15 @@
 				D6068A241A65291C0017B36C /* StudentRatingTableHeader.h */,
 				D6068A251A65291C0017B36C /* StudentRatingTableHeader.m */,
 				D6068A271A653C440017B36C /* StudentRatingTableHeader.xib */,
+				D6068A421A6A51D70017B36C /* StudentRatingLandscapeHeader.xib */,
 				D6068A321A6889A10017B36C /* RatingScrollView.h */,
 				D6068A331A6889A10017B36C /* RatingScrollView.m */,
+				D6BB99F21A0B85AD006273F8 /* StudentRatingTableView.h */,
+				D6BB99F31A0B85AD006273F8 /* StudentRatingTableView.m */,
+				D6068A441A6A58310017B36C /* StudentRatingLandscapeTableViewCell.h */,
+				D6068A451A6A58310017B36C /* StudentRatingLandscapeTableViewCell.m */,
+				D6068A461A6A58310017B36C /* StudentRatingLandscapeTableViewCell.xib */,
+				D6A672FD1A6A62D200890DD1 /* StudentRatingCellProtocol.h */,
 			);
 			name = StudentRating;
 			sourceTree = "<group>";
@@ -365,6 +388,8 @@
 				D66E2DF319E7E500006077BC /* Supporting Files */,
 				D6238D9219E907D7003D4CA8 /* RequestManager.h */,
 				D6238D9319E907D7003D4CA8 /* RequestManager.m */,
+				D6A672FE1A6A7BEC00890DD1 /* NavigationController.h */,
+				D6A672FF1A6A7BEC00890DD1 /* NavigationController.m */,
 			);
 			path = "RatingVolsu-iOS-ObjC";
 			sourceTree = "<group>";
@@ -438,8 +463,6 @@
 				D6BD2BCE1A07852800591069 /* GroupRatingTableView.m */,
 				D6BD2BD01A0785A400591069 /* RatingTableViewCell.h */,
 				D6BD2BD11A0785A400591069 /* RatingTableViewCell.m */,
-				D6BB99F21A0B85AD006273F8 /* StudentRatingTableView.h */,
-				D6BB99F31A0B85AD006273F8 /* StudentRatingTableView.m */,
 			);
 			name = TableView;
 			sourceTree = "<group>";
@@ -515,6 +538,9 @@
 				D61CEECD1A61C2C700B67DDC /* SectionHeaderView.xib */,
 				D61CEECF1A61DA8400B67DDC /* SectionHeaderView.h */,
 				D61CEED01A61DA8400B67DDC /* SectionHeaderView.m */,
+				D6A673011A6B34E900890DD1 /* RecentTableViewCell.h */,
+				D6A673021A6B34E900890DD1 /* RecentTableViewCell.m */,
+				D6A673041A6B350B00890DD1 /* RecentTableViewCell.xib */,
 			);
 			name = RecentItems;
 			sourceTree = "<group>";
@@ -614,7 +640,10 @@
 				D66E2E0219E7E500006077BC /* Main.storyboard in Resources */,
 				D61CEECE1A61C2C700B67DDC /* SectionHeaderView.xib in Resources */,
 				D6068A281A653C440017B36C /* StudentRatingTableHeader.xib in Resources */,
+				D6A673051A6B350B00890DD1 /* RecentTableViewCell.xib in Resources */,
+				D6068A431A6A51D70017B36C /* StudentRatingLandscapeHeader.xib in Resources */,
 				D66E2E0419E7E500006077BC /* Images.xcassets in Resources */,
+				D6068A481A6A58310017B36C /* StudentRatingLandscapeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,7 +710,9 @@
 				D6BD2BB41A06372200591069 /* Subject.m in Sources */,
 				D6D079891A39A55C000FB4DB /* GroupRatingTableViewController.m in Sources */,
 				D61CEED71A61F24F00B67DDC /* Faculty.m in Sources */,
+				D6A673031A6B34E900890DD1 /* RecentTableViewCell.m in Sources */,
 				D6BD2BCC1A0640F600591069 /* RatingItem+Mappings.m in Sources */,
+				D6068A471A6A58310017B36C /* StudentRatingLandscapeTableViewCell.m in Sources */,
 				D601A67D19F1514700735F5B /* RecentItem+Mappings.m in Sources */,
 				D6D079B31A39D3E0000FB4DB /* SubjectCollectionView.m in Sources */,
 				D6CE1F7419FE88C80062790E /* StudentRatingViewController.m in Sources */,
@@ -689,6 +720,7 @@
 				D6068A191A632A430017B36C /* RatingViewController.m in Sources */,
 				D6238D9419E907D7003D4CA8 /* RequestManager.m in Sources */,
 				D6D079A51A39B273000FB4DB /* NSNumber+RLE.m in Sources */,
+				D6A673001A6A7BEC00890DD1 /* NavigationController.m in Sources */,
 				D6D079A11A39B273000FB4DB /* NSArray+RLE.m in Sources */,
 				D6BCA27B19F3F4D70039AAB8 /* StudentsViewController.m in Sources */,
 				D61CEED11A61DA8400B67DDC /* SectionHeaderView.m in Sources */,

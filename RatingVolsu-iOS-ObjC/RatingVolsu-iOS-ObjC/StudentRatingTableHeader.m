@@ -11,6 +11,18 @@
 
 @implementation StudentRatingTableHeader
 
+
+- (instancetype)initWithOrientation:(UIDeviceOrientation)orientation {
+	
+	self = [super init];
+	if (self) {
+		NSString *xibId = (UIDeviceOrientationIsPortrait([[UIDevice currentDevice]orientation])) ? @"StudentRatingTableHeader" : @"StudentRatingLandscapeHeader";
+
+		self = xibId.xibView;
+	}
+	
+	return self;
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

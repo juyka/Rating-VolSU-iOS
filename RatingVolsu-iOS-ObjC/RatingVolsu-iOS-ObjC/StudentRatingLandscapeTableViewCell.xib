@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="StudentRatingLandscapeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANY-P4-zMb">
+                        <rect key="frame" x="15" y="0.0" width="185" height="59"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="185" id="uTY-Hv-AOq"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="Предмет">
+                                <attributes>
+                                    <color key="NSColor" red="0.14509803921568629" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCi-mw-Mci">
+                        <rect key="frame" x="200" y="0.0" width="67" height="59"/>
+                        <attributedString key="attributedText">
+                            <fragment content="1">
+                                <attributes>
+                                    <color key="NSColor" red="0.14509803921568629" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="13" name="HelveticaNeue-Medium"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HM0-X7-Xso">
+                        <rect key="frame" x="267" y="0.0" width="66" height="59"/>
+                        <attributedString key="attributedText">
+                            <fragment content="1">
+                                <attributes>
+                                    <color key="NSColor" red="0.14509803921568629" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="13" name="HelveticaNeue-Medium"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaN-5r-6Il">
+                        <rect key="frame" x="333" y="0.0" width="67" height="59"/>
+                        <attributedString key="attributedText">
+                            <fragment content="1">
+                                <attributes>
+                                    <color key="NSColor" red="0.14509803921568629" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="13" name="HelveticaNeue-Medium"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhP-z9-sjN">
+                        <rect key="frame" x="400" y="0.0" width="67" height="59"/>
+                        <attributedString key="attributedText">
+                            <fragment content="1">
+                                <attributes>
+                                    <color key="NSColor" red="0.14509803921568629" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="13" name="HelveticaNeue-Medium"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jt6-bl-hbO">
+                        <rect key="frame" x="467" y="0.0" width="66" height="59"/>
+                        <attributedString key="attributedText">
+                            <fragment content="1">
+                                <attributes>
+                                    <color key="NSColor" red="0.14509803921568629" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="13" name="HelveticaNeue-Medium"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNo-HN-Lt4">
+                        <rect key="frame" x="533" y="0.0" width="67" height="59"/>
+                        <attributedString key="attributedText">
+                            <fragment content="1">
+                                <attributes>
+                                    <color key="NSColor" red="0.14509803921568629" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="13" name="HelveticaNeue-Medium"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ANY-P4-zMb" firstAttribute="trailing" secondItem="PCi-mw-Mci" secondAttribute="leading" id="5bR-cC-dNc"/>
+                    <constraint firstItem="zhP-z9-sjN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="83W-hQ-CAt"/>
+                    <constraint firstAttribute="trailing" secondItem="YNo-HN-Lt4" secondAttribute="trailing" id="A1F-cc-E2B"/>
+                    <constraint firstItem="WaN-5r-6Il" firstAttribute="width" secondItem="HM0-X7-Xso" secondAttribute="width" id="AdF-Rv-PSh"/>
+                    <constraint firstItem="jt6-bl-hbO" firstAttribute="trailing" secondItem="YNo-HN-Lt4" secondAttribute="leading" id="CH8-bY-Gvo"/>
+                    <constraint firstItem="WaN-5r-6Il" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="G1j-3O-AeL"/>
+                    <constraint firstItem="PCi-mw-Mci" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="M3F-N8-IjO"/>
+                    <constraint firstItem="ANY-P4-zMb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="NxY-qb-QAG"/>
+                    <constraint firstAttribute="bottom" secondItem="jt6-bl-hbO" secondAttribute="bottom" id="P3c-Xm-gWs"/>
+                    <constraint firstItem="PCi-mw-Mci" firstAttribute="width" secondItem="HM0-X7-Xso" secondAttribute="width" id="PAU-Od-7S2"/>
+                    <constraint firstAttribute="bottom" secondItem="PCi-mw-Mci" secondAttribute="bottom" id="W0o-CZ-YgM"/>
+                    <constraint firstAttribute="bottom" secondItem="YNo-HN-Lt4" secondAttribute="bottom" id="adf-BA-YRc"/>
+                    <constraint firstAttribute="bottom" secondItem="ANY-P4-zMb" secondAttribute="bottom" id="bMV-3x-4S2"/>
+                    <constraint firstItem="HM0-X7-Xso" firstAttribute="trailing" secondItem="WaN-5r-6Il" secondAttribute="leading" id="e30-qL-iWa"/>
+                    <constraint firstItem="jt6-bl-hbO" firstAttribute="width" secondItem="YNo-HN-Lt4" secondAttribute="width" id="hoH-Cl-y36"/>
+                    <constraint firstItem="jt6-bl-hbO" firstAttribute="leading" secondItem="zhP-z9-sjN" secondAttribute="trailing" id="iZ3-to-qSX"/>
+                    <constraint firstItem="WaN-5r-6Il" firstAttribute="trailing" secondItem="zhP-z9-sjN" secondAttribute="leading" id="iwm-R4-eE9"/>
+                    <constraint firstItem="HM0-X7-Xso" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="kTy-Hm-qyU"/>
+                    <constraint firstItem="zhP-z9-sjN" firstAttribute="width" secondItem="jt6-bl-hbO" secondAttribute="width" id="kjn-QA-6wb"/>
+                    <constraint firstItem="ANY-P4-zMb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="mGy-9P-zui"/>
+                    <constraint firstAttribute="bottom" secondItem="WaN-5r-6Il" secondAttribute="bottom" id="oMZ-UJ-1Wc"/>
+                    <constraint firstItem="HM0-X7-Xso" firstAttribute="leading" secondItem="PCi-mw-Mci" secondAttribute="trailing" id="qRP-zg-edX"/>
+                    <constraint firstAttribute="bottom" secondItem="HM0-X7-Xso" secondAttribute="bottom" id="rn6-b8-oWx"/>
+                    <constraint firstItem="YNo-HN-Lt4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sOd-pg-l9H"/>
+                    <constraint firstAttribute="bottom" secondItem="zhP-z9-sjN" secondAttribute="bottom" id="vlq-h6-9RQ"/>
+                    <constraint firstItem="WaN-5r-6Il" firstAttribute="width" secondItem="zhP-z9-sjN" secondAttribute="width" id="yLZ-AY-v9C"/>
+                    <constraint firstItem="jt6-bl-hbO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zNv-xY-qCf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="exam" destination="jt6-bl-hbO" id="Qis-go-Y0y"/>
+                <outlet property="firstA" destination="PCi-mw-Mci" id="Yr7-oP-t7u"/>
+                <outlet property="secondA" destination="HM0-X7-Xso" id="Ndg-wi-Z31"/>
+                <outlet property="sum" destination="zhP-z9-sjN" id="Qpb-Z1-MnB"/>
+                <outlet property="thirdA" destination="WaN-5r-6Il" id="YFJ-CA-4dx"/>
+                <outlet property="titleText" destination="ANY-P4-zMb" id="dDt-QL-uHw"/>
+                <outlet property="total" destination="YNo-HN-Lt4" id="aZi-Ga-DBT"/>
+            </connections>
+            <point key="canvasLocation" x="254" y="391"/>
+        </tableViewCell>
+    </objects>
+</document>

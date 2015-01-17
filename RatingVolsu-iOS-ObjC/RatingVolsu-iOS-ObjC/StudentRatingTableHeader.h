@@ -15,4 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet FXPageControl *pageControl;
 
+- (instancetype)initWithOrientation:(UIDeviceOrientation)orientation;
+
 @end

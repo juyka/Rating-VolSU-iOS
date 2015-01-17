@@ -58,6 +58,11 @@
 	[self addChildViewController:self.currentViewController];
 	
 }
+
+- (BOOL)canRotate {
+	
+	return !self.segmentedControl.selectedSegmentIndex;
+}
 /*
 #pragma mark - Navigation
 

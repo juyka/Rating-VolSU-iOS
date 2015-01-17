@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="StudentRatingTableHeader">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5My-MO-Osa">
+                    <rect key="frame" x="200" y="0.0" width="67" height="32"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Модуль 1">
+                            <attributes>
+                                <color key="NSColor" red="0.55686274509803924" green="0.58431372549019611" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                <font key="NSOriginalFont" size="12" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woN-E2-Il2">
+                    <rect key="frame" x="267" y="0.0" width="66" height="32"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Модуль ">
+                            <attributes>
+                                <color key="NSColor" red="0.55686274509803924" green="0.58431372549019611" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                <font key="NSOriginalFont" size="12" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="2">
+                            <attributes>
+                                <color key="NSColor" red="0.55686274509803924" green="0.58431372549019611" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igG-4A-XsA">
+                    <rect key="frame" x="333" y="0.0" width="67" height="32"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Модуль ">
+                            <attributes>
+                                <color key="NSColor" red="0.55686274509803924" green="0.58431372549019611" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                <font key="NSOriginalFont" size="12" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="3">
+                            <attributes>
+                                <color key="NSColor" red="0.55686274509803924" green="0.58431372549019611" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjz-i5-UNr">
+                    <rect key="frame" x="400" y="0.0" width="67" height="32"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Сумма">
+                            <attributes>
+                                <color key="NSColor" red="0.55686274509803924" green="0.58431372549019611" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjm-BV-u1r">
+                    <rect key="frame" x="533" y="0.0" width="67" height="32"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Всего">
+                            <attributes>
+                                <color key="NSColor" red="0.55686274509803924" green="0.58431372549019611" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ril-mp-1ks">
+                    <rect key="frame" x="467" y="0.0" width="66" height="32"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Экзамен">
+                            <attributes>
+                                <color key="NSColor" red="0.55686274509803924" green="0.58431372549019611" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ril-mp-1ks" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0T7-b6-ZQO"/>
+                <constraint firstAttribute="bottom" secondItem="igG-4A-XsA" secondAttribute="bottom" id="0oX-Je-DY5"/>
+                <constraint firstItem="5My-MO-Osa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="200" id="1Bz-xx-Me8"/>
+                <constraint firstItem="sjz-i5-UNr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3pA-8j-yRa"/>
+                <constraint firstItem="ril-mp-1ks" firstAttribute="width" secondItem="sjz-i5-UNr" secondAttribute="width" id="4dl-Kx-w1k"/>
+                <constraint firstItem="igG-4A-XsA" firstAttribute="leading" secondItem="woN-E2-Il2" secondAttribute="trailing" id="5ZX-Qi-8tX"/>
+                <constraint firstAttribute="bottom" secondItem="5My-MO-Osa" secondAttribute="bottom" id="7F9-WT-K2h"/>
+                <constraint firstAttribute="bottom" secondItem="woN-E2-Il2" secondAttribute="bottom" id="7SJ-Gh-uQT"/>
+                <constraint firstItem="woN-E2-Il2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BS0-ov-fQ6"/>
+                <constraint firstItem="5My-MO-Osa" firstAttribute="width" secondItem="woN-E2-Il2" secondAttribute="width" id="DA3-P1-yUq"/>
+                <constraint firstItem="ril-mp-1ks" firstAttribute="width" secondItem="Gjm-BV-u1r" secondAttribute="width" id="DUD-Bs-3Pr"/>
+                <constraint firstAttribute="bottom" secondItem="ril-mp-1ks" secondAttribute="bottom" id="E6y-CQ-2Ca"/>
+                <constraint firstItem="5My-MO-Osa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KcC-VK-ESd"/>
+                <constraint firstItem="ril-mp-1ks" firstAttribute="leading" secondItem="sjz-i5-UNr" secondAttribute="trailing" id="Kej-ok-45Z"/>
+                <constraint firstItem="Gjm-BV-u1r" firstAttribute="width" secondItem="sjz-i5-UNr" secondAttribute="width" id="R4m-C5-ODW"/>
+                <constraint firstItem="woN-E2-Il2" firstAttribute="leading" secondItem="5My-MO-Osa" secondAttribute="trailing" id="SLo-c8-d03"/>
+                <constraint firstItem="ril-mp-1ks" firstAttribute="leading" secondItem="igG-4A-XsA" secondAttribute="trailing" id="T6Z-8n-VHU"/>
+                <constraint firstAttribute="bottom" secondItem="sjz-i5-UNr" secondAttribute="bottom" id="VyG-sK-t11"/>
+                <constraint firstItem="ril-mp-1ks" firstAttribute="width" secondItem="sjz-i5-UNr" secondAttribute="width" id="XaA-Xm-26q"/>
+                <constraint firstItem="woN-E2-Il2" firstAttribute="width" secondItem="igG-4A-XsA" secondAttribute="width" id="Za4-Vi-hLx"/>
+                <constraint firstAttribute="trailing" secondItem="sjz-i5-UNr" secondAttribute="trailing" id="aM9-Nm-kis"/>
+                <constraint firstItem="ril-mp-1ks" firstAttribute="width" secondItem="igG-4A-XsA" secondAttribute="width" id="bPy-Ru-JZj"/>
+                <constraint firstAttribute="bottom" secondItem="Gjm-BV-u1r" secondAttribute="bottom" id="cbU-Gb-8uf"/>
+                <constraint firstItem="igG-4A-XsA" firstAttribute="width" secondItem="sjz-i5-UNr" secondAttribute="width" id="i0f-4j-ubv"/>
+                <constraint firstItem="igG-4A-XsA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="osU-w6-Jjh"/>
+                <constraint firstItem="Gjm-BV-u1r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ryo-hf-acD"/>
+                <constraint firstItem="sjz-i5-UNr" firstAttribute="leading" secondItem="igG-4A-XsA" secondAttribute="trailing" id="tkg-eR-4yf"/>
+                <constraint firstItem="Gjm-BV-u1r" firstAttribute="leading" secondItem="ril-mp-1ks" secondAttribute="trailing" id="vG3-bl-fH2"/>
+                <constraint firstItem="Gjm-BV-u1r" firstAttribute="leading" secondItem="sjz-i5-UNr" secondAttribute="trailing" id="vfo-H0-jhN"/>
+                <constraint firstAttribute="trailing" secondItem="Gjm-BV-u1r" secondAttribute="trailing" id="vr0-8g-g4f"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="aM9-Nm-kis"/>
+                    <exclude reference="T6Z-8n-VHU"/>
+                    <exclude reference="XaA-Xm-26q"/>
+                    <exclude reference="bPy-Ru-JZj"/>
+                    <exclude reference="R4m-C5-ODW"/>
+                    <exclude reference="vfo-H0-jhN"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RequestManager.h"
 #import "CoreDataManager.h"
+#import "RatingViewController.h"
 
 @interface AppDelegate ()
 
@@ -39,9 +40,40 @@
 												forState:UIControlStateNormal];
 //	UIView *view = UIView.new;
 //	view.backgroundColor = @(0xE0E0E0).rgbColor;
-	[[UITableView appearance] setBackgroundColor:@(0xE0E0E0).rgbColor];
+	[[UITableView appearance] setBackgroundColor:@(0xEAEAF1).rgbColor];
 	
 	return YES;
+}
+
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+	UIViewController * currentViewController = [self topViewController];
+												
+	if ([currentViewController respondsToSelector:@selector(canRotate)] && [(RatingViewController *)currentViewController canRotate]) {
+		// Unlock landscape view orientations for this view controller
+		return UIInterfaceOrientationMaskAllButUpsideDown;
+	}
+ 
+	// Only allow portrait (standard behaviour)
+	return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIViewController*)topViewController {
+	return [self topViewControllerWithRootViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+}
+
+- (UIViewController*)topViewControllerWithRootViewController:(UIViewController*)rootViewController {
+	if ([rootViewController isKindOfClass:[UITabBarController class]]) {
+		UITabBarController* tabBarController = (UITabBarController*)rootViewController;
+		return [self topViewControllerWithRootViewController:tabBarController.selectedViewController];
+	} else if ([rootViewController isKindOfClass:[UINavigationController class]]) {
+		UINavigationController* navigationController = (UINavigationController*)rootViewController;
+		return [self topViewControllerWithRootViewController:navigationController.visibleViewController];
+	} else if (rootViewController.presentedViewController) {
+		UIViewController* presentedViewController = rootViewController.presentedViewController;
+		return [self topViewControllerWithRootViewController:presentedViewController];
+	} else {
+		return rootViewController;
+	}
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

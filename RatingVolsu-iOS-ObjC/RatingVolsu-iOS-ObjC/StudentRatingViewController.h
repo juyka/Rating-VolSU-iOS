@@ -12,5 +12,4 @@
 
 @property(nonatomic) Semester *semester;
 
-
 @end
