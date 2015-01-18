@@ -7,8 +7,9 @@
 //
 
 #import "GroupRatingTableViewController.h"
-#import "GroupRatingCollectionViewController.h"
+#import "GroupRatingViewController.h"
 #import "RubyLikeExtensions.h"
+#import "GroupRatingCell.h"
 
 @interface GroupRatingTableViewController()
 <
@@ -25,38 +26,12 @@ UITableViewDelegate
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
-- (void)setHeaderHeight:(CGFloat)headerHeight {
-	
-	_headerHeight = headerHeight;
-	NSDictionary *attributes = [self labelAttributes];
-	self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, headerHeight)];
-	UILabel *label = [[UILabel alloc] initWithFrame:CGRectInset(self.tableView.tableHeaderView.bounds, 8, 0)];
-	label.font = attributes[NSFontAttributeName];
-	label.backgroundColor = [UIColor clearColor];
-	label.textAlignment = [attributes[NSParagraphStyleAttributeName] alignment];
-	label.numberOfLines = 0;
-	label.minimumScaleFactor = 0.3;
-	label.lineBreakMode = [attributes[NSParagraphStyleAttributeName] lineBreakMode];
-	label.text = self.subject.name;
-	[self.tableView.tableHeaderView addSubview:label];
-	
-}
-
-- (NSDictionary *)labelAttributes {
-	
-	NSMutableParagraphStyle *style = [NSMutableParagraphStyle new];
-	style.alignment = NSTextAlignmentCenter;
-	style.lineBreakMode = NSLineBreakByWordWrapping;
-	
-	return @{
-			 NSParagraphStyleAttributeName: style,
-			 NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:14]
-			 };
-}
 
 - (void)viewDidLoad {
 	
 	[super viewDidLoad];
+	[self.tableView registerNib:[UINib nibWithNibName:@"GroupRatingCell" bundle:nil] forCellReuseIdentifier:@"cellId"];
+	self.tableView.rowHeight = 44.0f;
 	self.tableView.tableFooterView = [UIView new];
 	
 }
@@ -74,11 +49,12 @@ UITableViewDelegate
 	[self.tableView reloadData];
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCell:(GroupRatingCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	
 	RatingItem *item = _fetchedResultsController.fetchedObjects[indexPath.row];
-	cell.textLabel.text = item.semester.student.number;
-	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ б.", item.total];
+	cell.place.text = [NSString stringWithFormat:@"%@", item.semester.place];
+	cell.studentNumber.text = item.semester.student.number;
+	cell.mark.text = [NSString stringWithFormat:@"%@", item.total];
 	
 }
 
@@ -90,7 +66,7 @@ UITableViewDelegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellId" forIndexPath:indexPath];
+	GroupRatingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellId" forIndexPath:indexPath];
 	[self configureCell:cell atIndexPath:indexPath];
 	
 	return cell;

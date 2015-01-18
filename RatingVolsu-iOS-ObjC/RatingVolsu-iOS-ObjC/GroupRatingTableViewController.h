@@ -12,7 +12,6 @@
 
 @property(nonatomic) Semester *semester;
 @property(nonatomic) Subject *subject;
-@property(nonatomic) CGFloat headerHeight;
 @property(nonatomic) id delegateObject;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

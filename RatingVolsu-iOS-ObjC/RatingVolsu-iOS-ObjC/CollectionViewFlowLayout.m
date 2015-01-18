@@ -11,12 +11,16 @@
 @implementation CollectionViewFlowLayout
 
 - (void)awakeFromNib {
-
+	
 	self.minimumInteritemSpacing = 10.0;
-	self.minimumLineSpacing = 7;
+	self.minimumLineSpacing = 10;
 	self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
 }
 
+- (void)setContentSize:(CGSize)contentSize {
+
+	self.itemSize = contentSize;
+}
 
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
 	

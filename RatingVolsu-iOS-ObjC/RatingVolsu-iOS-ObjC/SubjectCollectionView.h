@@ -10,4 +10,6 @@
 
 @interface SubjectCollectionView : UICollectionView
 
+@property (nonatomic) BOOL cycledPaging;
+
 @end

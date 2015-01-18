@@ -8,7 +8,7 @@
 
 #import "StudentRatingViewController.h"
 #import "RatingItem+Mappings.h"
-#import "GroupRatingCollectionViewController.h"
+#import "GroupRatingViewController.h"
 #import "StudentRatingTableView.h"
 #import "StudentRatingTableViewCell.h"
 #import "StudentRatingTableHeader.h"
@@ -30,14 +30,7 @@ FXPageControlDelegate
 @property (nonatomic) StudentRatingTableHeader *headerView;
 @end
 
-@implementation StudentRatingViewController {
-	
-	IBOutlet UIView *_portraitView;
-	IBOutlet UIView *_landscapeView;
-	IBOutlet StudentRatingTableView *ratingTableView;
-	
-	UIView *_currentView;
-}
+@implementation StudentRatingViewController 
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 

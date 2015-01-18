@@ -7,7 +7,7 @@
 //
 
 #import "RatingViewController.h"
-#import "GroupRatingCollectionViewController.h"
+#import "GroupRatingViewController.h"
 #import "StudentRatingViewController.h"
 
 @interface RatingViewController ()

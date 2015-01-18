@@ -15,6 +15,28 @@
 
 @implementation SubjectCollectionView
 
-
+- (void)layoutSubviews {
+	
+	[super layoutSubviews];
+	
+	if (self.cycledPaging) {
+		
+		CollectionViewFlowLayout *layout = self.collectionViewLayout;
+		NSInteger numberOfItems = [self numberOfItemsInSection:0] / 3;
+		CGFloat sectionWidth = (layout.itemSize.width + layout.minimumInteritemSpacing) * numberOfItems;
+		CGFloat distanceFromCenterX = self.contentOffset.x + self.bounds.size.width / 2 - self.contentSize.width / 2;
+		
+		if (fabsf(distanceFromCenterX) > sectionWidth / 2) {
+			
+			CGFloat targetOffset = self.contentOffset.x;
+			if (distanceFromCenterX > 0) {
+				targetOffset -= sectionWidth;
+			} else {
+				targetOffset += sectionWidth;
+			}
+			self.contentOffset = CGPointMake(targetOffset, 0);
+		}
+	}
+}
 
 @end
