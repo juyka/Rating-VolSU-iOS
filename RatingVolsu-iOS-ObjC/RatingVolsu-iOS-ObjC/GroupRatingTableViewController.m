@@ -52,7 +52,7 @@ UITableViewDelegate
 - (void)configureCell:(GroupRatingCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	
 	RatingItem *item = _fetchedResultsController.fetchedObjects[indexPath.row];
-	cell.place.text = [NSString stringWithFormat:@"%@", item.semester.place];
+	cell.place.text = [NSString stringWithFormat:@"№%@", item.semester.place];
 	cell.studentNumber.text = item.semester.student.number;
 	cell.mark.text = [NSString stringWithFormat:@"%@", item.total];
 	
@@ -124,8 +124,9 @@ UITableViewDelegate
 		
 		[fetchRequest setEntity:entity];
 		NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"semester.place" ascending:YES];
-		[fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
-		
+		NSArray *sortDescroptors = @[sort];
+		[fetchRequest setSortDescriptors:sortDescroptors];
+
 		NSFetchedResultsController *theFetchedResultsController =
 		[[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
 											managedObjectContext:NSManagedObjectContext.defaultContext

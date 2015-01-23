@@ -34,26 +34,19 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(didChangePreferredContentSize:)
-												 name:UIContentSizeCategoryDidChangeNotification object:nil];
 
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
 	self.tableView.estimatedRowHeight = 60.0f;
 	[[self fetchedResultsController] performFetch:nil];
-	[_tableView reloadData];
+
+	dispatch_async (dispatch_get_main_queue (), ^{
+		[self.tableView reloadData];
+	});
 	[self.entityClass request:self.parentId withHandler:^(NSArray *entities){
 		[self.tableView reloadData];
 	} errorBlock:^(){
 		[self.tableView reloadData];
 	}];
-}
-
-- (void)dealloc
-{
-	[[NSNotificationCenter defaultCenter] removeObserver:self
-													name:UIContentSizeCategoryDidChangeNotification
-												  object:nil];
 }
 
 - (void)didChangePreferredContentSize:(NSNotification *)notification

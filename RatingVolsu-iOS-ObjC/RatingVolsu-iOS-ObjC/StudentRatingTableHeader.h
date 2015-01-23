@@ -13,8 +13,8 @@
 @interface StudentRatingTableHeader : UIView
 
 @property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet FXPageControl *pageControl;
+@property (nonatomic) IBOutlet FXPageControl *pageControl;
 
-- (instancetype)initWithOrientation:(UIDeviceOrientation)orientation;
++ (instancetype)headerWithOrientation:(BOOL)portraitOrientation;
 
 @end

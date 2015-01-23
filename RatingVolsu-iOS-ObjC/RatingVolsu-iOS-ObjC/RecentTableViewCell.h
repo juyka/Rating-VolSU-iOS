@@ -14,4 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionText;
 @property (weak, nonatomic) IBOutlet UIImageView *recentImage;
 
+- (void)setRecentItem:(RecentItem *)item;
+
 @end

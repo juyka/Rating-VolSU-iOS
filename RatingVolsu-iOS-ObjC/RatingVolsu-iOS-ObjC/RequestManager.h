@@ -14,7 +14,7 @@ typedef void (^RequestHandler)(NSArray *dataList);
 
 + (instancetype)manager;
 
-- (void)request:(NSString *)urlString parameters:(NSDictionary *)parameters withBlock:(RequestHandler)handler  errorBlock:(void (^)())errorHandler;
+- (NSURLSessionDataTask *)request:(NSString *)urlString parameters:(NSDictionary *)parameters withBlock:(RequestHandler)handler  errorBlock:(void (^)())errorHandler;
 - (void)facultsWithHandler:(RequestHandler)handler errorBlock:(void (^)())errorHandler;
 - (void)groups:(NSString *)facultId withHandler:(RequestHandler)handler;
 - (void)students:(NSString *)groupId withHandler:(RequestHandler)handler;

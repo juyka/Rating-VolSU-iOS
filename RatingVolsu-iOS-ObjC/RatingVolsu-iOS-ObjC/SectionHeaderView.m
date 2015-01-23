@@ -10,6 +10,14 @@
 
 @implementation SectionHeaderView
 
++ (instancetype)headerForSection:(NSInteger)section  {
+	
+	SectionHeaderView *view = @"SectionHeaderView".xibView;
+	
+	view.label.text = [@[@"последнее", @"избранное"][section] uppercaseString];
+	
+	return view;
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

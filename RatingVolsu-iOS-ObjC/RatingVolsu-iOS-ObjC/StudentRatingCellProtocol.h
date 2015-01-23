@@ -11,6 +11,7 @@
 @protocol StudentRatingCellProtocol <NSObject>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleText;
+@property (weak, nonatomic) IBOutlet UILabel *subjectType;
 @property (nonatomic) NSArray *numbers;
 
 @end

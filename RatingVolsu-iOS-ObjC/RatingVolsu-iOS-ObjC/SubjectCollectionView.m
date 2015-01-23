@@ -21,7 +21,7 @@
 	
 	if (self.cycledPaging) {
 		
-		CollectionViewFlowLayout *layout = self.collectionViewLayout;
+		CollectionViewFlowLayout *layout = (CollectionViewFlowLayout *) self.collectionViewLayout;
 		NSInteger numberOfItems = [self numberOfItemsInSection:0] / 3;
 		CGFloat sectionWidth = (layout.itemSize.width + layout.minimumInteritemSpacing) * numberOfItems;
 		CGFloat distanceFromCenterX = self.contentOffset.x + self.bounds.size.width / 2 - self.contentSize.width / 2;

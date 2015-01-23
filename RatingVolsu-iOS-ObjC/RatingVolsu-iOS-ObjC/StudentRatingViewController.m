@@ -9,12 +9,12 @@
 #import "StudentRatingViewController.h"
 #import "RatingItem+Mappings.h"
 #import "GroupRatingViewController.h"
-#import "StudentRatingTableView.h"
 #import "StudentRatingTableViewCell.h"
 #import "StudentRatingTableHeader.h"
 #import "SectionHeaderView.h"
 #import "FXPageControl/FXPageControl.h"
 #import "RatingScrollView.h"
+#import "NSNumber+Extensions.h"
 #import "StudentRatingCellProtocol.h"
 
 @interface StudentRatingViewController()
@@ -28,14 +28,23 @@ FXPageControlDelegate
 @property(nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) StudentRatingTableHeader *headerView;
+@property (nonatomic) BOOL pageOrientationIsPortrait;
 @end
 
-@implementation StudentRatingViewController 
+@implementation StudentRatingViewController {
+	
+	NSInteger currentPage;
+}
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	currentPage = 5;
+	UITapGestureRecognizer *tapRecognizer;
+	
+	tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+	[[self view] addGestureRecognizer:tapRecognizer];
 	
 	UISwipeGestureRecognizer *leftSwipe, *rightSwipe;
 	
@@ -48,41 +57,89 @@ FXPageControlDelegate
 	[[self view] addGestureRecognizer:rightSwipe];
 	
 	self.tableView.tableFooterView = [UIView new];
-	self.tableView.separatorInset = UIEdgeInsetsZero;
 	[self.tableView registerNib:[UINib nibWithNibName:@"StudentRatingLandscapeTableViewCell" bundle:nil] forCellReuseIdentifier:@"landscapeCell"];
 	[self.tableView registerNib:[UINib nibWithNibName:@"StudentRatingTableViewCell" bundle:nil] forCellReuseIdentifier:@"portraintCell"];
 	
 	[[self fetchedResultsController] performFetch:nil];
 	[_tableView reloadData];
 	
-	[RatingItem requestByStudent:self.semester withHandler:nil];
 }
 
 - (void)rightSwipe:(UISwipeGestureRecognizer *)sender {
 	
-		self.headerView.pageControl.currentPage--;
+	currentPage = (currentPage == 0) ? 5 : currentPage - 1;
+	[self changedCurrentPage];
 	
 }
 
 - (void)leftSwipe:(UISwipeGestureRecognizer *)sender {
 	
-		self.headerView.pageControl.currentPage++;
+	currentPage = (currentPage == 5) ? 0 : currentPage + 1;
+	[self changedCurrentPage];
 }
 
-- (void)pageControl:(FXPageControl *)pageControl changedCurrentPage:(NSInteger)currentPage {
+- (void)changedCurrentPage {
 	
-		[self.tableView.visibleCells each:^(StudentRatingTableViewCell *cell) {
-			[cell scroll:currentPage];
-		}];
+	self.headerView.pageControl.currentPage = currentPage;
+	
+	[self.tableView.visibleCells each:^(StudentRatingTableViewCell *cell) {
+		[cell scroll:currentPage];
+	}];
+	
+	self.headerView.title.text = @[@"1 модуль", @"2 модуль", @"3 модуль", @"Сумма", @"Экзамен", @"Всего"][currentPage];
+}
 
-		self.headerView.title.text = @[@"1 модуль", @"2 модуль", @"3 модуль", @"Сумма", @"Экзамен", @"Всего"][currentPage];
+- (BOOL)pageOrientationIsPortrait {
+	
+	return ([[UIApplication sharedApplication] statusBarOrientation] == UIInterfaceOrientationPortrait);
+}
+
+- (NSURLSessionDataTask *)studentRating:(void (^)())handler  {
+	
+	NSURLSessionDataTask *task;
+	
+	task = [RatingItem requestByStudent:self.semester withHandler:^(NSArray *dataList) {
+		
+		handler();
+	}
+	errorBlock:^{
+		
+		handler();
+	}];
+	
+	return task;
+}
+
+- (NSURLSessionDataTask *)refresh:(void (^)())handler {
+	
+	return [self studentRating:handler];
+	
+}
+
+- (void)tap:(UITapGestureRecognizer *)recognizer {
+	
+	if (self.pageOrientationIsPortrait) {
+
+		CGPoint location = [recognizer locationInView:self.view];
+		
+		if (location.x > self.view.frame.size.width / 2) {
+			currentPage = (currentPage == 5) ? 0 : currentPage + 1;
+		}
+		else {
+			currentPage = (currentPage == 0) ? 5 : currentPage - 1;
+		}
+		
+		[self changedCurrentPage];
+	}
 }
 
 - (void)configureCell:(id<StudentRatingCellProtocol>)cell atIndexPath:(NSIndexPath *)indexPath {
 	
 	RatingItem *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	cell.titleText.text = [NSString stringWithFormat:@"%@ ", item.subject.name];
+	cell.titleText.text = [NSString stringWithFormat:@"%@", item.subject.name];
+	cell.subjectType.text = item.subject.type.subjectType;
 	cell.numbers = @[item.firstAttestation, item.secondAttestation, item.thirdAttestation, item.sum, item.exam, item.total];
+	
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -92,7 +149,7 @@ FXPageControlDelegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	NSString *cellId = (UIDeviceOrientationIsLandscape([[UIDevice currentDevice]orientation])) ? @"landscapeCell" : @"portraintCell";
+	NSString *cellId = self.pageOrientationIsPortrait ? @"portraintCell" : @"landscapeCell";
 	
 	UITableViewCell<StudentRatingCellProtocol> *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
 	[self configureCell:cell atIndexPath:indexPath];
@@ -102,19 +159,10 @@ FXPageControlDelegate
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	
-	StudentRatingTableHeader *view = [[StudentRatingTableHeader alloc] initWithOrientation:[[UIDevice currentDevice]orientation]];
-		self.headerView = view;
-		self.headerView.backgroundColor = @(0xEAEAF1).rgbColor;
-		view.pageControl.numberOfPages = 6;
-		view.pageControl.delegate = self;
-		view.pageControl.currentPage = 5;
-		view.pageControl.dotSpacing = 5;
-		view.pageControl.dotSize = 4;
-		view.pageControl.dotColor = @(0xC2C1BF).rgbColor;
-		view.pageControl.selectedDotColor = @(0x9B9A99).rgbColor;
-		view.pageControl.backgroundColor = [UIColor clearColor];
-
-
+	StudentRatingTableHeader *view = [StudentRatingTableHeader headerWithOrientation:self.pageOrientationIsPortrait];
+	
+	self.headerView = view;
+	
 	return view;
 }
 
@@ -166,10 +214,19 @@ FXPageControlDelegate
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
-	BOOL value = (UIDeviceOrientationIsLandscape([[UIDevice currentDevice]orientation]));
-	[[self navigationController] setNavigationBarHidden:value animated:YES];
-	[self.tableView reloadData];
+	
+	[super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+	
+	[coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+		
+	} completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+		
+		[[self navigationController] setNavigationBarHidden:!self.pageOrientationIsPortrait animated:YES];
+		[self.tableView reloadData];
+	}];
+	
 }
+
 
 - (NSFetchedResultsController *)fetchedResultsController {
 	

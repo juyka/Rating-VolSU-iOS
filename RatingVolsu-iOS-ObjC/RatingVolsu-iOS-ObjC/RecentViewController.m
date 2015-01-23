@@ -59,45 +59,11 @@ NSFetchedResultsControllerDelegate
 	
 	RecentItem *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	
-	cell.separatorInset = UIEdgeInsetsZero;
-	cell.defaultColor = self.tableView.backgroundView.backgroundColor;
+	//cell.separatorInset = UIEdgeInsetsZero;
+	cell.defaultColor = self.tableView.backgroundColor;
 	
-	UIView *checkView = [[UIImageView alloc] initWithImage:@"check".image];
-	checkView.contentMode = UIViewContentModeCenter;
-	UIColor *greenColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
+	[cell setRecentItem:item];
 	
-	UIView *listView = [[UIImageView alloc] initWithImage:@"list".image];
-	listView.contentMode = UIViewContentModeCenter;
-	UIColor *yellowColor = [UIColor colorWithRed:195.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
-	
-	UIView *crossView = [[UIImageView alloc] initWithImage:@"cross".image];
-	crossView.contentMode = UIViewContentModeCenter;
-	UIColor *redColor = [UIColor colorWithRed:232.0 / 255.0 green:61.0 / 255.0 blue:14.0 / 255.0 alpha:1.0];
-	
-	UIView *view = item.isFavorite.boolValue ? listView : checkView;
-	UIColor *color = item.isFavorite.boolValue ? yellowColor : greenColor;
-	MCSwipeTableViewCellState state = item.isFavorite.boolValue ? MCSwipeTableViewCellState3 : MCSwipeTableViewCellState1;
-	
-	[cell setSwipeGestureWithView:view color:color mode:MCSwipeTableViewCellModeExit state:state completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-		
-		item.date = [NSDate date];
-		item.isFavorite = @(state == MCSwipeTableViewCellState1);
-		[[CoreDataManager sharedManager] saveContext];
-	}];
-	
-	MCSwipeTableViewCellState deleteState = item.isFavorite.boolValue ? MCSwipeTableViewCellState4 : MCSwipeTableViewCellState3;
-	
-	[cell setSwipeGestureWithView:crossView color:redColor mode:MCSwipeTableViewCellModeExit state:deleteState completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-		
-		[item delete];
-		[[CoreDataManager sharedManager] saveContext];
-	}];
-	
-	RecentItem *recentItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	cell.titleText.text = recentItem.name;
-	cell.descriptionText.text = [recentItem details];
-	NSString *title = recentItem.name.iconText;
-	cell.recentImage.image = [UIImage cellImage:title];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -125,10 +91,9 @@ NSFetchedResultsControllerDelegate
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	
-	SectionHeaderView *view = @"SectionHeaderView".xibView;
-	view.backgroundColor = tableView.backgroundView.backgroundColor;
-	NSString *text = [self titleForHeaderInSection:section];
-	view.label.text = text.uppercaseString;
+	NSNumber *key = self.fetchedResultsController.sectionIndexTitles[section];
+	SectionHeaderView *view = [SectionHeaderView headerForSection:key.intValue];
+	view.backgroundColor = tableView.backgroundColor;
 	
 	return view;
 }

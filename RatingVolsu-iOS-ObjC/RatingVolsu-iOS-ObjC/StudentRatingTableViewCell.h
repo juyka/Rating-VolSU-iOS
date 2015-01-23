@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet RatingScrollView *scrollView;
 @property (nonatomic) NSArray *numbers;
 @property (weak, nonatomic) IBOutlet UILabel *titleText;
+@property (weak, nonatomic) IBOutlet UILabel *subjectType;
 
 - (void)scroll:(NSInteger)pageNumber;
 

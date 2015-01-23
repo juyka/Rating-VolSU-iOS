@@ -13,5 +13,6 @@
 
 @property (nonatomic) NSArray *numbers;
 @property (weak, nonatomic) IBOutlet UILabel *titleText;
+@property (weak, nonatomic) IBOutlet UILabel *subjectType;
 
 @end

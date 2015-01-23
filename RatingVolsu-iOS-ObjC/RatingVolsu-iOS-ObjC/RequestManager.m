@@ -30,7 +30,7 @@ NSURL *baseURL;
 	return manager;
 }
 
-- (void)request:(NSString *)urlString parameters:(NSDictionary *)parameters
+- (NSURLSessionDataTask *)request:(NSString *)urlString parameters:(NSDictionary *)parameters
 	  withBlock:(RequestHandler)handler
 	 errorBlock:(void (^)())errorHandler {
 	
@@ -40,7 +40,9 @@ NSURL *baseURL;
 	
 	sessionManager.responseSerializer.stringEncoding = 4;
 	
-	[sessionManager POST:urlString
+	NSURLSessionDataTask *task;
+	
+	task = [sessionManager POST:urlString
 			  parameters:parameters
 				 success:^(NSURLSessionDataTask *task, id responseObject) {
 					 
@@ -64,12 +66,19 @@ NSURL *baseURL;
 					 
 				 }
 				 failure:^(NSURLSessionDataTask *task, NSError *error) {
-					 [[[UIAlertView alloc] initWithTitle:@"Ошибка подключения к серверу"
+					 if (errorHandler) {
+						 errorHandler();
+					 }
+					 else {
+						 
+						 [[[UIAlertView alloc] initWithTitle:@"Ошибка подключения к серверу"
 												 message:[error localizedDescription]
 												delegate:nil
 									   cancelButtonTitle:@"Ok"
 									   otherButtonTitles:nil] show];
+					 }
 				 }];
+	return task;
 	
 }
 

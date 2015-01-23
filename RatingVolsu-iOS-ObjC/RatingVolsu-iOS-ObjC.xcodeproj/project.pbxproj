@@ -45,8 +45,6 @@
 		D6A673081A6BFD3E00890DD1 /* GroupRatingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A673061A6BFD3E00890DD1 /* GroupRatingTableViewController.m */; };
 		D6A6730C1A6C1A9100890DD1 /* GroupRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A6730A1A6C1A9100890DD1 /* GroupRatingCell.m */; };
 		D6A6730D1A6C1A9100890DD1 /* GroupRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A6730B1A6C1A9100890DD1 /* GroupRatingCell.xib */; };
-		D6BB99F11A0B78BC006273F8 /* RatingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB99F01A0B78BC006273F8 /* RatingTableView.m */; };
-		D6BB99F41A0B85AD006273F8 /* StudentRatingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB99F31A0B85AD006273F8 /* StudentRatingTableView.m */; };
 		D6BCA27319F3F2040039AAB8 /* FacultiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BCA27219F3F2040039AAB8 /* FacultiesViewController.m */; };
 		D6BCA27819F3F4BC0039AAB8 /* GroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BCA27719F3F4BC0039AAB8 /* GroupsViewController.m */; };
 		D6BCA27B19F3F4D70039AAB8 /* StudentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BCA27A19F3F4D70039AAB8 /* StudentsViewController.m */; };
@@ -56,11 +54,8 @@
 		D6BD2BC61A063D8200591069 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BC51A063D8200591069 /* Student.m */; };
 		D6BD2BC91A063D8200591069 /* RecentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BC81A063D8200591069 /* RecentItem.m */; };
 		D6BD2BCC1A0640F600591069 /* RatingItem+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BCB1A0640F600591069 /* RatingItem+Mappings.m */; };
-		D6BD2BCF1A07852800591069 /* GroupRatingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BCE1A07852800591069 /* GroupRatingTableView.m */; };
-		D6BD2BD21A0785A400591069 /* RatingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BD11A0785A400591069 /* RatingTableViewCell.m */; };
 		D6BD2BD61A08EDC000591069 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BD51A08EDC000591069 /* NSArray+Extensions.m */; };
 		D6CE1F7419FE88C80062790E /* StudentRatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE1F7319FE88C80062790E /* StudentRatingViewController.m */; };
-		D6D006491A3DF7E800D6E564 /* RatingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D006481A3DF7E800D6E564 /* RatingItem.m */; };
 		D6D0797E1A307C42000FB4DB /* MNActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D079791A307C42000FB4DB /* MNActivityIndicatorView.m */; };
 		D6D0797F1A307C42000FB4DB /* MNRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D0797B1A307C42000FB4DB /* MNRefreshControl.m */; };
 		D6D079861A39A4DE000FB4DB /* GroupRatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D079851A39A4DE000FB4DB /* GroupRatingViewController.m */; };
@@ -76,6 +71,8 @@
 		D6D079AD1A39B709000FB4DB /* SubjectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D079AC1A39B709000FB4DB /* SubjectCollectionViewCell.m */; };
 		D6D079B01A39D068000FB4DB /* CollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D079AF1A39D068000FB4DB /* CollectionViewFlowLayout.m */; };
 		D6D079B31A39D3E0000FB4DB /* SubjectCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D079B21A39D3E0000FB4DB /* SubjectCollectionView.m */; };
+		D6E59EB21A71143600273F31 /* RatingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E59EB11A71143600273F31 /* RatingItem.m */; };
+		D6E59EB61A72797200273F31 /* NSNumber+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E59EB51A72797200273F31 /* NSNumber+Extensions.m */; };
 		D6FF4D6E1A03973900421E29 /* NSString+RubyLikeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF4D6D1A03973900421E29 /* NSString+RubyLikeExtensions.m */; };
 /* End PBXBuildFile section */
 
@@ -161,10 +158,6 @@
 		D6A673091A6C1A9100890DD1 /* GroupRatingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupRatingCell.h; sourceTree = "<group>"; };
 		D6A6730A1A6C1A9100890DD1 /* GroupRatingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupRatingCell.m; sourceTree = "<group>"; };
 		D6A6730B1A6C1A9100890DD1 /* GroupRatingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupRatingCell.xib; sourceTree = "<group>"; };
-		D6BB99EF1A0B78BC006273F8 /* RatingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingTableView.h; sourceTree = "<group>"; };
-		D6BB99F01A0B78BC006273F8 /* RatingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingTableView.m; sourceTree = "<group>"; };
-		D6BB99F21A0B85AD006273F8 /* StudentRatingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRatingTableView.h; sourceTree = "<group>"; };
-		D6BB99F31A0B85AD006273F8 /* StudentRatingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentRatingTableView.m; sourceTree = "<group>"; };
 		D6BCA27119F3F2040039AAB8 /* FacultiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacultiesViewController.h; sourceTree = "<group>"; };
 		D6BCA27219F3F2040039AAB8 /* FacultiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacultiesViewController.m; sourceTree = "<group>"; };
 		D6BCA27619F3F4BC0039AAB8 /* GroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupsViewController.h; sourceTree = "<group>"; };
@@ -183,16 +176,10 @@
 		D6BD2BC81A063D8200591069 /* RecentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentItem.m; sourceTree = "<group>"; };
 		D6BD2BCA1A0640F600591069 /* RatingItem+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RatingItem+Mappings.h"; sourceTree = "<group>"; };
 		D6BD2BCB1A0640F600591069 /* RatingItem+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RatingItem+Mappings.m"; sourceTree = "<group>"; };
-		D6BD2BCD1A07852800591069 /* GroupRatingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupRatingTableView.h; sourceTree = "<group>"; };
-		D6BD2BCE1A07852800591069 /* GroupRatingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupRatingTableView.m; sourceTree = "<group>"; };
-		D6BD2BD01A0785A400591069 /* RatingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingTableViewCell.h; sourceTree = "<group>"; };
-		D6BD2BD11A0785A400591069 /* RatingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingTableViewCell.m; sourceTree = "<group>"; };
 		D6BD2BD41A08EDC000591069 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
 		D6BD2BD51A08EDC000591069 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
 		D6CE1F7219FE88C80062790E /* StudentRatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRatingViewController.h; sourceTree = "<group>"; };
 		D6CE1F7319FE88C80062790E /* StudentRatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentRatingViewController.m; sourceTree = "<group>"; };
-		D6D006471A3DF7E800D6E564 /* RatingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingItem.h; sourceTree = "<group>"; };
-		D6D006481A3DF7E800D6E564 /* RatingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingItem.m; sourceTree = "<group>"; };
 		D6D079781A307C42000FB4DB /* MNActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNActivityIndicatorView.h; sourceTree = "<group>"; };
 		D6D079791A307C42000FB4DB /* MNActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNActivityIndicatorView.m; sourceTree = "<group>"; };
 		D6D0797A1A307C42000FB4DB /* MNRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNRefreshControl.h; sourceTree = "<group>"; };
@@ -224,6 +211,11 @@
 		D6D079AF1A39D068000FB4DB /* CollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		D6D079B11A39D3E0000FB4DB /* SubjectCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectCollectionView.h; sourceTree = "<group>"; };
 		D6D079B21A39D3E0000FB4DB /* SubjectCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectCollectionView.m; sourceTree = "<group>"; };
+		D6E59EB01A71143600273F31 /* RatingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RatingItem.h; path = ../RatingItem.h; sourceTree = "<group>"; };
+		D6E59EB11A71143600273F31 /* RatingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RatingItem.m; path = ../RatingItem.m; sourceTree = "<group>"; };
+		D6E59EB31A71333F00273F31 /* RatingViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingViewControllerProtocol.h; sourceTree = "<group>"; };
+		D6E59EB41A72797200273F31 /* NSNumber+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Extensions.h"; sourceTree = "<group>"; };
+		D6E59EB51A72797200273F31 /* NSNumber+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Extensions.m"; sourceTree = "<group>"; };
 		D6FF4D6C1A03973900421E29 /* NSString+RubyLikeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RubyLikeExtensions.h"; sourceTree = "<group>"; };
 		D6FF4D6D1A03973900421E29 /* NSString+RubyLikeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RubyLikeExtensions.m"; sourceTree = "<group>"; };
 		EC43CD03DA786FE80FE8B6BE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -271,8 +263,8 @@
 				D6BD2BB31A06372200591069 /* Subject.m */,
 				D6BD2BAF1A06372200591069 /* Group.h */,
 				D6BD2BB01A06372200591069 /* Group.m */,
-				D6D006471A3DF7E800D6E564 /* RatingItem.h */,
-				D6D006481A3DF7E800D6E564 /* RatingItem.m */,
+				D6E59EB01A71143600273F31 /* RatingItem.h */,
+				D6E59EB11A71143600273F31 /* RatingItem.m */,
 				D604871F19ED22A20009E1E7 /* Faculty+Mappings.h */,
 				D604872019ED22A20009E1E7 /* Faculty+Mappings.m */,
 				D6272BF819EE786B005DD267 /* Group+Mappings.h */,
@@ -307,17 +299,15 @@
 				D6068A1A1A63D7170017B36C /* StudentRatingTableViewCell.h */,
 				D6068A1B1A63D7170017B36C /* StudentRatingTableViewCell.m */,
 				D6068A301A6877780017B36C /* StudentRatingTableViewCell.xib */,
+				D6068A461A6A58310017B36C /* StudentRatingLandscapeTableViewCell.xib */,
 				D6068A241A65291C0017B36C /* StudentRatingTableHeader.h */,
 				D6068A251A65291C0017B36C /* StudentRatingTableHeader.m */,
 				D6068A271A653C440017B36C /* StudentRatingTableHeader.xib */,
 				D6068A421A6A51D70017B36C /* StudentRatingLandscapeHeader.xib */,
 				D6068A321A6889A10017B36C /* RatingScrollView.h */,
 				D6068A331A6889A10017B36C /* RatingScrollView.m */,
-				D6BB99F21A0B85AD006273F8 /* StudentRatingTableView.h */,
-				D6BB99F31A0B85AD006273F8 /* StudentRatingTableView.m */,
 				D6068A441A6A58310017B36C /* StudentRatingLandscapeTableViewCell.h */,
 				D6068A451A6A58310017B36C /* StudentRatingLandscapeTableViewCell.m */,
-				D6068A461A6A58310017B36C /* StudentRatingLandscapeTableViewCell.xib */,
 				D6A672FD1A6A62D200890DD1 /* StudentRatingCellProtocol.h */,
 			);
 			name = StudentRating;
@@ -354,6 +344,8 @@
 				D6BD2BD51A08EDC000591069 /* NSArray+Extensions.m */,
 				D6068A2D1A670EFE0017B36C /* UIImage+Extensions.h */,
 				D6068A2E1A670EFE0017B36C /* UIImage+Extensions.m */,
+				D6E59EB41A72797200273F31 /* NSNumber+Extensions.h */,
+				D6E59EB51A72797200273F31 /* NSNumber+Extensions.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -457,19 +449,6 @@
 			name = RatingSelector;
 			sourceTree = "<group>";
 		};
-		D6BD2BD31A0785A900591069 /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				D6BB99EF1A0B78BC006273F8 /* RatingTableView.h */,
-				D6BB99F01A0B78BC006273F8 /* RatingTableView.m */,
-				D6BD2BCD1A07852800591069 /* GroupRatingTableView.h */,
-				D6BD2BCE1A07852800591069 /* GroupRatingTableView.m */,
-				D6BD2BD01A0785A400591069 /* RatingTableViewCell.h */,
-				D6BD2BD11A0785A400591069 /* RatingTableViewCell.m */,
-			);
-			name = TableView;
-			sourceTree = "<group>";
-		};
 		D6D079751A307C42000FB4DB /* MNRefreshControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,9 +492,9 @@
 			children = (
 				D6068A171A632A430017B36C /* RatingViewController.h */,
 				D6068A181A632A430017B36C /* RatingViewController.m */,
+				D6E59EB31A71333F00273F31 /* RatingViewControllerProtocol.h */,
 				D6068A3E1A6A4FAF0017B36C /* GroupRating */,
 				D6068A3D1A6A4FA10017B36C /* StudentRating */,
-				D6BD2BD31A0785A900591069 /* TableView */,
 			);
 			name = Rating;
 			sourceTree = "<group>";
@@ -690,8 +669,8 @@
 				D66E2DFF19E7E500006077BC /* RatingSelectorViewController.m in Sources */,
 				D6D079A81A39B273000FB4DB /* NSString+RLE.m in Sources */,
 				D6BCA27819F3F4BC0039AAB8 /* GroupsViewController.m in Sources */,
+				D6E59EB61A72797200273F31 /* NSNumber+Extensions.m in Sources */,
 				D6D079AD1A39B709000FB4DB /* SubjectCollectionViewCell.m in Sources */,
-				D6BD2BCF1A07852800591069 /* GroupRatingTableView.m in Sources */,
 				D6D079861A39A4DE000FB4DB /* GroupRatingViewController.m in Sources */,
 				D604872119ED22A20009E1E7 /* Faculty+Mappings.m in Sources */,
 				D6D079A41A39B273000FB4DB /* NSMutableAttributedString+RLE.m in Sources */,
@@ -722,10 +701,8 @@
 				D66E2DF619E7E500006077BC /* main.m in Sources */,
 				D6272BF719EE6D1D005DD267 /* NSManagedObject+Extensions.m in Sources */,
 				D6BD2BC31A063D8100591069 /* Semester.m in Sources */,
-				D6BB99F11A0B78BC006273F8 /* RatingTableView.m in Sources */,
 				D6068A2C1A6549A30017B36C /* FXPageControl.m in Sources */,
 				D6BD2BB11A06372200591069 /* Group.m in Sources */,
-				D6D006491A3DF7E800D6E564 /* RatingItem.m in Sources */,
 				D601A67419F03FA000735F5B /* Semester+Mappings.m in Sources */,
 				D6D079B01A39D068000FB4DB /* CollectionViewFlowLayout.m in Sources */,
 				D6D0797F1A307C42000FB4DB /* MNRefreshControl.m in Sources */,
@@ -733,11 +710,10 @@
 				D6068A1D1A63D7170017B36C /* StudentRatingTableViewCell.m in Sources */,
 				D6BD2BC91A063D8200591069 /* RecentItem.m in Sources */,
 				D6068A261A65291C0017B36C /* StudentRatingTableHeader.m in Sources */,
-				D6BD2BD21A0785A400591069 /* RatingTableViewCell.m in Sources */,
 				D6D079AA1A39B273000FB4DB /* RLECFunctions.m in Sources */,
-				D6BB99F41A0B85AD006273F8 /* StudentRatingTableView.m in Sources */,
 				D6272BFA19EE786B005DD267 /* Group+Mappings.m in Sources */,
 				D6D079A61A39B273000FB4DB /* NSObject+RLE.m in Sources */,
+				D6E59EB21A71143600273F31 /* RatingItem.m in Sources */,
 				D6068A2F1A670EFE0017B36C /* UIImage+Extensions.m in Sources */,
 				D6272BFD19EE794E005DD267 /* Student+Mappings.m in Sources */,
 				D601A67119F03BEE00735F5B /* SemestersViewController.m in Sources */,

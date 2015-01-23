@@ -12,16 +12,21 @@
 @implementation StudentRatingTableHeader
 
 
-- (instancetype)initWithOrientation:(UIDeviceOrientation)orientation {
++ (instancetype)headerWithOrientation:(BOOL)portraitOrientation {
 	
-	self = [super init];
-	if (self) {
-		NSString *xibId = (UIDeviceOrientationIsPortrait([[UIDevice currentDevice]orientation])) ? @"StudentRatingTableHeader" : @"StudentRatingLandscapeHeader";
+	StudentRatingTableHeader *header;
+	NSString *xibId = portraitOrientation ? @"StudentRatingTableHeader" : @"StudentRatingLandscapeHeader";
 
-		self = xibId.xibView;
-	}
+	header = xibId.xibView;
+	header.pageControl.numberOfPages = 6;
+	header.pageControl.currentPage = 5;
+	header.pageControl.dotSpacing = 5;
+	header.pageControl.dotSize = 4;
+	header.pageControl.dotColor = @(0xC2C1BF).rgbColor;
+	header.pageControl.selectedDotColor = @(0x9B9A99).rgbColor;
+	header.pageControl.backgroundColor = [UIColor clearColor];
 	
-	return self;
+	return header;
 }
 /*
 // Only override drawRect: if you perform custom drawing.

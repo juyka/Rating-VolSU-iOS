@@ -374,7 +374,6 @@ const CGPathRef FXPageControlDotShapeTriangle = (const CGPathRef)3;
 - (void)setCurrentPage:(NSInteger)page
 {
     _currentPage = [self clampedPageValue:page];
-	[_delegate pageControl:self changedCurrentPage:_currentPage];
     [self setNeedsDisplay];
 }
 
@@ -395,15 +394,6 @@ const CGPathRef FXPageControlDotShapeTriangle = (const CGPathRef)3;
 {
 	CGPoint point = [touch locationInView:self];
     BOOL forward = _vertical? (point.y > self.frame.size.height / 2): (point.x > self.frame.size.width / 2);
-	if (self.currentPage == self.numberOfPages - 1 && forward) {
-		self.currentPage = 0;
-	}
-	else if (self.currentPage == 0 && !forward) {
-		self.currentPage = self.numberOfPages - 1;
-	} else {
-		self.currentPage = [self clampedPageValue:_currentPage + (forward? 1: -1)];
-	}
-	
     if (!_defersCurrentPageDisplay)
     {
         [self setNeedsDisplay];

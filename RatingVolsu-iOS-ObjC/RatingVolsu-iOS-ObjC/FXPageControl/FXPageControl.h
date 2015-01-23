@@ -101,7 +101,7 @@ IB_DESIGNABLE @interface FXPageControl : UIControl
 - (UIColor *)pageControl:(FXPageControl *)pageControl selectedColorForDotAtIndex:(NSInteger)index;
 
 
-- (void)pageControl:(FXPageControl *)pageControl changedCurrentPage:(NSInteger)currentPage;
+//- (void)pageControl:(FXPageControl *)pageControl changedCurrentPage:(NSInteger)currentPage;
 @end
 
 

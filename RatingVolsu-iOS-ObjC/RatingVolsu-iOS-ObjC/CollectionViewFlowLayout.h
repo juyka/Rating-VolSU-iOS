@@ -11,6 +11,4 @@
 @interface CollectionViewFlowLayout : UICollectionViewFlowLayout
 
 
-- (void)setContentSize:(CGSize)contentSize;
-
 @end

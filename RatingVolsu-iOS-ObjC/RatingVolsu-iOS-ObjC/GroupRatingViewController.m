@@ -12,6 +12,7 @@
 #import "RatingItem+Mappings.h"
 #import "CollectionViewFlowLayout.h"
 #import "FXPageControl/FXPageControl.h"
+#import "NSNumber+Extensions.h"
 
 @interface GroupRatingViewController()
 <
@@ -24,103 +25,110 @@ FXPageControlDelegate
 
 @property (weak, nonatomic) IBOutlet UILabel *subjectName;
 @property (weak, nonatomic) IBOutlet FXPageControl *pageControl;
-
+@property (weak, nonatomic) IBOutlet UILabel *subjectType;
+@property (nonatomic) NSArray *dataSource;
 @end
 
 @implementation GroupRatingViewController {
 	
-	NSArray *dataSource;
 	CGPoint contentOffset;
-	CGFloat cellWidth;
-	CGFloat maxHeight;
-	CGFloat inset;
-	BOOL scrolled;
 }
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	cellWidth = self.collectionView.frame.size.width * 0.7;
-	CollectionViewFlowLayout *layout = (CollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
-	[layout setContentSize:CGSizeMake(cellWidth, self.collectionView.frame.size.height - 10)];
-	
-	inset = (self.collectionView.frame.size.width - cellWidth) / 2;
+	self.pageControl.backgroundColor = [UIColor clearColor];
 	[self addData];
-	[self groupRequest];
+	
+}
 
+- (void)viewDidLayoutSubviews {
+	
+	self.collectionView.collectionViewLayout.itemSize = CGSizeMake(self.collectionView.frame.size.width * 0.6, self.collectionView.frame.size.height - 20);
+}
+
+- (void)setPageControl:(FXPageControl *)pageControl {
+	
+	_pageControl = pageControl;
+	self.pageControl.dotSpacing = 5;
+	self.pageControl.dotSize = 4;
+	self.pageControl.dotColor = @(0xC2C1BF).rgbColor;
+	self.pageControl.selectedDotColor = @(0x9B9A99).rgbColor;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 	
 	CGFloat contentOffsetX = scrollView.contentOffset.x;
+	CGFloat width = self.collectionView.collectionViewLayout.itemSize.width;
 	
-	scrolled = YES;
-	self.pageControl.currentPage = ((NSInteger)round(contentOffsetX /(cellWidth + 10)) % dataSource.count);
-}
-
-- (void)pageControl:(FXPageControl *)pageControl changedCurrentPage:(NSInteger)currentPage {
+	self.pageControl.currentPage = ((NSInteger)round(contentOffsetX /(width + 10)) % self.dataSource.count);
 	
-	if (!scrolled) {
-		NSInteger page = ((NSInteger)round(self.collectionView.contentOffset.x /(cellWidth + 10)) % dataSource.count);
-		NSInteger pageCount;
-		
-		if (page == dataSource.count - 1 && currentPage == 0) {
-			pageCount = 1;
-		} else if (page == 0 && currentPage == dataSource.count - 1) {
-			pageCount = -1;
-		} else
-			pageCount = currentPage - page;
-		
-		CGFloat offsetX = self.collectionView.contentOffset.x + pageCount * (cellWidth + 10);
-		[self.collectionView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
-	}
-	scrolled = NO;
-	Subject *item = dataSource[currentPage];
-	self.subjectName.text = [NSString stringWithFormat:@"%@ %@", item.name, item.type ? @"экзамен": @"зачет"];
+	Subject *subject = self.dataSource[self.pageControl.currentPage];
+	self.subjectName.text = subject.name;
+	self.subjectType.text = subject.type.subjectType;
 }
 
 - (void)addData {
 	
+	Subject *currentSubject = self.dataSource[self.pageControl.currentPage];
+	
 	NSArray *items = [RatingItem where:@{@"semester.student.group.groupId" : self.semester.student.group.groupId,
-										  @"semester.number" : self.semester.number}];
+										 @"semester.number" : self.semester.number}];
 	
-	dataSource = [items valueForKeyPath:@"@distinctUnionOfObjects.subject"];
+	RatingItem *ratingItem = [items find:^BOOL(RatingItem *object) {
+		return (![object.semester.place isEqualToNumber:@(0)]);
+	}];
+	self.dataSource = (ratingItem) ? [items valueForKeyPath:@"@distinctUnionOfObjects.subject"] : nil;
 	
-	dataSource = [dataSource sortedArrayUsingComparator:^NSComparisonResult(Subject *s1, Subject *s2){
-		NSNumber *count1 = [[items filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"subject.subjectId == %@", s1.subjectId]] valueForKeyPath:@"@count"];
-		NSNumber *count2 = [[items filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"subject.subjectId == %@", s2.subjectId]] valueForKeyPath:@"@count"];
+	if (self.dataSource) {
 		
-		return [count2 compare:count1];
-	}];
-	
-	self.pageControl.numberOfPages = dataSource.count;
-	self.pageControl.delegate = self;
-	self.pageControl.dotSpacing = 5;
-	self.pageControl.dotSize = 4;
-	self.pageControl.dotColor = @(0xC2C1BF).rgbColor;
-	self.pageControl.selectedDotColor = @(0x9B9A99).rgbColor;
-	self.pageControl.backgroundColor = [UIColor clearColor];
-	
-	Subject *item = dataSource[self.pageControl.currentPage];
-	self.subjectName.text = [NSString stringWithFormat:@"%@ %@", item.name, item.type ? @"экзамен": @"зачет"];
-	
-	self.collectionView.cycledPaging = dataSource.count > 1;
-	
-	[self.collectionView reloadData];
+		self.dataSource = [self.dataSource sortedArrayUsingComparator:^NSComparisonResult(Subject *s1, Subject *s2){
+			NSNumber *count1 = [[items filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"subject.subjectId == %@", s1.subjectId]] valueForKeyPath:@"@sum.total.intValue"];
+			NSNumber *count2 = [[items filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"subject.subjectId == %@", s2.subjectId]] valueForKeyPath:@"@sum.total.intValue"];
+			
+			return [count2 compare:count1];
+		}];
+		
+		self.collectionView.cycledPaging = self.dataSource.count > 1;
+		self.pageControl.numberOfPages = self.dataSource.count;
+		NSInteger index = [self.dataSource containsObject:currentSubject] ? [self.dataSource indexOfObject:currentSubject] : 0;
+		
+		self.pageControl.currentPage = index;
+		self.collectionView.contentOffset = CGPointMake(index * (self.collectionView.collectionViewLayout.itemSize.width + self.collectionView.collectionViewLayout.minimumInteritemSpacing) + self.collectionView.contentInset.left, 0);
+		
+		Subject *item = self.dataSource[self.pageControl.currentPage];
+		self.subjectName.text = item.name;
+		self.subjectType.text = item.type.subjectType;
+		
+		[self.collectionView reloadData];
+	}
 }
-	 
 
-- (void)groupRequest {
+
+- (NSURLSessionDataTask *)groupRequest:(void (^)())handler  {
 	
-	[RatingItem requestByGroup:self.semester withHandler:^(NSArray *dataList) {
+	NSURLSessionDataTask *task;
+	
+	task = [RatingItem requestByGroup:self.semester withHandler:^(NSArray *dataList) {
+		handler();
 		[self addData];
-	}];
+	}
+						   errorBlock:^{
+							   handler();
+						   }];
+	
+	return task;
+}
+
+- (NSURLSessionDataTask *)refresh:(void (^)())handler {
+	
+	return [self groupRequest:handler];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	
-	NSInteger path = indexPath.row % dataSource.count;
+	NSInteger path = indexPath.row % self.dataSource.count;
 	SubjectCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndexPath:indexPath];
-	Subject *subject = dataSource[path];
+	Subject *subject = self.dataSource[path];
 	
 	cell.controller.subject = subject;
 	cell.controller.semester = self.semester;
@@ -144,21 +152,26 @@ FXPageControlDelegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 	
-	return self.collectionView.cycledPaging ? dataSource.count * 3 : dataSource.count;
+	return self.collectionView.cycledPaging ? self.dataSource.count * 3 : self.dataSource.count;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
 	
-	return UIEdgeInsetsMake(0, inset, 0, inset);
+	CGFloat cellWidth = self.collectionView.collectionViewLayout.itemSize.width;
+	CGFloat frameWidth = self.collectionView.frame.size.width;
+	
+	CGFloat inset = (frameWidth - cellWidth) / 2;
+	
+	return UIEdgeInsetsMake(0, inset, 0, 0);
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-	
-	CGFloat height = collectionView.frame.size.height;
-	CGFloat width = cellWidth;
-	
-	return CGSizeMake(width, height);
-}
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+//
+//	CGFloat height = self.collectionView.collectionViewLayout.itemSize.height;
+//	CGFloat width = self.collectionView.collectionViewLayout.itemSize.width;
+//
+//	return CGSizeMake(width, height);
+//}
 
 
 @end

@@ -13,22 +13,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANY-P4-zMb">
-                        <rect key="frame" x="15" y="0.0" width="185" height="59"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="185" id="uTY-Hv-AOq"/>
-                        </constraints>
-                        <attributedString key="attributedText">
-                            <fragment content="Предмет">
-                                <attributes>
-                                    <color key="NSColor" red="0.14509803921568629" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <font key="NSFont" size="12" name="HelveticaNeue"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCi-mw-Mci">
                         <rect key="frame" x="200" y="0.0" width="67" height="59"/>
                         <attributedString key="attributedText">
@@ -107,6 +91,38 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sk7-0k-lHY">
+                        <rect key="frame" x="15" y="42" width="185" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="tp0-SC-mv9"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <color key="NSColor" red="0.55686274509803924" green="0.58431372549019611" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="10" name="HelveticaNeue-Light"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANY-P4-zMb">
+                        <rect key="frame" x="15" y="0.0" width="185" height="39"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="185" id="uTY-Hv-AOq"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="Предмет">
+                                <attributes>
+                                    <color key="NSColor" red="0.14509803921568629" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ANY-P4-zMb" firstAttribute="trailing" secondItem="PCi-mw-Mci" secondAttribute="leading" id="5bR-cC-dNc"/>
@@ -114,15 +130,18 @@
                     <constraint firstAttribute="trailing" secondItem="YNo-HN-Lt4" secondAttribute="trailing" id="A1F-cc-E2B"/>
                     <constraint firstItem="WaN-5r-6Il" firstAttribute="width" secondItem="HM0-X7-Xso" secondAttribute="width" id="AdF-Rv-PSh"/>
                     <constraint firstItem="jt6-bl-hbO" firstAttribute="trailing" secondItem="YNo-HN-Lt4" secondAttribute="leading" id="CH8-bY-Gvo"/>
+                    <constraint firstItem="PCi-mw-Mci" firstAttribute="leading" secondItem="sk7-0k-lHY" secondAttribute="trailing" id="DDt-6x-9Q3"/>
                     <constraint firstItem="WaN-5r-6Il" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="G1j-3O-AeL"/>
                     <constraint firstItem="PCi-mw-Mci" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="M3F-N8-IjO"/>
                     <constraint firstItem="ANY-P4-zMb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="NxY-qb-QAG"/>
                     <constraint firstAttribute="bottom" secondItem="jt6-bl-hbO" secondAttribute="bottom" id="P3c-Xm-gWs"/>
                     <constraint firstItem="PCi-mw-Mci" firstAttribute="width" secondItem="HM0-X7-Xso" secondAttribute="width" id="PAU-Od-7S2"/>
                     <constraint firstAttribute="bottom" secondItem="PCi-mw-Mci" secondAttribute="bottom" id="W0o-CZ-YgM"/>
+                    <constraint firstItem="ANY-P4-zMb" firstAttribute="width" secondItem="sk7-0k-lHY" secondAttribute="width" id="aXv-iE-q60"/>
                     <constraint firstAttribute="bottom" secondItem="YNo-HN-Lt4" secondAttribute="bottom" id="adf-BA-YRc"/>
                     <constraint firstAttribute="bottom" secondItem="ANY-P4-zMb" secondAttribute="bottom" id="bMV-3x-4S2"/>
                     <constraint firstItem="HM0-X7-Xso" firstAttribute="trailing" secondItem="WaN-5r-6Il" secondAttribute="leading" id="e30-qL-iWa"/>
+                    <constraint firstItem="sk7-0k-lHY" firstAttribute="top" secondItem="ANY-P4-zMb" secondAttribute="bottom" constant="3" id="fuS-Kh-pX1"/>
                     <constraint firstItem="jt6-bl-hbO" firstAttribute="width" secondItem="YNo-HN-Lt4" secondAttribute="width" id="hoH-Cl-y36"/>
                     <constraint firstItem="jt6-bl-hbO" firstAttribute="leading" secondItem="zhP-z9-sjN" secondAttribute="trailing" id="iZ3-to-qSX"/>
                     <constraint firstItem="WaN-5r-6Il" firstAttribute="trailing" secondItem="zhP-z9-sjN" secondAttribute="leading" id="iwm-R4-eE9"/>
@@ -132,16 +151,24 @@
                     <constraint firstAttribute="bottom" secondItem="WaN-5r-6Il" secondAttribute="bottom" id="oMZ-UJ-1Wc"/>
                     <constraint firstItem="HM0-X7-Xso" firstAttribute="leading" secondItem="PCi-mw-Mci" secondAttribute="trailing" id="qRP-zg-edX"/>
                     <constraint firstAttribute="bottom" secondItem="HM0-X7-Xso" secondAttribute="bottom" id="rn6-b8-oWx"/>
+                    <constraint firstItem="sk7-0k-lHY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="s8R-qe-jfm"/>
                     <constraint firstItem="YNo-HN-Lt4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sOd-pg-l9H"/>
                     <constraint firstAttribute="bottom" secondItem="zhP-z9-sjN" secondAttribute="bottom" id="vlq-h6-9RQ"/>
                     <constraint firstItem="WaN-5r-6Il" firstAttribute="width" secondItem="zhP-z9-sjN" secondAttribute="width" id="yLZ-AY-v9C"/>
+                    <constraint firstAttribute="bottom" secondItem="sk7-0k-lHY" secondAttribute="bottom" constant="4" id="yZN-GB-GTo"/>
                     <constraint firstItem="jt6-bl-hbO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zNv-xY-qCf"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="bMV-3x-4S2"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="exam" destination="jt6-bl-hbO" id="Qis-go-Y0y"/>
                 <outlet property="firstA" destination="PCi-mw-Mci" id="Yr7-oP-t7u"/>
                 <outlet property="secondA" destination="HM0-X7-Xso" id="Ndg-wi-Z31"/>
+                <outlet property="subjectType" destination="sk7-0k-lHY" id="hIs-0O-hu6"/>
                 <outlet property="sum" destination="zhP-z9-sjN" id="Qpb-Z1-MnB"/>
                 <outlet property="thirdA" destination="WaN-5r-6Il" id="YFJ-CA-4dx"/>
                 <outlet property="titleText" destination="ANY-P4-zMb" id="dDt-QL-uHw"/>

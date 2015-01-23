@@ -14,16 +14,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikG-Gj-mwj">
-                        <rect key="frame" x="15" y="0.0" width="20" height="43"/>
+                        <rect key="frame" x="15" y="0.0" width="35" height="43"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="0XP-Ar-LgW"/>
+                            <constraint firstAttribute="width" constant="35" id="0XP-Ar-LgW"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.14509803921568629" green="0.16862745098039217" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkH-xE-WLb">
-                        <rect key="frame" x="45" y="0.0" width="208" height="43"/>
+                        <rect key="frame" x="60" y="0.0" width="193" height="43"/>
                         <attributedString key="attributedText">
                             <fragment content="Студент">
                                 <attributes>

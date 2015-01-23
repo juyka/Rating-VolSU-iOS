@@ -10,8 +10,8 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="46"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgc-cC-uVb">
-                    <rect key="frame" x="15" y="15" width="249" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgc-cC-uVb">
+                    <rect key="frame" x="15" y="11" width="250" height="24"/>
                     <attributedString key="attributedText">
                         <fragment content="Для доступа к детальному рейтингу поверните устройство">
                             <attributes>
@@ -34,7 +34,7 @@
                         <constraint firstAttribute="width" constant="60" id="9QN-nY-sUD"/>
                     </constraints>
                     <attributedString key="attributedText">
-                        <fragment content="1 модуль">
+                        <fragment content="Всего">
                             <attributes>
                                 <color key="NSColor" red="0.55686274509803924" green="0.58431372549019611" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <font key="NSFont" size="13" name="HelveticaNeue"/>
@@ -44,8 +44,8 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MWW-TH-RWO" customClass="FXPageControl">
-                    <rect key="frame" x="320" y="29" width="50" height="10"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWW-TH-RWO" customClass="FXPageControl">
+                    <rect key="frame" x="320" y="27" width="50" height="10"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="6XO-uN-oPn"/>
@@ -53,13 +53,13 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="MWW-TH-RWO" firstAttribute="top" secondItem="Uza-LU-Q4e" secondAttribute="bottom" constant="1" id="D7u-FR-T4F"/>
                 <constraint firstItem="MWW-TH-RWO" firstAttribute="centerX" secondItem="Uza-LU-Q4e" secondAttribute="centerX" id="DOT-DQ-CUW"/>
                 <constraint firstItem="Vgc-cC-uVb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="GNq-JO-aP2"/>
-                <constraint firstItem="Uza-LU-Q4e" firstAttribute="leading" secondItem="Vgc-cC-uVb" secondAttribute="trailing" constant="51" id="LTO-ct-CKq"/>
-                <constraint firstAttribute="centerY" secondItem="Vgc-cC-uVb" secondAttribute="centerY" constant="-1.5" id="bWO-FG-KFq"/>
+                <constraint firstItem="Uza-LU-Q4e" firstAttribute="leading" secondItem="Vgc-cC-uVb" secondAttribute="trailing" constant="50" id="LTO-ct-CKq"/>
+                <constraint firstAttribute="centerY" secondItem="Vgc-cC-uVb" secondAttribute="centerY" id="bWO-FG-KFq"/>
                 <constraint firstItem="Uza-LU-Q4e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="fDp-qO-fzP"/>
                 <constraint firstAttribute="trailing" secondItem="Uza-LU-Q4e" secondAttribute="trailing" constant="25" id="fcf-Zx-l7R"/>
             </constraints>

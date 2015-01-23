@@ -1,9 +1,9 @@
 //
 //  RatingItem.m
-//  Pods
+//  RatingVolsu-iOS-ObjC
 //
-//  Created by Настя on 14/12/14.
-//
+//  Created by Настя on 22/01/15.
+//  Copyright (c) 2015 VolSU. All rights reserved.
 //
 
 #import "RatingItem.h"
@@ -20,7 +20,7 @@
 @dynamic sum;
 @dynamic thirdAttestation;
 @dynamic total;
-@dynamic priority;
+@dynamic isNullSubject;
 @dynamic semester;
 @dynamic subject;
 

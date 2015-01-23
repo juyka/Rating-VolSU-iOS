@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RatingViewControllerProtocol.h"
 
-@interface StudentRatingViewController : UIViewController
+@interface StudentRatingViewController : UIViewController<RatingViewControllerProtocol>
 
-@property(nonatomic) Semester *semester;
+@property (nonatomic) Semester *semester;
+
+- (NSURLSessionDataTask *)refresh:(void (^)())handler;
 
 @end

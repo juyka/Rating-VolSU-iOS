@@ -10,6 +10,6 @@
 
 @interface RatingItem (Mappings)
 
-+ (void)requestByStudent:(Semester *)semester withHandler:(RequestHandler)handler;
-+ (void)requestByGroup:(Semester *)semester withHandler:(RequestHandler)handler;
++ (NSURLSessionDataTask *)requestByStudent:(Semester *)semester withHandler:(RequestHandler)handler errorBlock:(void (^)())errorHandler;
++ (NSURLSessionDataTask *)requestByGroup:(Semester *)semester withHandler:(RequestHandler)handler errorBlock:(void (^)())errorHandler;
 @end

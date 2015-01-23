@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RatingViewControllerProtocol.h"
 
-@interface GroupRatingViewController : UIViewController
+@interface GroupRatingViewController : UIViewController<RatingViewControllerProtocol>
 
 @property(nonatomic) Semester *semester;
 
 - (void)scroll:(CGPoint)offset;
-
+- (NSURLSessionDataTask *)refresh:(void (^)())handler;
 @end

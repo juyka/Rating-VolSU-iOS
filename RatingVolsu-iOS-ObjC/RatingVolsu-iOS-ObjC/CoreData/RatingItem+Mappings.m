@@ -18,7 +18,7 @@
 			 };
 }
 
-+ (void)requestByStudent:(Semester *)semester withHandler:(RequestHandler)handler {
++ (NSURLSessionDataTask *)requestByStudent:(Semester *)semester withHandler:(RequestHandler)handler  errorBlock:(void (^)())errorHandler {
 	
 	NSDictionary *parameters = @{
 								 @"Fak" : semester.student.group.faculty.facultyId,
@@ -28,7 +28,9 @@
 								 };
 	NSString *url = @"stud_rat.php";
 	
-	[RequestManager.manager request:url parameters:parameters withBlock:^(NSArray *entries) {
+	NSURLSessionDataTask *task;
+	
+	task = [RequestManager.manager request:url parameters:parameters withBlock:^(NSArray *entries) {
 		
 		NSDictionary *dictionary = entries.first;
 		
@@ -75,10 +77,12 @@
 			}
 		}
 		
-	} errorBlock:nil];
+	} errorBlock:errorHandler];
+	
+	return task;
 }
 
-+ (void)requestByGroup:(Semester *)semester withHandler:(RequestHandler)handler {
++ (NSURLSessionDataTask *)requestByGroup:(Semester *)semester withHandler:(RequestHandler)handler errorBlock:(void (^)())errorHandler{
 	
 	NSDictionary *parameters = @{
 								 @"Fak" : semester.student.group.faculty.facultyId,
@@ -87,7 +91,9 @@
 								 };
 	NSString *url = @"group_rat.php";
 	
-	[RequestManager.manager request:url parameters:parameters withBlock:^(NSArray *entries) {
+	NSURLSessionDataTask *task;
+	
+	task = [RequestManager.manager request:url parameters:parameters withBlock:^(NSArray *entries) {
 		
 		NSDictionary *dictionary = entries.first;
 		NSArray *subjects;
@@ -102,7 +108,7 @@
 								  @"name" : [value valueForKeyPath:@"Name"],
 								  @"type" : [value valueForKeyPath:@"Type"],
 								  }];
-				return subject.name;
+				return subject;
 			}];
 		}
 		
@@ -128,15 +134,28 @@
 				
 				NSDictionary *marks = [value valueForKey:@"Predmet"];
 				
-				NSArray *subjectRatings = [marks map:^id(id key, id value) {
+				NSArray *subjectRatings = [subjects map:^id(Subject *subject) {
 					
-					NSString *identifier = [NSString stringWithFormat:@"%@%@", key, studentsSemester.semesterId];
+					NSString *identifier = [NSString stringWithFormat:@"%@%@", subject.subjectId, studentsSemester.semesterId];
 					RatingItem *item = [RatingItem findOrCreate:@{@"ratingItemId" : identifier}];
 					
+					NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\(.*\\)" options:NSRegularExpressionCaseInsensitive error:nil];
+					
+					NSString *subjectMark = [NSString stringWithFormat:@"%@", marks[subject.subjectId]];
+					NSNumber *total;
+					
+					if (subjectMark) {
+						NSString *value = [regex stringByReplacingMatchesInString:subjectMark options:0 range:NSMakeRange(0, subjectMark.length) withTemplate:@""];
+						total = @([value integerValue]);
+					}
+					else
+						total = @(0);
+					
 					[item update:@{
-								   @"subject" : [Subject findOrCreate:@{@"subjectId" : key}],
+								   @"subject" : [Subject findOrCreate:@{@"subjectId" : subject.subjectId}],
 								   @"semester" : studentsSemester,
-								   @"total": value
+								   @"total": total,
+								   @"isNullSubject": @(!(subjectMark))
 								   }];
 					return item;
 				}];
@@ -144,12 +163,27 @@
 				return subjectRatings;
 			}];
 			
+			ratingItems = [ratingItems sortedArrayUsingComparator:^NSComparisonResult(NSArray *obj1, NSArray *obj2) {
+				RatingItem *item1 = obj1.first;
+				RatingItem *item2 = obj2.first;
+				
+				return [item2.semester.student.number compare:item1.semester.student.number];
+			}];
+			
+			ratingItems = [ratingItems sortedArrayUsingComparator:^NSComparisonResult(NSArray *obj1, NSArray *obj2) {
+				
+				NSNumber *sum1 = [[obj1 subarrayWithRange:NSMakeRange(0, obj1.count)] valueForKeyPath:@"@sum.total.intValue"];
+				NSNumber *sum2 = [[obj2 subarrayWithRange:NSMakeRange(0, obj2.count)] valueForKeyPath:@"@sum.total.intValue"];
+				
+				return [sum2 compare:sum1];
+			}];
+			
 			[ratingItems eachWithIndex:^(NSArray *array, NSUInteger index) {
 				
 				RatingItem *item = array.first;
 				NSNumber *place = [[NSNumber alloc] initWithInteger:index + 1];
 				item.semester.place = place;
-				NSLog(@"%@", item.semester);
+				
 			}];
 			
 			[[CoreDataManager sharedManager] saveContext];
@@ -157,14 +191,14 @@
 			
 			NSArray *ratingTable = [ratingItems flatten];
 			
-			
 			if (handler) {
 				handler(ratingTable);
 			}
 		}
 		
-	} errorBlock:nil];
-
+	} errorBlock:errorHandler];
+	
+	return task;
 }
 
 @end

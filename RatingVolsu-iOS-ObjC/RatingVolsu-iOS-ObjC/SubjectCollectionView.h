@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CollectionViewFlowLayout.h"
 
 @interface SubjectCollectionView : UICollectionView
 
+@property (nonatomic) CollectionViewFlowLayout *collectionViewLayout;
 @property (nonatomic) BOOL cycledPaging;
 
 @end

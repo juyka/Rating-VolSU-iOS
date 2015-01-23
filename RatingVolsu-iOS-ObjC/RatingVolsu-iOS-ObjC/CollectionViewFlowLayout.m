@@ -17,11 +17,6 @@
 	self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
 }
 
-- (void)setContentSize:(CGSize)contentSize {
-
-	self.itemSize = contentSize;
-}
-
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
 	
 	CGPoint targetContentOffset;
