@@ -10,6 +10,9 @@
 
 @interface RecentItem (Mappings)
 
- - (NSString *)details;
+- (NSString *)details;
+- (void)rename:(NSString *)newName;
+
++ (void)clean;
 
 @end

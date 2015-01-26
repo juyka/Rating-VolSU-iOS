@@ -12,6 +12,7 @@
 @interface RecentTableViewCell : MCSwipeTableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleText;
+@property (weak, nonatomic) IBOutlet UITextField *editText;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionText;
 @property (weak, nonatomic) IBOutlet UIImageView *recentImage;
 

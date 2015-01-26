@@ -16,7 +16,7 @@
 
 @interface RecentViewController ()
 <
-MCSwipeTableViewCellDelegate,
+UIGestureRecognizerDelegate,
 UITableViewDataSource,
 UITableViewDelegate,
 NSFetchedResultsControllerDelegate
@@ -27,7 +27,10 @@ NSFetchedResultsControllerDelegate
 @property (nonatomic) Reachability *internetReachability;
 @end
 
-@implementation RecentViewController
+@implementation RecentViewController {
+	
+	NSIndexPath *selectedCellPath;
+}
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
@@ -37,6 +40,12 @@ NSFetchedResultsControllerDelegate
 	self.internetReachability = [Reachability reachabilityForInternetConnection];
 	[self.internetReachability startNotifier];
 	
+	UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+										  initWithTarget:self action:@selector(handleLongPress:)];
+	lpgr.minimumPressDuration = 1.5; //seconds
+	lpgr.delegate = self;
+	[self.tableView addGestureRecognizer:lpgr];
+	
 	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
 	item.title = @" ";
 	self.navigationItem.backBarButtonItem = item;
@@ -44,6 +53,16 @@ NSFetchedResultsControllerDelegate
 	[self.tableView registerNib:[UINib nibWithNibName:@"RecentTableViewCell" bundle:nil] forCellReuseIdentifier:@"recentCell"];
 	self.tableView.tableFooterView = [UIView new];
 	self.tableView.separatorInset = UIEdgeInsetsZero;
+
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(keyboardWillShow)
+												 name:UIKeyboardWillShowNotification
+											   object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(keyboardWillHide)
+												 name:UIKeyboardWillHideNotification
+											   object:nil];
 	
 	[[self fetchedResultsController] performFetch:nil];
 
@@ -55,6 +74,27 @@ NSFetchedResultsControllerDelegate
 	}
 	
 }
+
+-(void)keyboardWillShow {
+	
+	CGFloat keyboardOffset = 293;
+	
+	UIEdgeInsets insets = self.tableView.contentInset;
+	
+	self.tableView.contentInset = UIEdgeInsetsMake(insets.top, insets.left, keyboardOffset, insets.right);
+	
+}
+
+-(void)keyboardWillHide {
+	
+	CGFloat keyboardOffset = 293;
+	
+	UIEdgeInsets insets = self.tableView.contentInset;
+	
+	self.tableView.contentInset = UIEdgeInsetsMake(insets.top, insets.left, insets.bottom - keyboardOffset, insets.right);
+}
+
+
 - (IBAction)addItem {
 	
 	NetworkStatus netStatus = [self.internetReachability currentReachabilityStatus];
@@ -80,43 +120,48 @@ NSFetchedResultsControllerDelegate
 	
 	RecentItem *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	
-	UIView *checkView = [[UIImageView alloc] initWithImage:@"check".image];
-	checkView.contentMode = UIViewContentModeCenter;
-	UIColor *greenColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
-	
-	UIView *listView = [[UIImageView alloc] initWithImage:@"cross".image];
-	listView.contentMode = UIViewContentModeCenter;
-	UIColor *yellowColor = [UIColor colorWithRed:195.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
-	
-	UIView *crossView = [[UIImageView alloc] initWithImage:@"cross".image];
-	crossView.contentMode = UIViewContentModeCenter;
-	UIColor *redColor = [UIColor colorWithRed:232.0 / 255.0 green:61.0 / 255.0 blue:14.0 / 255.0 alpha:1.0];
-	
-	UIView *view = item.isFavorite.boolValue ? listView : checkView;
-	UIColor *color = item.isFavorite.boolValue ? yellowColor : greenColor;
-	
-	MCSwipeTableViewCellState state = item.isFavorite.boolValue ? MCSwipeTableViewCellState3 : MCSwipeTableViewCellState1;
-	
-	[cell setSwipeGestureWithView:view color:color mode:MCSwipeTableViewCellModeExit state:state completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-		
-		item.date = [NSDate date];
-		item.isFavorite = @(state == MCSwipeTableViewCellState1);
-		[[CoreDataManager sharedManager] saveContext];
-	}];
-	
-	MCSwipeTableViewCellState deleteState = item.isFavorite.boolValue ? MCSwipeTableViewCellState4 : MCSwipeTableViewCellState3;
-	
-	[cell setSwipeGestureWithView:crossView color:redColor mode:MCSwipeTableViewCellModeExit state:deleteState completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-		
-		[item delete];
-		[[CoreDataManager sharedManager] saveContext];
-	}];
-	
 	cell.defaultColor = self.tableView.backgroundColor;
-	
+	cell.editText.delegate = self;
 	[cell setRecentItem:item];
 	
 }
+
+
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+	CGPoint p = [gestureRecognizer locationInView:self.tableView];
+	
+	NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
+	if (gestureRecognizer.state == UIGestureRecognizerStateBegan &&indexPath != nil) {
+		
+		RecentTableViewCell *cell = (RecentTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+		cell.editText.hidden = NO;
+		[cell.editText becomeFirstResponder];
+		[cell.editText selectAll:nil];
+		cell.titleText.hidden = YES;
+		selectedCellPath = indexPath;
+		
+	}
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+
+	RecentTableViewCell *cell = (RecentTableViewCell *)[self.tableView cellForRowAtIndexPath:selectedCellPath];
+	RecentItem *item = [self.fetchedResultsController objectAtIndexPath:selectedCellPath];
+	
+	[item rename:cell.editText.text];
+	
+	[textField resignFirstResponder];
+	return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+	RecentTableViewCell *cell = (RecentTableViewCell *)[self.tableView cellForRowAtIndexPath:selectedCellPath];
+	cell.editText.hidden = YES;
+	cell.titleText.hidden = NO;
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	
@@ -238,6 +283,7 @@ NSFetchedResultsControllerDelegate
 		[fetchRequest setEntity:entity];
 		
 		[fetchRequest setSortDescriptors:@[@"isFavorite".descending, @"date".descending]];
+		fetchRequest.fetchLimit = 10;
 		
 		NSFetchedResultsController *theFetchedResultsController =
 		[[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
@@ -262,6 +308,8 @@ NSFetchedResultsControllerDelegate
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
+	[self.view.window endEditing:YES];
+	
 	if ([segue.identifier isEqualToString:@"RatingSegue"]) {
 		
 		RatingViewController *controller = segue.destinationViewController;

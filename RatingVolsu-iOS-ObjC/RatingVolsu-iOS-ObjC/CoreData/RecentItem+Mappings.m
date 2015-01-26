@@ -7,6 +7,7 @@
 //
 
 #import "RecentItem+Mappings.h"
+#import "NSManagedObject+Extensions.h"
 
 @implementation RecentItem (Mappings)
 
@@ -25,6 +26,24 @@
 	}
 	
 	return details;
+}
+
+- (void)rename:(NSString *)newName {
+	
+	self.name = newName;
+	[CoreDataManager.sharedManager saveContext];
+}
+
++ (void)clean {
+	
+	NSArray *items = [RecentItem where:@{@"isFavorite": @NO} order:@"date".descending];
+	
+	for (int index = 10; index < items.count; index++) {
+		
+		[items[index] delete];
+	}
+	
+	[CoreDataManager.sharedManager saveContext];
 }
 
 @end

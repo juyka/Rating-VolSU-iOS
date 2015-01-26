@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RecentViewController : UIViewController
+@interface RecentViewController : UIViewController<UITextFieldDelegate>
 
 @end

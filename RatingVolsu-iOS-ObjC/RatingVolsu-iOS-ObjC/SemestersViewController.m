@@ -90,6 +90,10 @@
 					   }];
 		_selectedItem = item;
 		[CoreDataManager.sharedManager saveContext];
+		
+		[RecentItem clean];
+		
+		
 	}
 }
 
