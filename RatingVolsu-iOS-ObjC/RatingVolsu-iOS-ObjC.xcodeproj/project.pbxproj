@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0102B89B1C52458B9C1483B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C04D6F37EBC2412C96CB0297 /* libPods.a */; };
-		5F000E6119F4EE2400DB5E91 /* RatingVolsu-iOS-ObjC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F000E5F19F4EE2400DB5E91 /* RatingVolsu-iOS-ObjC.xcdatamodeld */; };
+		5F000E6119F4EE2400DB5E91 /* Rating VolSU.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F000E5F19F4EE2400DB5E91 /* Rating VolSU.xcdatamodeld */; };
 		D601A67119F03BEE00735F5B /* SemestersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67019F03BEE00735F5B /* SemestersViewController.m */; };
 		D601A67419F03FA000735F5B /* Semester+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67319F03FA000735F5B /* Semester+Mappings.m */; };
 		D601A67A19F14AAF00735F5B /* RecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67919F14AAF00735F5B /* RecentViewController.m */; };
@@ -40,8 +40,6 @@
 		D66E2E0419E7E500006077BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66E2E0319E7E500006077BC /* Images.xcassets */; };
 		D66E2E1319E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D66E2E1219E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m */; };
 		D6A673001A6A7BEC00890DD1 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A672FF1A6A7BEC00890DD1 /* NavigationController.m */; };
-		D6A673031A6B34E900890DD1 /* RecentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A673021A6B34E900890DD1 /* RecentTableViewCell.m */; };
-		D6A673051A6B350B00890DD1 /* RecentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A673041A6B350B00890DD1 /* RecentTableViewCell.xib */; };
 		D6A673081A6BFD3E00890DD1 /* GroupRatingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A673061A6BFD3E00890DD1 /* GroupRatingTableViewController.m */; };
 		D6A6730C1A6C1A9100890DD1 /* GroupRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A6730A1A6C1A9100890DD1 /* GroupRatingCell.m */; };
 		D6A6730D1A6C1A9100890DD1 /* GroupRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A6730B1A6C1A9100890DD1 /* GroupRatingCell.xib */; };
@@ -73,6 +71,9 @@
 		D6D079B31A39D3E0000FB4DB /* SubjectCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D079B21A39D3E0000FB4DB /* SubjectCollectionView.m */; };
 		D6E59EB21A71143600273F31 /* RatingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E59EB11A71143600273F31 /* RatingItem.m */; };
 		D6E59EB61A72797200273F31 /* NSNumber+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E59EB51A72797200273F31 /* NSNumber+Extensions.m */; };
+		D6E59EB91A75136100273F31 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E59EB81A75136100273F31 /* Reachability.m */; };
+		D6E59EBD1A769BC600273F31 /* RecentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E59EBB1A769BC600273F31 /* RecentTableViewCell.m */; };
+		D6E59EBE1A769BC600273F31 /* RecentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6E59EBC1A769BC600273F31 /* RecentTableViewCell.xib */; };
 		D6FF4D6E1A03973900421E29 /* NSString+RubyLikeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF4D6D1A03973900421E29 /* NSString+RubyLikeExtensions.m */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +88,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5F000E6019F4EE2400DB5E91 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		5F000E6019F4EE2400DB5E91 /* Rating VolSU.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Rating VolSU.xcdatamodel"; sourceTree = "<group>"; };
 		A413F8C5B5AD3198095D27CB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C04D6F37EBC2412C96CB0297 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D601A66F19F03BEE00735F5B /* SemestersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemestersViewController.h; sourceTree = "<group>"; };
@@ -135,7 +136,7 @@
 		D6272BF919EE786B005DD267 /* Group+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Group+Mappings.m"; sourceTree = "<group>"; };
 		D6272BFB19EE794E005DD267 /* Student+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+Mappings.h"; sourceTree = "<group>"; };
 		D6272BFC19EE794E005DD267 /* Student+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+Mappings.m"; sourceTree = "<group>"; };
-		D66E2DF019E7E500006077BC /* RatingVolsu-iOS-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RatingVolsu-iOS-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66E2DF019E7E500006077BC /* Rating VolSU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rating VolSU.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66E2DF419E7E500006077BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D66E2DF519E7E500006077BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D66E2DF719E7E500006077BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -150,9 +151,6 @@
 		D6A672FD1A6A62D200890DD1 /* StudentRatingCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRatingCellProtocol.h; sourceTree = "<group>"; };
 		D6A672FE1A6A7BEC00890DD1 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		D6A672FF1A6A7BEC00890DD1 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
-		D6A673011A6B34E900890DD1 /* RecentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentTableViewCell.h; sourceTree = "<group>"; };
-		D6A673021A6B34E900890DD1 /* RecentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentTableViewCell.m; sourceTree = "<group>"; };
-		D6A673041A6B350B00890DD1 /* RecentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentTableViewCell.xib; sourceTree = "<group>"; };
 		D6A673061A6BFD3E00890DD1 /* GroupRatingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupRatingTableViewController.m; sourceTree = "<group>"; };
 		D6A673071A6BFD3E00890DD1 /* GroupRatingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupRatingTableViewController.h; sourceTree = "<group>"; };
 		D6A673091A6C1A9100890DD1 /* GroupRatingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupRatingCell.h; sourceTree = "<group>"; };
@@ -216,6 +214,11 @@
 		D6E59EB31A71333F00273F31 /* RatingViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingViewControllerProtocol.h; sourceTree = "<group>"; };
 		D6E59EB41A72797200273F31 /* NSNumber+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Extensions.h"; sourceTree = "<group>"; };
 		D6E59EB51A72797200273F31 /* NSNumber+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Extensions.m"; sourceTree = "<group>"; };
+		D6E59EB71A75136100273F31 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		D6E59EB81A75136100273F31 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		D6E59EBA1A769BC600273F31 /* RecentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentTableViewCell.h; sourceTree = "<group>"; };
+		D6E59EBB1A769BC600273F31 /* RecentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentTableViewCell.m; sourceTree = "<group>"; };
+		D6E59EBC1A769BC600273F31 /* RecentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentTableViewCell.xib; sourceTree = "<group>"; };
 		D6FF4D6C1A03973900421E29 /* NSString+RubyLikeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RubyLikeExtensions.h"; sourceTree = "<group>"; };
 		D6FF4D6D1A03973900421E29 /* NSString+RubyLikeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RubyLikeExtensions.m"; sourceTree = "<group>"; };
 		EC43CD03DA786FE80FE8B6BE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -364,7 +367,7 @@
 		D66E2DF119E7E500006077BC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D66E2DF019E7E500006077BC /* RatingVolsu-iOS-ObjC.app */,
+				D66E2DF019E7E500006077BC /* Rating VolSU.app */,
 				D66E2E0C19E7E500006077BC /* RatingVolsu-iOS-ObjCTests.xctest */,
 			);
 			name = Products;
@@ -373,7 +376,7 @@
 		D66E2DF219E7E500006077BC /* RatingVolsu-iOS-ObjC */ = {
 			isa = PBXGroup;
 			children = (
-				5F000E5F19F4EE2400DB5E91 /* RatingVolsu-iOS-ObjC.xcdatamodeld */,
+				5F000E5F19F4EE2400DB5E91 /* Rating VolSU.xcdatamodeld */,
 				D6BCA27419F3F2400039AAB8 /* Classes */,
 				D6272BF419EE6C4A005DD267 /* Extensions */,
 				D604873619ED3F530009E1E7 /* CoreData */,
@@ -393,6 +396,8 @@
 		D66E2DF319E7E500006077BC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D6E59EB71A75136100273F31 /* Reachability.h */,
+				D6E59EB81A75136100273F31 /* Reachability.m */,
 				D66E2DF419E7E500006077BC /* Info.plist */,
 				D66E2DF519E7E500006077BC /* main.m */,
 				D6272BF319EE6839005DD267 /* PrefixHeader.pch */,
@@ -507,9 +512,9 @@
 				D61CEECD1A61C2C700B67DDC /* SectionHeaderView.xib */,
 				D61CEECF1A61DA8400B67DDC /* SectionHeaderView.h */,
 				D61CEED01A61DA8400B67DDC /* SectionHeaderView.m */,
-				D6A673011A6B34E900890DD1 /* RecentTableViewCell.h */,
-				D6A673021A6B34E900890DD1 /* RecentTableViewCell.m */,
-				D6A673041A6B350B00890DD1 /* RecentTableViewCell.xib */,
+				D6E59EBA1A769BC600273F31 /* RecentTableViewCell.h */,
+				D6E59EBB1A769BC600273F31 /* RecentTableViewCell.m */,
+				D6E59EBC1A769BC600273F31 /* RecentTableViewCell.xib */,
 			);
 			name = RecentItems;
 			sourceTree = "<group>";
@@ -542,7 +547,7 @@
 			);
 			name = "RatingVolsu-iOS-ObjC";
 			productName = "RatingVolsu-iOS-ObjC";
-			productReference = D66E2DF019E7E500006077BC /* RatingVolsu-iOS-ObjC.app */;
+			productReference = D66E2DF019E7E500006077BC /* Rating VolSU.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D66E2E0B19E7E500006077BC /* RatingVolsu-iOS-ObjCTests */ = {
@@ -609,7 +614,7 @@
 				D66E2E0219E7E500006077BC /* Main.storyboard in Resources */,
 				D61CEECE1A61C2C700B67DDC /* SectionHeaderView.xib in Resources */,
 				D6068A281A653C440017B36C /* StudentRatingTableHeader.xib in Resources */,
-				D6A673051A6B350B00890DD1 /* RecentTableViewCell.xib in Resources */,
+				D6E59EBE1A769BC600273F31 /* RecentTableViewCell.xib in Resources */,
 				D6068A431A6A51D70017B36C /* StudentRatingLandscapeHeader.xib in Resources */,
 				D66E2E0419E7E500006077BC /* Images.xcassets in Resources */,
 				D6068A481A6A58310017B36C /* StudentRatingLandscapeTableViewCell.xib in Resources */,
@@ -674,13 +679,13 @@
 				D6D079861A39A4DE000FB4DB /* GroupRatingViewController.m in Sources */,
 				D604872119ED22A20009E1E7 /* Faculty+Mappings.m in Sources */,
 				D6D079A41A39B273000FB4DB /* NSMutableAttributedString+RLE.m in Sources */,
+				D6E59EB91A75136100273F31 /* Reachability.m in Sources */,
 				D6BCA27319F3F2040039AAB8 /* FacultiesViewController.m in Sources */,
 				D6BD2BD61A08EDC000591069 /* NSArray+Extensions.m in Sources */,
 				D6A6730C1A6C1A9100890DD1 /* GroupRatingCell.m in Sources */,
 				D6A673081A6BFD3E00890DD1 /* GroupRatingTableViewController.m in Sources */,
 				D6BD2BB41A06372200591069 /* Subject.m in Sources */,
 				D61CEED71A61F24F00B67DDC /* Faculty.m in Sources */,
-				D6A673031A6B34E900890DD1 /* RecentTableViewCell.m in Sources */,
 				D6BD2BCC1A0640F600591069 /* RatingItem+Mappings.m in Sources */,
 				D6068A471A6A58310017B36C /* StudentRatingLandscapeTableViewCell.m in Sources */,
 				D601A67D19F1514700735F5B /* RecentItem+Mappings.m in Sources */,
@@ -694,6 +699,7 @@
 				D6D079A11A39B273000FB4DB /* NSArray+RLE.m in Sources */,
 				D6BCA27B19F3F4D70039AAB8 /* StudentsViewController.m in Sources */,
 				D61CEED11A61DA8400B67DDC /* SectionHeaderView.m in Sources */,
+				D6E59EBD1A769BC600273F31 /* RecentTableViewCell.m in Sources */,
 				D6D079A71A39B273000FB4DB /* NSPredicate+RLE.m in Sources */,
 				D6FF4D6E1A03973900421E29 /* NSString+RubyLikeExtensions.m in Sources */,
 				D6D079A31A39B273000FB4DB /* NSDate+RLE.m in Sources */,
@@ -719,7 +725,7 @@
 				D601A67119F03BEE00735F5B /* SemestersViewController.m in Sources */,
 				D6D0797E1A307C42000FB4DB /* MNActivityIndicatorView.m in Sources */,
 				D6068A341A6889A10017B36C /* RatingScrollView.m in Sources */,
-				5F000E6119F4EE2400DB5E91 /* RatingVolsu-iOS-ObjC.xcdatamodeld in Sources */,
+				5F000E6119F4EE2400DB5E91 /* Rating VolSU.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,6 +798,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -828,6 +835,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -844,7 +852,7 @@
 				INFOPLIST_FILE = "RatingVolsu-iOS-ObjC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Rating VolSU";
 			};
 			name = Debug;
 		};
@@ -859,7 +867,7 @@
 				INFOPLIST_FILE = "RatingVolsu-iOS-ObjC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Rating VolSU";
 			};
 			name = Release;
 		};
@@ -930,13 +938,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		5F000E5F19F4EE2400DB5E91 /* RatingVolsu-iOS-ObjC.xcdatamodeld */ = {
+		5F000E5F19F4EE2400DB5E91 /* Rating VolSU.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				5F000E6019F4EE2400DB5E91 /* DataModel.xcdatamodel */,
+				5F000E6019F4EE2400DB5E91 /* Rating VolSU.xcdatamodel */,
 			);
-			currentVersion = 5F000E6019F4EE2400DB5E91 /* DataModel.xcdatamodel */;
-			path = "RatingVolsu-iOS-ObjC.xcdatamodeld";
+			currentVersion = 5F000E6019F4EE2400DB5E91 /* Rating VolSU.xcdatamodel */;
+			path = "Rating VolSU.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

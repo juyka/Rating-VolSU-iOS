@@ -104,7 +104,7 @@ FXPageControlDelegate
 	}
 	errorBlock:^{
 		
-		handler();
+	//	handler();
 	}];
 	
 	return task;

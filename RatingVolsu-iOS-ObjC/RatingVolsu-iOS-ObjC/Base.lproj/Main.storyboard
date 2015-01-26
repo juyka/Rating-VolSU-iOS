@@ -762,9 +762,13 @@
                                 <exclude reference="cm7-GI-HEc"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Kwn-Xf-S4E"/>
                                 <exclude reference="KMA-Lq-T0j"/>
                                 <exclude reference="iL1-uh-YJ6"/>
                                 <exclude reference="tDe-lR-ISW"/>
+                                <exclude reference="EHR-UC-Seg"/>
+                                <exclude reference="S89-SU-0Yi"/>
+                                <exclude reference="sQ3-Rc-hW7"/>
                                 <exclude reference="3Q1-i9-gkP"/>
                                 <exclude reference="DRq-L2-0Sc"/>
                                 <exclude reference="Gw6-MP-lL5"/>
@@ -772,10 +776,6 @@
                                 <exclude reference="TD9-dS-Iwv"/>
                                 <exclude reference="e7i-FO-2AW"/>
                                 <exclude reference="xGa-mz-pcJ"/>
-                                <exclude reference="EHR-UC-Seg"/>
-                                <exclude reference="S89-SU-0Yi"/>
-                                <exclude reference="sQ3-Rc-hW7"/>
-                                <exclude reference="Kwn-Xf-S4E"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -786,9 +786,13 @@
                                 <include reference="cm7-GI-HEc"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Kwn-Xf-S4E"/>
                                 <include reference="KMA-Lq-T0j"/>
                                 <include reference="iL1-uh-YJ6"/>
                                 <include reference="tDe-lR-ISW"/>
+                                <include reference="EHR-UC-Seg"/>
+                                <include reference="S89-SU-0Yi"/>
+                                <include reference="sQ3-Rc-hW7"/>
                                 <include reference="3Q1-i9-gkP"/>
                                 <include reference="DRq-L2-0Sc"/>
                                 <include reference="Gw6-MP-lL5"/>
@@ -796,10 +800,6 @@
                                 <include reference="TD9-dS-Iwv"/>
                                 <include reference="e7i-FO-2AW"/>
                                 <include reference="xGa-mz-pcJ"/>
-                                <include reference="EHR-UC-Seg"/>
-                                <include reference="S89-SU-0Yi"/>
-                                <include reference="sQ3-Rc-hW7"/>
-                                <include reference="Kwn-Xf-S4E"/>
                             </mask>
                         </variation>
                     </view>
@@ -815,6 +815,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sek-Dt-6LT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1203" y="1126"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="VsT-DM-ave">
+            <objects>
+                <tableViewController id="48r-fo-ftS" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qF9-p0-WvY">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HD0-J5-PHW">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HD0-J5-PHW" id="1tc-BW-BLV">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="48r-fo-ftS" id="laz-Hk-i1r"/>
+                            <outlet property="delegate" destination="48r-fo-ftS" id="q0U-02-yNa"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mS0-Tq-fek" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.5" y="-302"/>
         </scene>
         <!--История-->
         <scene sceneID="Oiq-bI-Ewb">

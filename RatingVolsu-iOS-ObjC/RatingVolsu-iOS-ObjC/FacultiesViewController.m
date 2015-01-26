@@ -19,6 +19,8 @@
 
 - (void)viewDidLoad {
 	
+	[super viewDidLoad];
+	
 	if (![RecentItem all].count) {
 		
 		self.navigationItem.leftBarButtonItem = nil;

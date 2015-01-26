@@ -23,7 +23,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkH-xE-WLb">
-                        <rect key="frame" x="60" y="0.0" width="193" height="43"/>
+                        <rect key="frame" x="55" y="0.0" width="203" height="43"/>
                         <attributedString key="attributedText">
                             <fragment content="Студент">
                                 <attributes>
@@ -55,8 +55,8 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="uhk-kQ-vuH" secondAttribute="bottom" id="3EW-a0-wuQ"/>
                     <constraint firstItem="uhk-kQ-vuH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="EU5-V0-YL3"/>
-                    <constraint firstItem="uhk-kQ-vuH" firstAttribute="leading" secondItem="GkH-xE-WLb" secondAttribute="trailing" constant="10" id="GlI-CD-hbS"/>
-                    <constraint firstItem="GkH-xE-WLb" firstAttribute="leading" secondItem="ikG-Gj-mwj" secondAttribute="trailing" constant="10" id="ITF-e9-V11"/>
+                    <constraint firstItem="uhk-kQ-vuH" firstAttribute="leading" secondItem="GkH-xE-WLb" secondAttribute="trailing" constant="5" id="GlI-CD-hbS"/>
+                    <constraint firstItem="GkH-xE-WLb" firstAttribute="leading" secondItem="ikG-Gj-mwj" secondAttribute="trailing" constant="5" id="ITF-e9-V11"/>
                     <constraint firstAttribute="bottom" secondItem="ikG-Gj-mwj" secondAttribute="bottom" id="Ib1-df-g6H"/>
                     <constraint firstAttribute="trailing" secondItem="uhk-kQ-vuH" secondAttribute="trailing" constant="15" id="LkQ-qI-jAy"/>
                     <constraint firstAttribute="bottom" secondItem="GkH-xE-WLb" secondAttribute="bottom" id="O4P-zU-cYa"/>

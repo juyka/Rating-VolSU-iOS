@@ -25,8 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	//self.dataSource = @[@1, @2, @3];
-	
+
+	self.tableView.tableFooterView = UIView.new;
 	Group *group = self.student.group;
 	[Semester request:group.groupId withHandler:^(NSArray *dataList) {
 		
@@ -34,12 +34,6 @@
 		[self.tableView reloadData];
 	} errorBlock:nil];
 	
-    // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)configureCell:(RatingSelectorTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {

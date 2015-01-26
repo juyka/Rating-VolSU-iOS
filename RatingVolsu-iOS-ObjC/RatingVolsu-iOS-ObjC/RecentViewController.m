@@ -12,9 +12,11 @@
 #import "SectionHeaderView.h"
 #import "UIImage+Extensions.h"
 #import "RecentTableViewCell.h"
+#import "Reachability.h"
 
 @interface RecentViewController ()
 <
+MCSwipeTableViewCellDelegate,
 UITableViewDataSource,
 UITableViewDelegate,
 NSFetchedResultsControllerDelegate
@@ -22,7 +24,7 @@ NSFetchedResultsControllerDelegate
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic) Reachability *internetReachability;
 @end
 
 @implementation RecentViewController
@@ -31,6 +33,9 @@ NSFetchedResultsControllerDelegate
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
+	self.internetReachability = [Reachability reachabilityForInternetConnection];
+	[self.internetReachability startNotifier];
 	
 	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
 	item.title = @" ";
@@ -52,14 +57,61 @@ NSFetchedResultsControllerDelegate
 }
 - (IBAction)addItem {
 	
-	[self performSegueWithIdentifier:@"RatingSelectorSegue" sender:nil];
+	NetworkStatus netStatus = [self.internetReachability currentReachabilityStatus];
+	
+	if (netStatus == NotReachable) {
+		
+		[[[UIAlertView alloc] initWithTitle:@"Нет соединения с Интернет"
+									message:nil
+								   delegate:nil
+						  cancelButtonTitle:@"Ok"
+						  otherButtonTitles:nil] show];
+		
+	} else {
+		
+		[self performSegueWithIdentifier:@"RatingSelectorSegue" sender:nil];
+		
+	}
+	
+	
 }
 
 - (void)configureCell:(RecentTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	
 	RecentItem *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	
-	//cell.separatorInset = UIEdgeInsetsZero;
+	UIView *checkView = [[UIImageView alloc] initWithImage:@"check".image];
+	checkView.contentMode = UIViewContentModeCenter;
+	UIColor *greenColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
+	
+	UIView *listView = [[UIImageView alloc] initWithImage:@"cross".image];
+	listView.contentMode = UIViewContentModeCenter;
+	UIColor *yellowColor = [UIColor colorWithRed:195.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
+	
+	UIView *crossView = [[UIImageView alloc] initWithImage:@"cross".image];
+	crossView.contentMode = UIViewContentModeCenter;
+	UIColor *redColor = [UIColor colorWithRed:232.0 / 255.0 green:61.0 / 255.0 blue:14.0 / 255.0 alpha:1.0];
+	
+	UIView *view = item.isFavorite.boolValue ? listView : checkView;
+	UIColor *color = item.isFavorite.boolValue ? yellowColor : greenColor;
+	
+	MCSwipeTableViewCellState state = item.isFavorite.boolValue ? MCSwipeTableViewCellState3 : MCSwipeTableViewCellState1;
+	
+	[cell setSwipeGestureWithView:view color:color mode:MCSwipeTableViewCellModeExit state:state completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+		
+		item.date = [NSDate date];
+		item.isFavorite = @(state == MCSwipeTableViewCellState1);
+		[[CoreDataManager sharedManager] saveContext];
+	}];
+	
+	MCSwipeTableViewCellState deleteState = item.isFavorite.boolValue ? MCSwipeTableViewCellState4 : MCSwipeTableViewCellState3;
+	
+	[cell setSwipeGestureWithView:crossView color:redColor mode:MCSwipeTableViewCellModeExit state:deleteState completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+		
+		[item delete];
+		[[CoreDataManager sharedManager] saveContext];
+	}];
+	
 	cell.defaultColor = self.tableView.backgroundColor;
 	
 	[cell setRecentItem:item];
@@ -117,6 +169,10 @@ NSFetchedResultsControllerDelegate
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
 	[self.tableView beginUpdates];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+	
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
@@ -202,6 +258,7 @@ NSFetchedResultsControllerDelegate
 		[self performSegueWithIdentifier:@"RatingSegue"sender:item];
 	});
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 

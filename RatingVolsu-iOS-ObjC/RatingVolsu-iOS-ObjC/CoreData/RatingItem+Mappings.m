@@ -36,6 +36,8 @@
 		
 		NSDictionary *objects = [dictionary valueForKey:@"Predmet"];
 		
+		NSArray *ratingTable;
+		
 		if (objects.class != NSNull.class) {
 			
 			[objects each:^(id key, id value) {
@@ -71,10 +73,12 @@
 			[[CoreDataManager sharedManager] saveContext];
 		
 			
-			NSArray *ratingTable = [ratingItems studentRatingTable];
-			if (handler) {
-				handler(ratingTable);
-			}
+			ratingTable = [ratingItems studentRatingTable];
+			
+		}
+		
+		if (handler) {
+			handler(ratingTable);
 		}
 		
 	} errorBlock:errorHandler];
@@ -97,6 +101,7 @@
 		
 		NSDictionary *dictionary = entries.first;
 		NSArray *subjects;
+		NSArray *ratingTable;
 		
 		NSDictionary *objects = [dictionary valueForKey:@"Predmet"];
 		
@@ -189,11 +194,12 @@
 			[[CoreDataManager sharedManager] saveContext];
 
 			
-			NSArray *ratingTable = [ratingItems flatten];
+			ratingTable = [ratingItems flatten];
 			
-			if (handler) {
-				handler(ratingTable);
-			}
+		}
+		
+		if (handler) {
+			handler(ratingTable);
 		}
 		
 	} errorBlock:errorHandler];

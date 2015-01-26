@@ -9,12 +9,14 @@
 #import "RatingViewController.h"
 #import "GroupRatingViewController.h"
 #import "StudentRatingViewController.h"
+#import "Reachability.h"
 
 @interface RatingViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (nonatomic) IBOutlet UIBarButtonItem *refreshItem;
+@property (nonatomic) Reachability *internetReachability;
 
 @property(nonatomic) UIViewController<RatingViewControllerProtocol> *currentViewController;
 @property (nonatomic) NSURLSessionDataTask *task;
@@ -24,6 +26,9 @@
 @implementation RatingViewController
 
 - (void)viewDidLoad {
+	
+	self.internetReachability = [Reachability reachabilityForInternetConnection];
+	[self.internetReachability startNotifier];
     [super viewDidLoad];
 	[self changeViewController:self.segmentedControl];
 }
@@ -36,21 +41,37 @@
 
 - (IBAction)refresh:(id)sender {
 	
-	UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]
-												  initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+	NetworkStatus netStatus = [self.internetReachability currentReachabilityStatus];
 	
-	UIBarButtonItem *progressIndicator = [[UIBarButtonItem alloc]
-										  initWithCustomView:activityIndicator];
-	
-//	UIBarButtonItem *item = self.refreshItem;
-	
-	self.navigationItem.rightBarButtonItem = progressIndicator;
-	
-	[activityIndicator startAnimating];
-	
-	self.task = [self.currentViewController refresh:^{
-		self.navigationItem.rightBarButtonItem = self.refreshItem;
-	}];
+	if (netStatus == NotReachable) {
+		
+	//	UIImageView *imageView = [[UIImageView alloc] initWithImage:@"alert".image];
+	//	imageView.frame =
+		UIBarButtonItem *accessWarning = [[UIBarButtonItem alloc]
+										  initWithImage:@"alert".image style:UIBarButtonItemStyleDone target:nil action:nil];
+		
+		
+		self.navigationItem.rightBarButtonItem = accessWarning;
+		self.navigationItem.rightBarButtonItem.enabled = NO;
+		
+	}
+	else {
+		
+		UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc]
+													  initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+		
+		UIBarButtonItem *progressIndicator = [[UIBarButtonItem alloc]
+											  initWithCustomView:activityIndicator];
+		
+		
+		self.navigationItem.rightBarButtonItem = progressIndicator;
+		
+		[activityIndicator startAnimating];
+		
+		self.task = [self.currentViewController refresh:^{
+			self.navigationItem.rightBarButtonItem = self.refreshItem;
+		}];
+	}
 }
 
 - (IBAction)changeViewController:(UISegmentedControl *)sender {
