@@ -56,7 +56,6 @@
 		[item delete];
 		[[CoreDataManager sharedManager] saveContext];
 	}];
-	
 
 	self.titleText.text = item.name;
 	self.editText.text = item.name;

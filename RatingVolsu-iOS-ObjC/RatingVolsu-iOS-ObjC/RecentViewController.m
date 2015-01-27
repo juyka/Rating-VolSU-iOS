@@ -120,6 +120,25 @@ NSFetchedResultsControllerDelegate
 	
 	RecentItem *item = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	
+	if (item.isFavorite.boolValue) {
+		
+		UIView *checkView = [[UIImageView alloc] initWithImage:@"edit".image];
+		checkView.contentMode = UIViewContentModeCenter;
+		UIColor *blueColor = @(0x4444dd).rgbColor;
+		
+		[cell setSwipeGestureWithView:checkView color:blueColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+			
+			RecentTableViewCell *viewCell = (RecentTableViewCell *)cell;
+			NSIndexPath *path = [self.tableView indexPathForCell:viewCell];
+			viewCell.editText.hidden = NO;
+			[viewCell.editText becomeFirstResponder];
+			[viewCell.editText selectAll:nil];
+			viewCell.titleText.hidden = YES;
+			selectedCellPath = path;
+			
+		}];
+	}
+	
 	cell.defaultColor = self.tableView.backgroundColor;
 	cell.editText.delegate = self;
 	[cell setRecentItem:item];
