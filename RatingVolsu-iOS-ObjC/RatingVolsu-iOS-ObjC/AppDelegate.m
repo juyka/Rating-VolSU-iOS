@@ -10,6 +10,7 @@
 #import "RequestManager.h"
 #import "CoreDataManager.h"
 #import "RatingViewController.h"
+#import <Appirater.h>
 
 @interface AppDelegate ()
 
@@ -38,9 +39,18 @@
 														  NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:17],
 														  }
 												forState:UIControlStateNormal];
-//	UIView *view = UIView.new;
-//	view.backgroundColor = @(0xE0E0E0).rgbColor;
+	
 	[[UITableView appearance] setBackgroundColor:@(0xEAEAF1).rgbColor];
+	
+	
+	[Appirater setAppId:@"552035781"];
+	[Appirater setDaysUntilPrompt:7];
+	[Appirater setUsesUntilPrompt:10];
+	[Appirater setSignificantEventsUntilPrompt:-1];
+	[Appirater setTimeBeforeReminding:2];
+	[Appirater setDebug:YES];
+	
+	[Appirater appLaunched:YES];
 	
 	return YES;
 }
@@ -87,7 +97,8 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-	// Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+	
+	[Appirater appEnteredForeground:YES];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

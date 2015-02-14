@@ -8,7 +8,7 @@
 
 #import "RatingSelectorViewController.h"
 #import "RequestManager.h"
-#import "CoreData/CoreDataModel.h"
+#import "CoreDataModel.h"
 #import "ObjectiveRecord.h"
 #import "Student+Mappings.h"
 #import "SemestersViewController.h"

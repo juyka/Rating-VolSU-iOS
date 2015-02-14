@@ -13,6 +13,7 @@
 #import "UIImage+Extensions.h"
 #import "RecentTableViewCell.h"
 #import "Reachability.h"
+#import <Appirater.h>
 
 @interface RecentViewController ()
 <
@@ -75,7 +76,12 @@ NSFetchedResultsControllerDelegate
 	
 }
 
--(void)keyboardWillShow {
+- (void)viewDidAppear:(BOOL)animated {
+	
+	[Appirater userDidSignificantEvent:YES];
+}
+
+- (void)keyboardWillShow {
 	
 	CGFloat keyboardOffset = 293;
 	
@@ -85,7 +91,7 @@ NSFetchedResultsControllerDelegate
 	
 }
 
--(void)keyboardWillHide {
+- (void)keyboardWillHide {
 	
 	CGFloat keyboardOffset = 293;
 	

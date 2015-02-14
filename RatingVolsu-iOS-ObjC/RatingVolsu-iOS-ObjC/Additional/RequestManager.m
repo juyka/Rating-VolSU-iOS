@@ -72,7 +72,7 @@ NSURL *baseURL;
 					 else {
 						 
 						 [[[UIAlertView alloc] initWithTitle:@"Ошибка подключения к серверу"
-												 message:[error localizedDescription]
+												 message:nil
 												delegate:nil
 									   cancelButtonTitle:@"Ok"
 									   otherButtonTitles:nil] show];

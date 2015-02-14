@@ -187,8 +187,8 @@
 		D6D079AF1A39D068000FB4DB /* CollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		D6D079B11A39D3E0000FB4DB /* SubjectCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectCollectionView.h; sourceTree = "<group>"; };
 		D6D079B21A39D3E0000FB4DB /* SubjectCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectCollectionView.m; sourceTree = "<group>"; };
-		D6E59EB01A71143600273F31 /* RatingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RatingItem.h; path = ../RatingItem.h; sourceTree = "<group>"; };
-		D6E59EB11A71143600273F31 /* RatingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RatingItem.m; path = ../RatingItem.m; sourceTree = "<group>"; };
+		D6E59EB01A71143600273F31 /* RatingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingItem.h; sourceTree = "<group>"; };
+		D6E59EB11A71143600273F31 /* RatingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingItem.m; sourceTree = "<group>"; };
 		D6E59EB31A71333F00273F31 /* RatingViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingViewControllerProtocol.h; sourceTree = "<group>"; };
 		D6E59EB41A72797200273F31 /* NSNumber+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Extensions.h"; sourceTree = "<group>"; };
 		D6E59EB51A72797200273F31 /* NSNumber+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Extensions.m"; sourceTree = "<group>"; };
@@ -309,7 +309,7 @@
 				D6068A451A6A58310017B36C /* StudentRatingLandscapeTableViewCell.m */,
 				D6A672FD1A6A62D200890DD1 /* StudentRatingCellProtocol.h */,
 			);
-			name = StudentRating;
+			path = StudentRating;
 			sourceTree = "<group>";
 		};
 		D6068A3E1A6A4FAF0017B36C /* GroupRating */ = {
@@ -329,7 +329,7 @@
 				D6A6730A1A6C1A9100890DD1 /* GroupRatingCell.m */,
 				D6A6730B1A6C1A9100890DD1 /* GroupRatingCell.xib */,
 			);
-			name = GroupRating;
+			path = GroupRating;
 			sourceTree = "<group>";
 		};
 		D6272BF419EE6C4A005DD267 /* Extensions */ = {
@@ -372,6 +372,7 @@
 		D66E2DF219E7E500006077BC /* RatingVolsu-iOS-ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				D6ABE40A1A8FE97900FF6EED /* Additional */,
 				5F000E5F19F4EE2400DB5E91 /* Rating VolSU.xcdatamodeld */,
 				D6BCA27419F3F2400039AAB8 /* Classes */,
 				D6272BF419EE6C4A005DD267 /* Extensions */,
@@ -381,8 +382,6 @@
 				D66E2E0019E7E500006077BC /* Main.storyboard */,
 				D66E2E0319E7E500006077BC /* Images.xcassets */,
 				D66E2DF319E7E500006077BC /* Supporting Files */,
-				D6238D9219E907D7003D4CA8 /* RequestManager.h */,
-				D6238D9319E907D7003D4CA8 /* RequestManager.m */,
 			);
 			path = "RatingVolsu-iOS-ObjC";
 			sourceTree = "<group>";
@@ -399,16 +398,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D6ABE40A1A8FE97900FF6EED /* Additional */ = {
+			isa = PBXGroup;
+			children = (
+				D6238D9219E907D7003D4CA8 /* RequestManager.h */,
+				D6238D9319E907D7003D4CA8 /* RequestManager.m */,
+				5F1BAD631A8F833F00C20B0B /* RLE */,
+				D6068A291A6549A30017B36C /* FXPageControl */,
+			);
+			path = Additional;
+			sourceTree = "<group>";
+		};
 		D6BCA27419F3F2400039AAB8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5F1BAD631A8F833F00C20B0B /* RLE */,
-				D6068A291A6549A30017B36C /* FXPageControl */,
 				D6FF4D5F1A0231B300421E29 /* RecentItems */,
 				D6FF4D5E1A02319A00421E29 /* Rating */,
 				D6BCA27519F3F2760039AAB8 /* RatingSelector */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		D6BCA27519F3F2760039AAB8 /* RatingSelector */ = {
@@ -427,7 +435,7 @@
 				D6068A141A63149C0017B36C /* RatingSelectorTableViewCell.h */,
 				D6068A151A63149C0017B36C /* RatingSelectorTableViewCell.m */,
 			);
-			name = RatingSelector;
+			path = RatingSelector;
 			sourceTree = "<group>";
 		};
 		D6FF4D5E1A02319A00421E29 /* Rating */ = {
@@ -439,7 +447,7 @@
 				D6068A3E1A6A4FAF0017B36C /* GroupRating */,
 				D6068A3D1A6A4FA10017B36C /* StudentRating */,
 			);
-			name = Rating;
+			path = Rating;
 			sourceTree = "<group>";
 		};
 		D6FF4D5F1A0231B300421E29 /* RecentItems */ = {
@@ -454,7 +462,7 @@
 				D6E59EBB1A769BC600273F31 /* RecentTableViewCell.m */,
 				D6E59EBC1A769BC600273F31 /* RecentTableViewCell.xib */,
 			);
-			name = RecentItems;
+			path = RecentItems;
 			sourceTree = "<group>";
 		};
 		EF32D28432157E8CFBE67506 /* Pods */ = {
@@ -499,6 +507,7 @@
 				TargetAttributes = {
 					D66E2DEF19E7E500006077BC = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = ZHTY836BFP;
 					};
 				};
 			};
@@ -736,12 +745,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RatingVolsu-iOS-ObjC/PrefixHeader.pch";
 				INFOPLIST_FILE = "RatingVolsu-iOS-ObjC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Rating VolSU";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -751,12 +763,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RatingVolsu-iOS-ObjC/PrefixHeader.pch";
 				INFOPLIST_FILE = "RatingVolsu-iOS-ObjC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Rating VolSU";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## AFNetworking
 
-Copyright (c) 2013-2014 AFNetworking (http://afnetworking.com/)
+Copyright (c) 2013-2015 AFNetworking (http://afnetworking.com/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+
+## Appirater
+
+Copyright 2014. Arash Payan. This library is distributed under the terms of the MIT/X11.
 
 ## MCSwipeTableViewCell
 

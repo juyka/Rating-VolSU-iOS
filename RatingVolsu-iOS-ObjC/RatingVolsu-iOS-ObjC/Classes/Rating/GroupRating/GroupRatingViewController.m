@@ -11,7 +11,7 @@
 #import "SubjectCollectionView.h"
 #import "RatingItem+Mappings.h"
 #import "CollectionViewFlowLayout.h"
-#import "FXPageControl/FXPageControl.h"
+#import "FXPageControl.h"
 #import "NSNumber+Extensions.h"
 
 @interface GroupRatingViewController()

@@ -8,11 +8,10 @@
 
 #import "StudentRatingViewController.h"
 #import "RatingItem+Mappings.h"
-#import "GroupRatingViewController.h"
 #import "StudentRatingTableViewCell.h"
 #import "StudentRatingTableHeader.h"
 #import "SectionHeaderView.h"
-#import "FXPageControl/FXPageControl.h"
+#import "FXPageControl.h"
 #import "RatingScrollView.h"
 #import "NSNumber+Extensions.h"
 #import "StudentRatingCellProtocol.h"
