@@ -44,6 +44,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="15" y="10" width="210" height="21"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXw-3w-56q">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -58,10 +61,14 @@
                                                         </fragment>
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="15" y="37" width="210" height="14"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="cXw-3w-56q" firstAttribute="top" secondItem="NEZ-CY-xAg" secondAttribute="bottom" constant="6" id="3Ik-iJ-Saf"/>
+                                                <constraint firstAttribute="bottom" secondItem="cXw-3w-56q" secondAttribute="bottom" constant="8" id="D1i-TF-8eQ"/>
                                                 <constraint firstItem="cXw-3w-56q" firstAttribute="leading" secondItem="UOZ-Kf-lPr" secondAttribute="leading" constant="15" id="Ivr-ay-vv5"/>
                                                 <constraint firstAttribute="trailing" secondItem="cXw-3w-56q" secondAttribute="trailing" constant="15" id="aA7-8o-gYy"/>
                                                 <constraint firstAttribute="trailing" secondItem="NEZ-CY-xAg" secondAttribute="trailing" constant="15" id="afR-fU-emh"/>
@@ -78,6 +85,7 @@
                                                     <exclude reference="emr-xr-nLs"/>
                                                     <exclude reference="g8v-0Z-HxL"/>
                                                     <exclude reference="3Ik-iJ-Saf"/>
+                                                    <exclude reference="D1i-TF-8eQ"/>
                                                     <exclude reference="Ivr-ay-vv5"/>
                                                     <exclude reference="aA7-8o-gYy"/>
                                                 </mask>
@@ -92,6 +100,7 @@
                                                     <include reference="emr-xr-nLs"/>
                                                     <include reference="g8v-0Z-HxL"/>
                                                     <include reference="3Ik-iJ-Saf"/>
+                                                    <include reference="D1i-TF-8eQ"/>
                                                     <include reference="Ivr-ay-vv5"/>
                                                     <include reference="aA7-8o-gYy"/>
                                                 </mask>
@@ -121,6 +130,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="15" y="10" width="225" height="21"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3B6-iP-zVa">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -135,6 +147,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="15" y="37" width="225" height="14"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -142,6 +157,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="aWf-sn-pEt" secondAttribute="trailing" id="Heb-Eq-QJm"/>
                                                 <constraint firstAttribute="trailing" secondItem="3B6-iP-zVa" secondAttribute="trailing" id="J7P-ZU-Yyl"/>
                                                 <constraint firstItem="3B6-iP-zVa" firstAttribute="leading" secondItem="9kc-Bl-C0i" secondAttribute="leading" constant="15" id="NFS-bA-eAQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="3B6-iP-zVa" secondAttribute="bottom" constant="8" id="POc-J6-kas"/>
                                                 <constraint firstItem="3B6-iP-zVa" firstAttribute="top" secondItem="aWf-sn-pEt" secondAttribute="bottom" constant="3" id="niL-Yg-sSG">
                                                     <variation key="widthClass=compact" constant="6"/>
                                                 </constraint>
@@ -155,6 +171,7 @@
                                                 <mask key="constraints">
                                                     <exclude reference="J7P-ZU-Yyl"/>
                                                     <exclude reference="NFS-bA-eAQ"/>
+                                                    <exclude reference="POc-J6-kas"/>
                                                     <exclude reference="niL-Yg-sSG"/>
                                                     <exclude reference="BbT-fv-CMO"/>
                                                     <exclude reference="Heb-Eq-QJm"/>
@@ -169,6 +186,7 @@
                                                 <mask key="constraints">
                                                     <include reference="J7P-ZU-Yyl"/>
                                                     <include reference="NFS-bA-eAQ"/>
+                                                    <include reference="POc-J6-kas"/>
                                                     <include reference="niL-Yg-sSG"/>
                                                     <include reference="BbT-fv-CMO"/>
                                                     <include reference="Heb-Eq-QJm"/>
@@ -200,6 +218,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="15" y="11" width="225" height="21"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -382,6 +403,7 @@
                                                     <variation key="widthClass=compact" constant="6"/>
                                                 </constraint>
                                                 <constraint firstAttribute="trailing" secondItem="4Cg-0Y-5mG" secondAttribute="trailing" id="Gw7-4s-fcl"/>
+                                                <constraint firstAttribute="bottom" secondItem="4Cg-0Y-5mG" secondAttribute="bottom" constant="8" id="U26-Sy-V7o"/>
                                                 <constraint firstItem="4Cg-0Y-5mG" firstAttribute="leading" secondItem="YE9-BD-Ria" secondAttribute="leading" constant="15" id="nOj-23-vN6"/>
                                                 <constraint firstAttribute="trailing" secondItem="p2H-oH-kxM" secondAttribute="trailing" id="unb-O7-gDz"/>
                                             </constraints>
@@ -393,6 +415,7 @@
                                                 <mask key="constraints">
                                                     <exclude reference="9Bh-C8-ADZ"/>
                                                     <exclude reference="Gw7-4s-fcl"/>
+                                                    <exclude reference="U26-Sy-V7o"/>
                                                     <exclude reference="nOj-23-vN6"/>
                                                     <exclude reference="05w-bH-WOc"/>
                                                     <exclude reference="4rG-dF-zq8"/>
@@ -407,6 +430,7 @@
                                                 <mask key="constraints">
                                                     <include reference="9Bh-C8-ADZ"/>
                                                     <include reference="Gw7-4s-fcl"/>
+                                                    <include reference="U26-Sy-V7o"/>
                                                     <include reference="nOj-23-vN6"/>
                                                     <include reference="05w-bH-WOc"/>
                                                     <include reference="4rG-dF-zq8"/>
@@ -796,7 +820,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="35" sectionFooterHeight="35" translatesAutoresizingMaskIntoConstraints="NO" id="wjZ-sh-yYt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="35" sectionFooterHeight="35" translatesAutoresizingMaskIntoConstraints="NO" id="wjZ-sh-yYt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>

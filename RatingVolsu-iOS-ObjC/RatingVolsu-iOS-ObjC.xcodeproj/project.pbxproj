@@ -47,7 +47,6 @@
 		D66E2DFF19E7E500006077BC /* RatingSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66E2DFE19E7E500006077BC /* RatingSelectorViewController.m */; };
 		D66E2E0219E7E500006077BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D66E2E0019E7E500006077BC /* Main.storyboard */; };
 		D66E2E0419E7E500006077BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66E2E0319E7E500006077BC /* Images.xcassets */; };
-		D6A673001A6A7BEC00890DD1 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A672FF1A6A7BEC00890DD1 /* NavigationController.m */; };
 		D6A673081A6BFD3E00890DD1 /* GroupRatingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A673061A6BFD3E00890DD1 /* GroupRatingTableViewController.m */; };
 		D6A6730C1A6C1A9100890DD1 /* GroupRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A6730A1A6C1A9100890DD1 /* GroupRatingCell.m */; };
 		D6A6730D1A6C1A9100890DD1 /* GroupRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A6730B1A6C1A9100890DD1 /* GroupRatingCell.xib */; };
@@ -152,11 +151,7 @@
 		D66E2DFE19E7E500006077BC /* RatingSelectorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatingSelectorViewController.m; sourceTree = "<group>"; };
 		D66E2E0119E7E500006077BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D66E2E0319E7E500006077BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D66E2E1119E7E500006077BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D66E2E1219E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatingVolsu_iOS_ObjCTests.m; sourceTree = "<group>"; };
 		D6A672FD1A6A62D200890DD1 /* StudentRatingCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRatingCellProtocol.h; sourceTree = "<group>"; };
-		D6A672FE1A6A7BEC00890DD1 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
-		D6A672FF1A6A7BEC00890DD1 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		D6A673061A6BFD3E00890DD1 /* GroupRatingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupRatingTableViewController.m; sourceTree = "<group>"; };
 		D6A673071A6BFD3E00890DD1 /* GroupRatingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupRatingTableViewController.h; sourceTree = "<group>"; };
 		D6A673091A6C1A9100890DD1 /* GroupRatingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupRatingCell.h; sourceTree = "<group>"; };
@@ -360,7 +355,6 @@
 			isa = PBXGroup;
 			children = (
 				D66E2DF219E7E500006077BC /* RatingVolsu-iOS-ObjC */,
-				D66E2E0F19E7E500006077BC /* RatingVolsu-iOS-ObjCTests */,
 				D66E2DF119E7E500006077BC /* Products */,
 				B5ED92712D1B48229702FF1C /* Frameworks */,
 				EF32D28432157E8CFBE67506 /* Pods */,
@@ -389,8 +383,6 @@
 				D66E2DF319E7E500006077BC /* Supporting Files */,
 				D6238D9219E907D7003D4CA8 /* RequestManager.h */,
 				D6238D9319E907D7003D4CA8 /* RequestManager.m */,
-				D6A672FE1A6A7BEC00890DD1 /* NavigationController.h */,
-				D6A672FF1A6A7BEC00890DD1 /* NavigationController.m */,
 			);
 			path = "RatingVolsu-iOS-ObjC";
 			sourceTree = "<group>";
@@ -407,29 +399,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D66E2E0F19E7E500006077BC /* RatingVolsu-iOS-ObjCTests */ = {
-			isa = PBXGroup;
-			children = (
-				D66E2E1219E7E500006077BC /* RatingVolsu_iOS_ObjCTests.m */,
-				D66E2E1019E7E500006077BC /* Supporting Files */,
-			);
-			path = "RatingVolsu-iOS-ObjCTests";
-			sourceTree = "<group>";
-		};
-		D66E2E1019E7E500006077BC /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D66E2E1119E7E500006077BC /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		D6BCA27419F3F2400039AAB8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				5F1BAD631A8F833F00C20B0B /* RLE */,
 				D6068A291A6549A30017B36C /* FXPageControl */,
-				D6D0798A1A39B273000FB4DB /* RLE-master */,
 				D6FF4D5F1A0231B300421E29 /* RecentItems */,
 				D6FF4D5E1A02319A00421E29 /* Rating */,
 				D6BCA27519F3F2760039AAB8 /* RatingSelector */,
@@ -454,14 +428,6 @@
 				D6068A151A63149C0017B36C /* RatingSelectorTableViewCell.m */,
 			);
 			name = RatingSelector;
-			sourceTree = "<group>";
-		};
-		D6D0798A1A39B273000FB4DB /* RLE-master */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "RLE-master";
-			path = "../../../Downloads/RLE-master";
 			sourceTree = "<group>";
 		};
 		D6FF4D5E1A02319A00421E29 /* Rating */ = {
@@ -639,7 +605,6 @@
 				D6BD2BC61A063D8200591069 /* Student.m in Sources */,
 				D6068A191A632A430017B36C /* RatingViewController.m in Sources */,
 				D6238D9419E907D7003D4CA8 /* RequestManager.m in Sources */,
-				D6A673001A6A7BEC00890DD1 /* NavigationController.m in Sources */,
 				D6BCA27B19F3F4D70039AAB8 /* StudentsViewController.m in Sources */,
 				D61CEED11A61DA8400B67DDC /* SectionHeaderView.m in Sources */,
 				D6E59EBD1A769BC600273F31 /* RecentTableViewCell.m in Sources */,

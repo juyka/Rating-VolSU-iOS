@@ -193,18 +193,6 @@ NSFetchedResultsControllerDelegate
 	return [self.fetchedResultsController.sections count];
 }
 
-- (NSString *)titleForHeaderInSection:(NSInteger)section {
-	
-	NSDictionary *headers = @{
-							  @"1" : @"избранное",
-							  @"0" : @"последнее"
-							  };
-	
-	NSString *key = self.fetchedResultsController.sectionIndexTitles[section];
-	
-	return headers[key];
-}
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	
 	NSNumber *key = self.fetchedResultsController.sectionIndexTitles[section];
@@ -233,11 +221,6 @@ NSFetchedResultsControllerDelegate
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
 	[self.tableView beginUpdates];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-	
-	[self.view.window endEditing:YES];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject

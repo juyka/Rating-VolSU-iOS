@@ -8,6 +8,14 @@
 
 #import "StudentRatingTableHeader.h"
 #import "FXPageControl.h"
+#import <ObjectiveSugar.h>
+
+@interface StudentRatingTableHeader ()
+
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *labels;
+
+@end
+
 
 @implementation StudentRatingTableHeader
 
@@ -25,6 +33,12 @@
 	header.pageControl.dotColor = @(0xC2C1BF).rgbColor;
 	header.pageControl.selectedDotColor = @(0x9B9A99).rgbColor;
 	header.pageControl.backgroundColor = [UIColor clearColor];
+	
+	if (IS_IPHONE_4_OR_LESS && !portraitOrientation) {
+		[header.labels each:^(UILabel *label) {
+			label.font = @(10).ptFont;
+		}];
+	}
 	
 	return header;
 }
