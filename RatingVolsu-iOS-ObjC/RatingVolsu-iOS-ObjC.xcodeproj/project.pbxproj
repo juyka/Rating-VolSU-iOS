@@ -54,8 +54,6 @@
 		D6BD2BCC1A0640F600591069 /* RatingItem+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BCB1A0640F600591069 /* RatingItem+Mappings.m */; };
 		D6BD2BD61A08EDC000591069 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2BD51A08EDC000591069 /* NSArray+Extensions.m */; };
 		D6CE1F7419FE88C80062790E /* StudentRatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CE1F7319FE88C80062790E /* StudentRatingViewController.m */; };
-		D6D0797E1A307C42000FB4DB /* MNActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D079791A307C42000FB4DB /* MNActivityIndicatorView.m */; };
-		D6D0797F1A307C42000FB4DB /* MNRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D0797B1A307C42000FB4DB /* MNRefreshControl.m */; };
 		D6D079861A39A4DE000FB4DB /* GroupRatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D079851A39A4DE000FB4DB /* GroupRatingViewController.m */; };
 		D6D079A11A39B273000FB4DB /* NSArray+RLE.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D0798D1A39B273000FB4DB /* NSArray+RLE.m */; };
 		D6D079A21A39B273000FB4DB /* NSAttributedString+RLE.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D0798F1A39B273000FB4DB /* NSAttributedString+RLE.m */; };
@@ -178,10 +176,6 @@
 		D6BD2BD51A08EDC000591069 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
 		D6CE1F7219FE88C80062790E /* StudentRatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentRatingViewController.h; sourceTree = "<group>"; };
 		D6CE1F7319FE88C80062790E /* StudentRatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentRatingViewController.m; sourceTree = "<group>"; };
-		D6D079781A307C42000FB4DB /* MNActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNActivityIndicatorView.h; sourceTree = "<group>"; };
-		D6D079791A307C42000FB4DB /* MNActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNActivityIndicatorView.m; sourceTree = "<group>"; };
-		D6D0797A1A307C42000FB4DB /* MNRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNRefreshControl.h; sourceTree = "<group>"; };
-		D6D0797B1A307C42000FB4DB /* MNRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNRefreshControl.m; sourceTree = "<group>"; };
 		D6D079841A39A4DE000FB4DB /* GroupRatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupRatingViewController.h; sourceTree = "<group>"; };
 		D6D079851A39A4DE000FB4DB /* GroupRatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupRatingViewController.m; sourceTree = "<group>"; };
 		D6D0798C1A39B273000FB4DB /* NSArray+RLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+RLE.h"; sourceTree = "<group>"; };
@@ -427,7 +421,6 @@
 			children = (
 				D6068A291A6549A30017B36C /* FXPageControl */,
 				D6D0798A1A39B273000FB4DB /* RLE-master */,
-				D6D079751A307C42000FB4DB /* MNRefreshControl */,
 				D6FF4D5F1A0231B300421E29 /* RecentItems */,
 				D6FF4D5E1A02319A00421E29 /* Rating */,
 				D6BCA27519F3F2760039AAB8 /* RatingSelector */,
@@ -452,17 +445,6 @@
 				D6068A151A63149C0017B36C /* RatingSelectorTableViewCell.m */,
 			);
 			name = RatingSelector;
-			sourceTree = "<group>";
-		};
-		D6D079751A307C42000FB4DB /* MNRefreshControl */ = {
-			isa = PBXGroup;
-			children = (
-				D6D079781A307C42000FB4DB /* MNActivityIndicatorView.h */,
-				D6D079791A307C42000FB4DB /* MNActivityIndicatorView.m */,
-				D6D0797A1A307C42000FB4DB /* MNRefreshControl.h */,
-				D6D0797B1A307C42000FB4DB /* MNRefreshControl.m */,
-			);
-			path = MNRefreshControl;
 			sourceTree = "<group>";
 		};
 		D6D0798A1A39B273000FB4DB /* RLE-master */ = {
@@ -711,7 +693,6 @@
 				D6BD2BB11A06372200591069 /* Group.m in Sources */,
 				D601A67419F03FA000735F5B /* Semester+Mappings.m in Sources */,
 				D6D079B01A39D068000FB4DB /* CollectionViewFlowLayout.m in Sources */,
-				D6D0797F1A307C42000FB4DB /* MNRefreshControl.m in Sources */,
 				D601A67A19F14AAF00735F5B /* RecentViewController.m in Sources */,
 				D6068A1D1A63D7170017B36C /* StudentRatingTableViewCell.m in Sources */,
 				D6BD2BC91A063D8200591069 /* RecentItem.m in Sources */,
@@ -723,7 +704,6 @@
 				D6068A2F1A670EFE0017B36C /* UIImage+Extensions.m in Sources */,
 				D6272BFD19EE794E005DD267 /* Student+Mappings.m in Sources */,
 				D601A67119F03BEE00735F5B /* SemestersViewController.m in Sources */,
-				D6D0797E1A307C42000FB4DB /* MNActivityIndicatorView.m in Sources */,
 				D6068A341A6889A10017B36C /* RatingScrollView.m in Sources */,
 				5F000E6119F4EE2400DB5E91 /* Rating VolSU.xcdatamodeld in Sources */,
 			);

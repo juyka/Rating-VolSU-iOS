@@ -26,18 +26,18 @@
 	
 	UIView *checkView = [[UIImageView alloc] initWithImage:@"favorites".image];
 	checkView.contentMode = UIViewContentModeCenter;
-	UIColor *greenColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
+	UIColor *blueColor = @(0xFF8F27).rgbColor;
 	
 	UIView *listView = [[UIImageView alloc] initWithImage:@"cross".image];
 	listView.contentMode = UIViewContentModeCenter;
-	UIColor *yellowColor = [UIColor colorWithRed:195.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
+	UIColor *turquoiseColor = @(0x4CDAC2).rgbColor;
 	
 	UIView *crossView = [[UIImageView alloc] initWithImage:@"cross".image];
 	crossView.contentMode = UIViewContentModeCenter;
-	UIColor *redColor = [UIColor colorWithRed:232.0 / 255.0 green:61.0 / 255.0 blue:14.0 / 255.0 alpha:1.0];
+	UIColor *redColor = @(0xD13838).rgbColor;
 	
 	UIView *view = item.isFavorite.boolValue ? listView : checkView;
-	UIColor *color = item.isFavorite.boolValue ? yellowColor : greenColor;
+	UIColor *color = item.isFavorite.boolValue ? turquoiseColor : blueColor;
 	
 	MCSwipeTableViewCellState state = item.isFavorite.boolValue ? MCSwipeTableViewCellState3 : MCSwipeTableViewCellState1;
 	

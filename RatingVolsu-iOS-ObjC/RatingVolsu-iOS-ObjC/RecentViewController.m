@@ -42,7 +42,7 @@ NSFetchedResultsControllerDelegate
 	
 	UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
 										  initWithTarget:self action:@selector(handleLongPress:)];
-	lpgr.minimumPressDuration = 1.5; //seconds
+	lpgr.minimumPressDuration = 0.7;
 	lpgr.delegate = self;
 	[self.tableView addGestureRecognizer:lpgr];
 	
@@ -124,7 +124,7 @@ NSFetchedResultsControllerDelegate
 		
 		UIView *checkView = [[UIImageView alloc] initWithImage:@"edit".image];
 		checkView.contentMode = UIViewContentModeCenter;
-		UIColor *blueColor = @(0x4444dd).rgbColor;
+		UIColor *blueColor = @(0x162A52).rgbColor;
 		
 		[cell setSwipeGestureWithView:checkView color:blueColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
 			
@@ -151,7 +151,7 @@ NSFetchedResultsControllerDelegate
 	CGPoint p = [gestureRecognizer locationInView:self.tableView];
 	
 	NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
-	if (gestureRecognizer.state == UIGestureRecognizerStateBegan &&indexPath != nil) {
+	if (gestureRecognizer.state == UIGestureRecognizerStateBegan && indexPath.section == 0) {
 		
 		RecentTableViewCell *cell = (RecentTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
 		cell.editText.hidden = NO;
@@ -237,6 +237,7 @@ NSFetchedResultsControllerDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 	
+	[self.view.window endEditing:YES];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
