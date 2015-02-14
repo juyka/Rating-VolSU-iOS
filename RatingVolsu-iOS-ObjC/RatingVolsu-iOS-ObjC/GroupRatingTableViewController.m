@@ -95,7 +95,7 @@ UITableViewDelegate
 			break;
 			
 		case NSFetchedResultsChangeUpdate:
-			[self configureCell:[tableView cellForRowAtIndexPath:indexPath]
+			[self configureCell:(GroupRatingCell *)[tableView cellForRowAtIndexPath:indexPath]
 					atIndexPath:indexPath];
 			break;
 			

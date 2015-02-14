@@ -17,6 +17,7 @@
 		5F1BAD7B1A8F833F00C20B0B /* NSObject+RLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1BAD6F1A8F833F00C20B0B /* NSObject+RLE.m */; };
 		5F1BAD7C1A8F833F00C20B0B /* NSPredicate+RLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1BAD711A8F833F00C20B0B /* NSPredicate+RLE.m */; };
 		5F1BAD7D1A8F833F00C20B0B /* NSString+RLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1BAD731A8F833F00C20B0B /* NSString+RLE.m */; };
+		5F1BAD801A8F8C1500C20B0B /* NSLocale+KeyboardFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1BAD7F1A8F8C1500C20B0B /* NSLocale+KeyboardFix.m */; };
 		D601A67119F03BEE00735F5B /* SemestersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67019F03BEE00735F5B /* SemestersViewController.m */; };
 		D601A67419F03FA000735F5B /* Semester+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67319F03FA000735F5B /* Semester+Mappings.m */; };
 		D601A67A19F14AAF00735F5B /* RecentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D601A67919F14AAF00735F5B /* RecentViewController.m */; };
@@ -93,6 +94,8 @@
 		5F1BAD731A8F833F00C20B0B /* NSString+RLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RLE.m"; sourceTree = "<group>"; };
 		5F1BAD741A8F833F00C20B0B /* RLECFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLECFunctions.h; sourceTree = "<group>"; };
 		5F1BAD751A8F833F00C20B0B /* RubyLikeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RubyLikeExtensions.h; sourceTree = "<group>"; };
+		5F1BAD7E1A8F8C1500C20B0B /* NSLocale+KeyboardFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLocale+KeyboardFix.h"; sourceTree = "<group>"; };
+		5F1BAD7F1A8F8C1500C20B0B /* NSLocale+KeyboardFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLocale+KeyboardFix.m"; sourceTree = "<group>"; };
 		A413F8C5B5AD3198095D27CB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C04D6F37EBC2412C96CB0297 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D601A66F19F03BEE00735F5B /* SemestersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SemestersViewController.h; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 				D6068A2E1A670EFE0017B36C /* UIImage+Extensions.m */,
 				D6E59EB41A72797200273F31 /* NSNumber+Extensions.h */,
 				D6E59EB51A72797200273F31 /* NSNumber+Extensions.m */,
+				5F1BAD7E1A8F8C1500C20B0B /* NSLocale+KeyboardFix.h */,
+				5F1BAD7F1A8F8C1500C20B0B /* NSLocale+KeyboardFix.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -454,25 +459,6 @@
 		D6D0798A1A39B273000FB4DB /* RLE-master */ = {
 			isa = PBXGroup;
 			children = (
-				D6D0798C1A39B273000FB4DB /* NSArray+RLE.h */,
-				D6D0798D1A39B273000FB4DB /* NSArray+RLE.m */,
-				D6D0798E1A39B273000FB4DB /* NSAttributedString+RLE.h */,
-				D6D0798F1A39B273000FB4DB /* NSAttributedString+RLE.m */,
-				D6D079901A39B273000FB4DB /* NSDate+RLE.h */,
-				D6D079911A39B273000FB4DB /* NSDate+RLE.m */,
-				D6D079921A39B273000FB4DB /* NSMutableAttributedString+RLE.h */,
-				D6D079931A39B273000FB4DB /* NSMutableAttributedString+RLE.m */,
-				D6D079941A39B273000FB4DB /* NSNumber+RLE.h */,
-				D6D079951A39B273000FB4DB /* NSNumber+RLE.m */,
-				D6D079961A39B273000FB4DB /* NSObject+RLE.h */,
-				D6D079971A39B273000FB4DB /* NSObject+RLE.m */,
-				D6D079981A39B273000FB4DB /* NSPredicate+RLE.h */,
-				D6D079991A39B273000FB4DB /* NSPredicate+RLE.m */,
-				D6D0799A1A39B273000FB4DB /* NSString+RLE.h */,
-				D6D0799B1A39B273000FB4DB /* NSString+RLE.m */,
-				D6D0799D1A39B273000FB4DB /* RLECFunctions.h */,
-				D6D0799E1A39B273000FB4DB /* RLECFunctions.m */,
-				D6D0799F1A39B273000FB4DB /* RubyLikeExtensions.h */,
 			);
 			name = "RLE-master";
 			path = "../../../Downloads/RLE-master";
@@ -626,6 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6068A161A63149C0017B36C /* RatingSelectorTableViewCell.m in Sources */,
+				5F1BAD801A8F8C1500C20B0B /* NSLocale+KeyboardFix.m in Sources */,
 				D66E2DF919E7E500006077BC /* AppDelegate.m in Sources */,
 				D66E2DFF19E7E500006077BC /* RatingSelectorViewController.m in Sources */,
 				D6BCA27819F3F4BC0039AAB8 /* GroupsViewController.m in Sources */,

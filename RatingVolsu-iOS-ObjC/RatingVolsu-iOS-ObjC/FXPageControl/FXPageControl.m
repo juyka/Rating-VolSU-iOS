@@ -392,8 +392,8 @@ const CGPathRef FXPageControlDotShapeTriangle = (const CGPathRef)3;
 
 - (void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	CGPoint point = [touch locationInView:self];
-    BOOL forward = _vertical? (point.y > self.frame.size.height / 2): (point.x > self.frame.size.width / 2);
+	//CGPoint point = [touch locationInView:self];
+   // BOOL forward = _vertical? (point.y > self.frame.size.height / 2): (point.x > self.frame.size.width / 2);
     if (!_defersCurrentPageDisplay)
     {
         [self setNeedsDisplay];

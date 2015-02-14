@@ -82,7 +82,7 @@ NSURL *baseURL;
 	
 }
 
-- (void)facultsWithHandler:(RequestHandler)handler {
+- (void)facultsWithHandler:(RequestHandler)handler errorBlock:(void (^)())errorHandler {
 	
 	NSDictionary *parameters = @{ @"get_lists": @"0"};
 	NSString *url = @"facult_req.php";
@@ -93,7 +93,7 @@ NSURL *baseURL;
 		if (handler) {
 			handler(entries);
 		}
-	} errorBlock:nil];
+	} errorBlock:errorHandler];
 }
 
 - (void)groups:(NSString *)facultId withHandler:(RequestHandler)handler {
