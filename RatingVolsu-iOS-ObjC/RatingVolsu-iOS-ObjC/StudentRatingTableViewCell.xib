@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -11,7 +11,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bB-Vk-Jk5">
-                    <rect key="frame" x="15" y="5" width="275" height="35"/>
+                    <rect key="frame" x="15" y="5" width="275" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="34" id="RsE-FR-KUk"/>
+                    </constraints>
                     <attributedString key="attributedText">
                         <fragment content="Label">
                             <attributes>
@@ -31,7 +34,7 @@
                     </constraints>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrP-Rq-Q6z">
-                    <rect key="frame" x="15" y="43" width="275" height="13"/>
+                    <rect key="frame" x="15" y="24" width="275" height="13"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="13" id="Gig-mY-goU"/>
                     </constraints>
@@ -54,7 +57,6 @@
                 <constraint firstItem="0TI-48-sac" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7hM-1P-KuA"/>
                 <constraint firstItem="0TI-48-sac" firstAttribute="leading" secondItem="2bB-Vk-Jk5" secondAttribute="trailing" constant="5" id="IHC-EY-SDc"/>
                 <constraint firstItem="0TI-48-sac" firstAttribute="leading" secondItem="HrP-Rq-Q6z" secondAttribute="trailing" constant="5" id="U1D-68-fTn"/>
-                <constraint firstAttribute="bottom" secondItem="HrP-Rq-Q6z" secondAttribute="bottom" constant="4" id="VSb-pJ-k7H"/>
                 <constraint firstAttribute="trailing" secondItem="0TI-48-sac" secondAttribute="trailing" constant="5" id="cMy-YH-z9K"/>
                 <constraint firstItem="HrP-Rq-Q6z" firstAttribute="top" secondItem="2bB-Vk-Jk5" secondAttribute="bottom" constant="3" id="k9O-QO-u63"/>
                 <constraint firstItem="HrP-Rq-Q6z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="njb-5B-2QC"/>

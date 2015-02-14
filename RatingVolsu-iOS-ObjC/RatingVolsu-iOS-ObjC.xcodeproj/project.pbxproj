@@ -424,6 +424,7 @@
 			children = (
 				5F1BAD631A8F833F00C20B0B /* RLE */,
 				D6068A291A6549A30017B36C /* FXPageControl */,
+				D6D0798A1A39B273000FB4DB /* RLE-master */,
 				D6FF4D5F1A0231B300421E29 /* RecentItems */,
 				D6FF4D5E1A02319A00421E29 /* Rating */,
 				D6BCA27519F3F2760039AAB8 /* RatingSelector */,
@@ -448,6 +449,33 @@
 				D6068A151A63149C0017B36C /* RatingSelectorTableViewCell.m */,
 			);
 			name = RatingSelector;
+			sourceTree = "<group>";
+		};
+		D6D0798A1A39B273000FB4DB /* RLE-master */ = {
+			isa = PBXGroup;
+			children = (
+				D6D0798C1A39B273000FB4DB /* NSArray+RLE.h */,
+				D6D0798D1A39B273000FB4DB /* NSArray+RLE.m */,
+				D6D0798E1A39B273000FB4DB /* NSAttributedString+RLE.h */,
+				D6D0798F1A39B273000FB4DB /* NSAttributedString+RLE.m */,
+				D6D079901A39B273000FB4DB /* NSDate+RLE.h */,
+				D6D079911A39B273000FB4DB /* NSDate+RLE.m */,
+				D6D079921A39B273000FB4DB /* NSMutableAttributedString+RLE.h */,
+				D6D079931A39B273000FB4DB /* NSMutableAttributedString+RLE.m */,
+				D6D079941A39B273000FB4DB /* NSNumber+RLE.h */,
+				D6D079951A39B273000FB4DB /* NSNumber+RLE.m */,
+				D6D079961A39B273000FB4DB /* NSObject+RLE.h */,
+				D6D079971A39B273000FB4DB /* NSObject+RLE.m */,
+				D6D079981A39B273000FB4DB /* NSPredicate+RLE.h */,
+				D6D079991A39B273000FB4DB /* NSPredicate+RLE.m */,
+				D6D0799A1A39B273000FB4DB /* NSString+RLE.h */,
+				D6D0799B1A39B273000FB4DB /* NSString+RLE.m */,
+				D6D0799D1A39B273000FB4DB /* RLECFunctions.h */,
+				D6D0799E1A39B273000FB4DB /* RLECFunctions.m */,
+				D6D0799F1A39B273000FB4DB /* RubyLikeExtensions.h */,
+			);
+			name = "RLE-master";
+			path = "../../../Downloads/RLE-master";
 			sourceTree = "<group>";
 		};
 		D6FF4D5E1A02319A00421E29 /* Rating */ = {
