@@ -103,7 +103,6 @@ FXPageControlDelegate
 	}
 	errorBlock:^{
 		
-	//	handler();
 	}];
 	
 	return task;
@@ -236,13 +235,14 @@ FXPageControlDelegate
 		[fetchRequest setEntity:entity];
 		fetchRequest.sortDescriptors = @[@"total".descending];
 		
-		fetchRequest.predicate = [NSPredicate predicateWithFormat:@"semester.semesterId = %@", self.semester.semesterId ];
+		fetchRequest.predicate = [NSPredicate predicateWithFormat:@"semester.semesterId = %@", self.semester.semesterId];
 		
 		NSFetchedResultsController *theFetchedResultsController =
 		[[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
 											managedObjectContext:NSManagedObjectContext.defaultContext
 											  sectionNameKeyPath:nil
 													   cacheName:nil];
+		
 		self.fetchedResultsController = theFetchedResultsController;
 		_fetchedResultsController.delegate = self;
 	}

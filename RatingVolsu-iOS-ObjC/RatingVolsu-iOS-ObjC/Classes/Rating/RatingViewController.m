@@ -27,16 +27,11 @@
 
 - (void)viewDidLoad {
 	
+	RVAppDelegate.shouldShowRateUs = YES;
 	self.internetReachability = [Reachability reachabilityForInternetConnection];
 	[self.internetReachability startNotifier];
     [super viewDidLoad];
 	[self changeViewController:self.segmentedControl];
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)refresh:(id)sender {
@@ -45,8 +40,6 @@
 	
 	if (netStatus == NotReachable) {
 		
-	//	UIImageView *imageView = [[UIImageView alloc] initWithImage:@"alert".image];
-	//	imageView.frame =
 		UIBarButtonItem *accessWarning = [[UIBarButtonItem alloc]
 										  initWithImage:@"alert".image style:UIBarButtonItemStyleDone target:nil action:nil];
 		
@@ -63,13 +56,14 @@
 		UIBarButtonItem *progressIndicator = [[UIBarButtonItem alloc]
 											  initWithCustomView:activityIndicator];
 		
-		
 		self.navigationItem.rightBarButtonItem = progressIndicator;
 		
 		[activityIndicator startAnimating];
 		
+		__weak typeof(self) weakSelf = self;
+		
 		self.task = [self.currentViewController refresh:^{
-			self.navigationItem.rightBarButtonItem = self.refreshItem;
+			weakSelf.navigationItem.rightBarButtonItem = weakSelf.refreshItem;
 		}];
 	}
 }
@@ -102,14 +96,5 @@
 	
 	return !self.segmentedControl.selectedSegmentIndex;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

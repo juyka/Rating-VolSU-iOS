@@ -86,7 +86,7 @@
 	return task;
 }
 
-+ (NSURLSessionDataTask *)requestByGroup:(Semester *)semester withHandler:(RequestHandler)handler errorBlock:(void (^)())errorHandler{
++ (NSURLSessionDataTask *)requestByGroup:(Semester *)semester withHandler:(RequestHandler)handler errorBlock:(void (^)())errorHandler {
 	
 	NSDictionary *parameters = @{
 								 @"Fak" : semester.student.group.faculty.facultyId,
@@ -193,7 +193,6 @@
 			
 			[[CoreDataManager sharedManager] saveContext];
 
-			
 			ratingTable = [ratingItems flatten];
 			
 		}

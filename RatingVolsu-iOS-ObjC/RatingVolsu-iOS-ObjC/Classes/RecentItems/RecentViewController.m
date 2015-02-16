@@ -26,6 +26,8 @@ NSFetchedResultsControllerDelegate
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) Reachability *internetReachability;
+
+
 @end
 
 @implementation RecentViewController {
@@ -38,23 +40,10 @@ NSFetchedResultsControllerDelegate
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	self.internetReachability = [Reachability reachabilityForInternetConnection];
-	[self.internetReachability startNotifier];
-	
-	UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
-										  initWithTarget:self action:@selector(handleLongPress:)];
-	lpgr.minimumPressDuration = 0.7;
-	lpgr.delegate = self;
-	[self.tableView addGestureRecognizer:lpgr];
-	
 	UIBarButtonItem *item = [[UIBarButtonItem alloc] init];
 	item.title = @" ";
 	self.navigationItem.backBarButtonItem = item;
 	
-	[self.tableView registerNib:[UINib nibWithNibName:@"RecentTableViewCell" bundle:nil] forCellReuseIdentifier:@"recentCell"];
-	self.tableView.tableFooterView = [UIView new];
-	self.tableView.separatorInset = UIEdgeInsetsZero;
-
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(keyboardWillShow)
 												 name:UIKeyboardWillShowNotification
@@ -64,7 +53,21 @@ NSFetchedResultsControllerDelegate
 											 selector:@selector(keyboardWillHide)
 												 name:UIKeyboardWillHideNotification
 											   object:nil];
+
 	
+	self.internetReachability = [Reachability reachabilityForInternetConnection];
+	[self.internetReachability startNotifier];
+	
+	UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+										  initWithTarget:self action:@selector(handleLongPress:)];
+	lpgr.minimumPressDuration = 0.7;
+	lpgr.delegate = self;
+	
+	[self.tableView addGestureRecognizer:lpgr];
+	self.tableView.tableFooterView = [UIView new];
+	self.tableView.separatorInset = UIEdgeInsetsZero;
+	[self.tableView registerNib:[UINib nibWithNibName:@"RecentTableViewCell" bundle:nil] forCellReuseIdentifier:@"recentCell"];
+
 	[[self fetchedResultsController] performFetch:nil];
 
 	[self.tableView reloadData];
@@ -73,12 +76,16 @@ NSFetchedResultsControllerDelegate
 		
 		[self addItem];
 	}
-	
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	
-	[Appirater userDidSignificantEvent:YES];
+	[super viewDidAppear:animated];
+	
+	if (RVAppDelegate.shouldShowRateUs) {
+		[Appirater userDidSignificantEvent:YES];
+		RVAppDelegate.shouldShowRateUs = NO;
+	}
 }
 
 - (void)keyboardWillShow {
@@ -118,8 +125,7 @@ NSFetchedResultsControllerDelegate
 		[self performSegueWithIdentifier:@"RatingSelectorSegue" sender:nil];
 		
 	}
-	
-	
+
 }
 
 - (void)configureCell:(RecentTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {

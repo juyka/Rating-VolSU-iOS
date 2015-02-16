@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0102B89B1C52458B9C1483B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C04D6F37EBC2412C96CB0297 /* libPods.a */; };
-		5F000E6119F4EE2400DB5E91 /* Rating VolSU.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F000E5F19F4EE2400DB5E91 /* Rating VolSU.xcdatamodeld */; };
+		5F000E6119F4EE2400DB5E91 /* Рейтинг.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F000E5F19F4EE2400DB5E91 /* Рейтинг.xcdatamodeld */; };
 		5F1BAD761A8F833F00C20B0B /* NSArray+RLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1BAD651A8F833F00C20B0B /* NSArray+RLE.m */; };
 		5F1BAD771A8F833F00C20B0B /* NSAttributedString+RLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1BAD671A8F833F00C20B0B /* NSAttributedString+RLE.m */; };
 		5F1BAD781A8F833F00C20B0B /* NSDate+RLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1BAD691A8F833F00C20B0B /* NSDate+RLE.m */; };
@@ -74,7 +74,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F000E6019F4EE2400DB5E91 /* Rating VolSU.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Rating VolSU.xcdatamodel"; sourceTree = "<group>"; };
+		5F000E6019F4EE2400DB5E91 /* Рейтинг.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Рейтинг.xcdatamodel"; sourceTree = "<group>"; };
 		5F1BAD641A8F833F00C20B0B /* NSArray+RLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+RLE.h"; sourceTree = "<group>"; };
 		5F1BAD651A8F833F00C20B0B /* NSArray+RLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+RLE.m"; sourceTree = "<group>"; };
 		5F1BAD661A8F833F00C20B0B /* NSAttributedString+RLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+RLE.h"; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		D6272BF919EE786B005DD267 /* Group+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Group+Mappings.m"; sourceTree = "<group>"; };
 		D6272BFB19EE794E005DD267 /* Student+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+Mappings.h"; sourceTree = "<group>"; };
 		D6272BFC19EE794E005DD267 /* Student+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+Mappings.m"; sourceTree = "<group>"; };
-		D66E2DF019E7E500006077BC /* Rating VolSU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rating VolSU.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66E2DF019E7E500006077BC /* Рейтинг.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Рейтинг.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66E2DF419E7E500006077BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D66E2DF519E7E500006077BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D66E2DF719E7E500006077BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -364,7 +364,7 @@
 		D66E2DF119E7E500006077BC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D66E2DF019E7E500006077BC /* Rating VolSU.app */,
+				D66E2DF019E7E500006077BC /* Рейтинг.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -373,7 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				D6ABE40A1A8FE97900FF6EED /* Additional */,
-				5F000E5F19F4EE2400DB5E91 /* Rating VolSU.xcdatamodeld */,
+				5F000E5F19F4EE2400DB5E91 /* Рейтинг.xcdatamodeld */,
 				D6BCA27419F3F2400039AAB8 /* Classes */,
 				D6272BF419EE6C4A005DD267 /* Extensions */,
 				D604873619ED3F530009E1E7 /* CoreData */,
@@ -493,7 +493,7 @@
 			);
 			name = "RatingVolsu-iOS-ObjC";
 			productName = "RatingVolsu-iOS-ObjC";
-			productReference = D66E2DF019E7E500006077BC /* Rating VolSU.app */;
+			productReference = D66E2DF019E7E500006077BC /* Рейтинг.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -513,10 +513,9 @@
 			};
 			buildConfigurationList = D66E2DEB19E7E500006077BC /* Build configuration list for PBXProject "RatingVolsu-iOS-ObjC" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = Russian;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = D66E2DE719E7E500006077BC;
@@ -639,7 +638,7 @@
 				D6272BFD19EE794E005DD267 /* Student+Mappings.m in Sources */,
 				D601A67119F03BEE00735F5B /* SemestersViewController.m in Sources */,
 				D6068A341A6889A10017B36C /* RatingScrollView.m in Sources */,
-				5F000E6119F4EE2400DB5E91 /* Rating VolSU.xcdatamodeld in Sources */,
+				5F000E6119F4EE2400DB5E91 /* Рейтинг.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,7 +751,7 @@
 				INFOPLIST_FILE = "RatingVolsu-iOS-ObjC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "Rating VolSU";
+				PRODUCT_NAME = "Рейтинг";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -770,7 +769,7 @@
 				INFOPLIST_FILE = "RatingVolsu-iOS-ObjC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "Rating VolSU";
+				PRODUCT_NAME = "Рейтинг";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -799,13 +798,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		5F000E5F19F4EE2400DB5E91 /* Rating VolSU.xcdatamodeld */ = {
+		5F000E5F19F4EE2400DB5E91 /* Рейтинг.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				5F000E6019F4EE2400DB5E91 /* Rating VolSU.xcdatamodel */,
+				5F000E6019F4EE2400DB5E91 /* Рейтинг.xcdatamodel */,
 			);
-			currentVersion = 5F000E6019F4EE2400DB5E91 /* Rating VolSU.xcdatamodel */;
-			path = "Rating VolSU.xcdatamodeld";
+			currentVersion = 5F000E6019F4EE2400DB5E91 /* Рейтинг.xcdatamodel */;
+			path = "Рейтинг.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

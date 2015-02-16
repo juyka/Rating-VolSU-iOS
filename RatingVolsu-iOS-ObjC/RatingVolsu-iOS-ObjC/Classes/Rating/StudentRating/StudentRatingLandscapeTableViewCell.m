@@ -20,17 +20,6 @@
 
 @implementation StudentRatingLandscapeTableViewCell
 
-//- (id)initWithCoder:(NSCoder *)aDecoder {
-//	
-//	self = [super initWithCoder:aDecoder];
-//	if (self) {
-//		
-//		
-//	}
-//	
-//	return self;
-//}
-
 -(void)setNumbers:(NSArray *)numbers {
 	
 	NSArray *labels = @[_firstA, _secondA, _thirdA, _sum, _exam, _total];
@@ -38,16 +27,6 @@
 	[labels eachWithIndex:^(UILabel *label, NSUInteger index) {
 		label.text = [NSString stringWithFormat:@"%@", numbers[index]];
 	}];
-}
-
-- (void)awakeFromNib {
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

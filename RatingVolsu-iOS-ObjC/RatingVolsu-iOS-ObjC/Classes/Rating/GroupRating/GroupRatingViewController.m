@@ -150,12 +150,13 @@ FXPageControlDelegate
 	
 	NSURLSessionDataTask *task;
 	
+	__weak typeof(self) weakSelf = self;
+	
 	task = [RatingItem requestByGroup:self.semester withHandler:^(NSArray *dataList) {
 		handler();
-		[self addData];
+		[weakSelf addData];
 	}
 	errorBlock:^{
-	   //handler();
 	}];
 	
 	return task;

@@ -43,12 +43,18 @@
 	[[UITableView appearance] setBackgroundColor:@(0xEAEAF1).rgbColor];
 	
 	
+	[Appirater setCustomAlertMessage:@"Если Вам нравится приложение, пожалуйста, поставьте свою оценку. Это займет у Вас не больше одной минуты.\n Спасибо за поддержку!"];
+	[Appirater setCustomAlertTitle:@"Оценить Рейтинг ВолГУ"];
+	[Appirater setCustomAlertRateButtonTitle:@"Оценить"];
+	[Appirater setCustomAlertRateLaterButtonTitle:@"Напомнить позже"];
+	[Appirater setCustomAlertCancelButtonTitle:@"Нет, спасибо"];
+	
 	[Appirater setAppId:@"552035781"];
 	[Appirater setDaysUntilPrompt:7];
-	[Appirater setUsesUntilPrompt:10];
-	[Appirater setSignificantEventsUntilPrompt:-1];
+	[Appirater setUsesUntilPrompt:15];
+	[Appirater setSignificantEventsUntilPrompt:2];
 	[Appirater setTimeBeforeReminding:2];
-	[Appirater setDebug:YES];
+	[Appirater setDebug:NO];
 	
 	[Appirater appLaunched:YES];
 	

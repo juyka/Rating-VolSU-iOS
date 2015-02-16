@@ -42,22 +42,18 @@
 	dispatch_async (dispatch_get_main_queue (), ^{
 		[self.tableView reloadData];
 	});
+	
+	__weak typeof(self) weakSelf = self;
 	[self.entityClass request:self.parentId withHandler:^(NSArray *entities){
-		[self.tableView reloadData];
+		[weakSelf.tableView reloadData];
 	} errorBlock:^(){
-		[self.tableView reloadData];
+		[weakSelf.tableView reloadData];
 	}];
 }
 
 - (void)didChangePreferredContentSize:(NSNotification *)notification
 {
 	[self.tableView reloadData];
-}
-
-
-- (void)didReceiveMemoryWarning {
-	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
 }
 
 - (void)configureCell:(RatingSelectorTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {

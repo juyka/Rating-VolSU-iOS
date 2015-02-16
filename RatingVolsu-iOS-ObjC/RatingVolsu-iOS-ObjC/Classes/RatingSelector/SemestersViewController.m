@@ -28,10 +28,12 @@
 
 	self.tableView.tableFooterView = UIView.new;
 	Group *group = self.student.group;
+	
+	__weak typeof(self) weakSelf = self;
 	[Semester request:group.groupId withHandler:^(NSArray *dataList) {
 		
-		self.dataSource = dataList;
-		[self.tableView reloadData];
+		weakSelf.dataSource = dataList;
+		[weakSelf.tableView reloadData];
 	} errorBlock:nil];
 	
 }
