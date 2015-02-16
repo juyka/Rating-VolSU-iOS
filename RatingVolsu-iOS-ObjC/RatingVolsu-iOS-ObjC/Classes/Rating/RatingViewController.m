@@ -18,7 +18,7 @@
 @property (nonatomic) IBOutlet UIBarButtonItem *refreshItem;
 @property (nonatomic) Reachability *internetReachability;
 
-@property(nonatomic) UIViewController<RatingViewControllerProtocol> *currentViewController;
+@property (nonatomic) UIViewController<RatingViewControllerProtocol> *currentViewController;
 @property (nonatomic) NSURLSessionDataTask *task;
 
 @end
@@ -26,6 +26,7 @@
 @implementation RatingViewController
 
 - (void)viewDidLoad {
+	[super viewDidLoad];
 	
 	RVAppDelegate.shouldShowRateUs = YES;
 	self.internetReachability = [Reachability reachabilityForInternetConnection];
@@ -72,24 +73,20 @@
 	
 	[self.task cancel];
 	
-	NSInteger index = sender.selectedSegmentIndex;
+	NSString *viewControllerID = @[@"StudentRating", @"GroupRating"][sender.selectedSegmentIndex];
 	
-	NSString *viewControllerID = @[@"StudentRating", @"GroupRating"][index];
-	
-	UIViewController<RatingViewControllerProtocol> *subViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:viewControllerID];
+	UIViewController<RatingViewControllerProtocol> *subViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:viewControllerID];
 	
 	[self.currentViewController removeFromParentViewController];
+	[self.currentViewController.view removeFromSuperview];
 	self.currentViewController = subViewController;
 	[self addChildViewController:self.currentViewController];
 	
 	[subViewController setValue:self.recentItem.semester forKey:@"semester"];
 	subViewController.view.frame = self.containerView.bounds;
-	
-	[self.currentViewController.view removeFromSuperview];
 	[self.containerView addSubview:subViewController.view];
 	
 	[self refresh:self];
-	
 }
 
 - (BOOL)canRotate {

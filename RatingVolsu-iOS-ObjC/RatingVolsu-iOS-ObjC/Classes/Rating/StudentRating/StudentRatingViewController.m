@@ -249,9 +249,4 @@ FXPageControlDelegate
 	return _fetchedResultsController;
 }
 
-
-
-
-
-
 @end

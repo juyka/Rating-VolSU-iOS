@@ -49,7 +49,7 @@
 	[Appirater setCustomAlertRateLaterButtonTitle:@"Напомнить позже"];
 	[Appirater setCustomAlertCancelButtonTitle:@"Нет, спасибо"];
 	
-	[Appirater setAppId:@"552035781"];
+	[Appirater setAppId:@"967841111"];
 	[Appirater setDaysUntilPrompt:7];
 	[Appirater setUsesUntilPrompt:15];
 	[Appirater setSignificantEventsUntilPrompt:2];
